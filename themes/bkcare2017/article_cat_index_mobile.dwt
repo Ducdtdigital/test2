@@ -1,0 +1,65 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css,mobile/css/article_cat_index.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    {include file='library/ur_here.lbi'}
+    {include file='library/article_category_tree_mobile.lbi'}
+    {if $top5}
+    <h2 class="titlehome">Top 5 tin nỗi bật</h2>
+        <ul class="articles_cat">
+            {foreach from=$top5 item=article name=artciles_list}
+            <li>
+                <a href="{$article.url}">
+                    {if $smarty.foreach.artciles_list.index eq 0}
+                    <img src="{$option.cdn1_path}{$article.thumb}" alt="{$article.title|escape:html}" width="100" height="70">
+                    <h3>{$article.title|escape:html}</h3>
+                    {else}
+                    <h3 class="dot">{$article.title|escape:html}</h3>
+                    {/if}
+                    <span>{$article.viewed} lượt xem</span>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    <div class="clr"></div>
+    {/if}
+    <!-- TemplateBeginEditable name="Main" -->
+<!-- #BeginLibraryItem "/library/cat_articles_mobile.lbi" -->
+{if $articles }
+<div class="articles_cat">
+    <h2 class="titlehome"><a href="{$articles_cat.url}">{$articles_cat.name|escape:html}</a></h2>
+        <ul>
+           {foreach from=$articles item=article_item name=articles}
+           <li>
+                <a href="{$article.url}">
+                    {if $smarty.foreach.articles.index eq 0}
+                    <img src="{$option.cdn1_path}{$article.thumb}" alt="{$article.title|escape:html}" width="100" height="70">
+                    <h3>{$article.title|escape:html}</h3>
+                    {else}
+                    <h3 class="dot">{$article.title|escape:html}</h3>
+                    {/if}
+                    <span>{$article.viewed} lượt xem</span>
+                </a>
+            </li>
+            {/foreach}
+    </ul>
+</div>
+{/if}
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+    {include file='library/article_category_tree_mobile.lbi'}
+</section>
+{include file='library/page_header_mobile_article.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{insert_js name='articlecatIndex.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global_mobile.js,js/init_mobile.js'}
+<script type="text/javascript">
+    $(document).ready(function() {
+        callw('._cat_article','.mnav',4,30);
+    });
+
+</script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

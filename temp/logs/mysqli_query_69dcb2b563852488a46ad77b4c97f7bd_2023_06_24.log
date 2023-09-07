@@ -1,0 +1,52 @@
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('6eb21712edf1bc2c3070178a6e65c8f1', '1687566463', '113.23.44.157', 'a:0:{}')
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687566463', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '6eb21712edf1bc2c3070178a6e65c8f1' LIMIT 1
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `thbvietnam_1s`.`nb_sessions` WHERE sesskey = '6eb21712edf1bc2c3070178a6e65c8f1'
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('6eb21712edf1bc2c3070178a6e65c8f1', '1687566463', '113.23.44.157', 'a:0:{}')
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687566463', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '6eb21712edf1bc2c3070178a6e65c8f1' LIMIT 1
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('64b47ac44ea00ae660e4bd0458bd35be', '1687566463', '113.23.44.157', 'a:0:{}')
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+SELECT rd_id, link_old, link_new  FROM `thbvietnam_1s`.`nb_redirect` WHERE link_old = 'favicon.ico' 
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_redirect' doesn't exist
+
+SELECT region, library, sort_order, id, number, type FROM `thbvietnam_1s`.`nb_template` WHERE theme = 'bkcare2017' AND filename = '404' AND type > 0 AND remarks='' ORDER BY region, library, sort_order
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_template' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687566463', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '64b47ac44ea00ae660e4bd0458bd35be' LIMIT 1
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions_data` WHERE expiry < 1687564663
+
+2023-06-24 07:27:43 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions_data' doesn't exist
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type, IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img, g.brand_logo FROM `thbvietnam_1s`.`nb_goods` AS g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `thbvietnam_1s`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND (g.cat_id  IN ('602')  OR g.goods_id IN ('') )  group by g.goods_id ORDER BY (g.shop_price = 0) ASC, (g.goods_number = 0) ASC, g.is_best DESC, g.sort_order,  is_best ASC LIMIT 20
+
+2023-06-24 22:57:48 - MySQLi Query Error: Unknown column 'g.brand_logo' in 'field list'
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type, IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img, g.brand_logo FROM `thbvietnam_1s`.`nb_goods` AS g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `thbvietnam_1s`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND (g.cat_id  IN ('316','591','590','595')  OR g.goods_id IN ('') )  group by g.goods_id ORDER BY (g.shop_price = 0) ASC, (g.goods_number = 0) ASC, g.is_best DESC, g.sort_order,  is_best ASC LIMIT 20
+
+2023-06-24 22:57:51 - MySQLi Query Error: Unknown column 'g.brand_logo' in 'field list'
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type, IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img, g.brand_logo FROM `thbvietnam_1s`.`nb_goods` AS g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `thbvietnam_1s`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND (g.cat_id  IN ('591')  OR g.goods_id IN ('') )  group by g.goods_id ORDER BY (g.shop_price = 0) ASC, (g.goods_number = 0) ASC, g.is_best DESC, g.sort_order,  is_best ASC LIMIT 20
+
+2023-06-24 22:57:52 - MySQLi Query Error: Unknown column 'g.brand_logo' in 'field list'
+

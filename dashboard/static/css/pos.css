@@ -1,0 +1,4 @@
+.col_l , .col_r{display: inline-block;float: left;overflow: hidden;}
+.col_l {width: 400px}
+.col_r {width: 780px;margin-left: 20px;box-sizing: border-box;}
+.actions_post {margin: 20px 0;}

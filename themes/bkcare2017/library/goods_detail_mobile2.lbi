@@ -1,0 +1,125 @@
+{if $goods.is_on_sale eq 1}
+    <div class="area_price" id="normalproduct">
+        <div class="">Trạng thái: Hàng cũ đã qua sử dụng</div>
+        {* Kiem tra khong nhap gia --> gia Lien he *}
+        {if $goods.shop_price eq 0}
+            Giá liên hệ
+        {else}
+            {if $goods.is_promote and $goods.gmt_end_time}
+                <p><strong id="_amount">{$goods.promote_price}</strong> <del>{$goods.shop_price_formated}</del></p>
+            {else}
+                <p><strong id="_amount">{$goods.shop_price_formated}</strong></p>
+                 {if $cfg.show_marketprice}
+                <p>{$lang.market_price} <del>{$goods.market_price}</del></p>
+                 {/if}
+            {/if}
+            <p>Tiết kiệm: {$goods.saved_price|formart_number}₫  <em>{$goods.discount}</em></p>
+            {if $goods.is_promote and $goods.gmt_end_time}
+            <p class="end_time_wrapper">Thời gian KM còn lại: <span class="end_time" title="{siy:date_format date=$goods.gmt_end_time format='Y-m-d-H-i-s'}">{siy:date_format date=$goods.gmt_end_time}</span></p>
+            {/if}
+            {if ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+            <p class="price" style="color: #f60">Trạng thái: Tạm Hết Hàng</p>
+            {/if}
+
+
+        {/if}
+    </div>
+{if $goods.goods_gift || $promotion.0.url}
+<div class="area_promotion">
+    <strong>khuyến mãi - Ưu đãi</strong>
+    {$goods.goods_gift}
+     {if $promotion.0.url}
+    {foreach from=$promotion item=item key=key}
+        {if $item.type eq "favourable"}
+        <p>{$lang.favourable} <strong>{$item.act_name}</strong></p>
+        {/if}
+    {/foreach}
+    {/if}
+</div>
+{/if}
+
+
+{if $goods.goods_number neq '0' and $option.use_storage eq '1'}
+<form action="javascript:buy({$goods.goods_id})" method="post" id="purchase_form">
+    {if $specification}
+        <div class="properties">
+            {foreach from=$specification item=spec key=spec_key name=specification}
+            <dl{if $spec.attr_type eq 2} title="{$lang.multi_choice}"{/if}>
+                <dt>{$spec.name}{$lang.colon}</dt>
+                {if $spec.attr_type eq 1}
+                <dd class="radio">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}"{if $key eq 0} checked="checked"{/if} />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {else}
+                <dd class="checkbox">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {/if}
+            </dl>
+            <input type="hidden" name="spec_list" value="{$key}">
+            {/foreach}
+        </div>
+{/if}<!-- #specification -->
+<div class="sfamout" style="padding: 10px">Số lượng: <div class="button-container">
+                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                        <input type="number" name="number" class="qty" value="1" min="1" max="{$goods.goods_number}">
+                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                    </div> {$lang.amount}{$lang.colon} <span class="price amount">{if $goods.is_promote and $goods.gmt_end_time }{$goods.promote_price}{else}{$goods.shop_price_formated}{/if}</span></div>
+</form>
+
+<div class="area_order clr">
+    <a href="javascript:buy({$goods.goods_id})" class="buy_now"><b>Mua ngay </b><span>Mua online hoặc tại cửa hàng</span></a>
+     {if $istragop}
+    <a  rel="nofollow" href="thanh-toan?gid={$goods.goods_id}" class="buy_ins"><b>Mua Trả Góp </b><span>Qua thẻ tín dụng VISA hoặc Master</span></a>
+    {/if}
+</div>
+{/if}<!-- het checl con hang hien -->
+<div class="callorder">
+    <div class="ct">
+        <span>Gọi đặt mua: <a href="tel:{$service_phone}">{$service_phone}</a> ({$opentime})</span>
+    </div>
+</div>
+{else}
+ <div class="area_price" id="normalproduct">
+    <p><strong>Ngừng Kinh Doanh</strong></p>
+ </div>
+{/if}<!-- ngung kinh doanh -->
+<ul class="policy ">
+    {if $goods.goods_packaged}
+    <li class="inpr">
+        <span>Trong hộp có: {$goods.goods_packaged} </span>
+    </li>
+    {/if}
+    {if $goods.warranty}
+    <li class="wrpr">
+        <span>Bảo hành: {$goods.warranty}. </span>
+    </li>
+    {/if}
+     {if $goods.goods_doitra}
+    <li><i class="icon-poltick"></i><strong>1 đổi 1 trong {$goods.goods_doitra} ngày</strong> nếu lỗi do NSX</li>
+    {/if}
+    <li><i class="icon-poltel"></i>
+        <p>Liên hệ HOTLINE {$service_phone}<small> (8-21h cả T7, CN)</small></p>
+    </li>
+    <li><i class="icon-polmail"></i>
+        <p>Email: {$service_email}</p>
+    </li>
+</ul>
+<div class="requestcall">
+    <h4>Bạn cần chúng tôi gọi lại TƯ VẤN</h4>
+    <div class="request-msg">Chúng tôi sẽ tư vấn theo thông tin bạn đã cung cấp.</div>
+    <form>
+        <input type="hidden" name="url" value="">
+        <input name="tel" placeholder="Nhập số điện thoại của anh/chị">
+         <a href="javascript:;" id="_call"> <strong>HÃY GỌI LẠI CHO TÔI!!!</strong>
+        <span>Tôi đang rất quan tâm sản phẩm này</span> </a>
+    </form>
+</div>

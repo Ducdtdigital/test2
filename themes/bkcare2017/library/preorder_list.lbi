@@ -1,0 +1,18 @@
+{if $preorder_list and $preorder_list.total > 0}
+<div class="clearfix"></div>
+    <h4 class="title_text" style="border-top:1px solid #e5e5e5">{$preorder_list.total} Người đã đăng ký Đặt Trước</h4>
+    <div class="danhsach">
+        <ul class="listorder" id="listorder">
+        <li> <div>Họ tên</div> <div>Số điện thoại</div> <div>Thời gian đăng ký</div> </li>
+           {foreach from=$preorder_list.list key=i item=booking name=preorder}
+            <li><div>{$booking.sex} {$booking.link_man}</div> <div>{$booking.tel}</div> <div>{$booking.booking_time}</div></li>
+           {/foreach}
+         </ul>
+    </div>
+     <a class="listfull" href="javascript:void(0)" onclick="LoadPreOrderCustomer()">Xem tất cả danh sách</a>
+ {else}
+ <div class="clearfix"></div>
+ <div class="danhsach" style="border-top:1px solid #e5e5e5;padding-top: 20px">
+    Gọi đặt mua: <strong>{$service_phone}</strong> (8:00-20:00)
+ </div>
+{/if}

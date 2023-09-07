@@ -1,0 +1,204 @@
+{include file='library/html_header_mobile.lbi'}
+ <link rel="canonical" href="{$canonical}" />
+{$cat_faq}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "image": "{$cat_icon}",
+    "description": "{$description}",
+    {if $category eq $sub.id and $sub.cat_id}
+    "isSimilarTo": [
+        {foreach from=$catsubs item=sub name=catsub}
+        
+       {foreach from=$sub.cat_id item=sub name=child_cat}
+        {
+          "@type": "Thing",
+          "name": "{$sub.name|escape}",
+          "url": "{$option.static_path}{$sub.url}",
+          "@id": "{$option.static_path}{$sub.url}#category",
+          "image": "{$sub.icon}",
+          "mainEntityOfPage": "{$option.static_path}{$sub.url}",
+          "description": "{$sub.desc}"
+        }
+        {if not $smarty.foreach.child_cat.last},{/if}
+        {/foreach}
+        {/foreach}
+      ],
+    {/if}
+    "name": "{$cat_name}",
+    "url": "{$option.static_path}{$active_url}",
+    "@id": "{$option.static_path}{$active_url}#category",
+    "model": "{$cat_name}",
+    "sku": "{$cat_name}",
+    "mpn": "{$cat_name}",
+    "category": "{$option.static_path}{$active_url}",
+    "mainEntityOfPage": "{$option.static_path}{$active_url}",
+    "brand": {
+      "@id": "{$option.static_path}#organization"
+    },
+    "logo": {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "url": "{$cat_icon}",
+      "image": "{$cat_icon}",
+      "name": "{$cat_name}",
+      "description": "{$description}",
+      "representativeOfPage": "true",
+      "uploadDate": "10098223232323-060606-2121 0303:0606:3232.32"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "VND",
+      "itemCondition": "https://schema.org/NewCondition",
+      "priceValidUntil": "February 15, 2025",
+      "highPrice": "17500000",
+      "lowPrice": "103000",
+      "offerCount": "675",
+      "url": "{$option.static_path}{$active_url}"
+    },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingCount": 30,
+                "ratingValue": 4.7
+            },
+            "audience": [
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Audience",
+                    "audienceType": "https://vi.wikipedia.org/wiki/Th%E1%BB%A3_m%E1%BB%99c",
+                    "url": "https://vi.wikipedia.org/wiki/Th%E1%BB%A3_m%E1%BB%99c",
+                    "name": "Thợ Mộc",
+                    "geographicArea": {
+                    "@type": "AdministrativeArea",
+                    "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                    "@id": "kg:/m/01crd5",
+                    "name": "Việt Nam"
+                }
+                },
+                    {
+                    "@context": "https://schema.org",
+                    "@type": "Audience",
+                    "audienceType": ["https://vi.wikipedia.org/wiki/H%E1%BB%99_gia_%C4%91%C3%ACnh"],
+                    "url": "https://vi.wikipedia.org/wiki/H%E1%BB%99_gia_%C4%91%C3%ACnh",
+                    "name": "Hộ Gia Đình",
+                    "geographicArea": {
+                    "@type": "AdministrativeArea",
+                    "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                    "@id": "kg:/m/01crd5",
+                    "name": "Việt Nam"
+                    }
+                }
+            ],
+            "potentialAction": 
+                {
+                    "instrument": ["phone", "laptop", "pc", "tablet"],
+                    "@type": "BuyAction",
+                    "mainEntityOfPage": "{$option.static_path}gio-hang",
+                    "name": "giỏ hàng",
+                    "url": "{$option.static_path}gio-hang",
+                    "target": "{$option.static_path}gio-hang",
+                    "description": "Chọn mua hàng",
+                    "location": {
+                        "@type": "City",
+                        "sameAs": ["https://en.wikipedia.org/wiki/Vietnam", "https://www.wikidata.org/wiki/Q881"],
+                        "name": "Việt Nam",
+                        "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                        "@id": "kg:/m/01crd5",
+                        "mainEntityOfPage":"https://www.google.com/search?q=việt+nam&amp;kponly=&amp;kgmid=/m/01crd5","hasMap": "https://goo.gl/maps/5HUQFbzHSxRuAWVBA"
+                    }
+  }
+}
+</script>
+{insert_css files="owl-carousel/owl.carousel.2.3.4.min.css,mobile/css/global.css,mobile/css/category.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    {include file='library/ur_here.lbi'}
+    {if $catsubs}
+    <div class="scrollmenu _category">
+        <ul class="mnav">
+           {foreach from=$catsubs item=sub name=catsub}
+                {if $category eq $sub.id and $sub.cat_id}
+                  {foreach from=$sub.cat_id item='child' name='child_cat'}
+                    <li>
+                      <a href="{$child.url}">
+                        <img src="{$child.icon}" alt="{$child.name|escape}">
+                      </a>
+                      <a href="{$child.url}">
+                        <span>{$child.name}</span>
+                      </a>
+                    </li>
+                    {if $smarty.foreach.child_cat.iteration == 9}
+                      <li class="toggle-more-li">
+                        <span class="toggle-more">Xem thêm</span>
+                      </li>
+                    {/if}
+                  {/foreach}
+                {/if}
+              {/foreach}
+        </ul>
+        </div>
+        <div class="clr"></div>
+    {/if}
+
+     <!-- TemplateBeginEditable name="TopProducts" -->
+<!-- TemplateEndEditable -->
+    {include file='library/cat_filter_tgdd_mobile.lbi'}
+    {include file='library/goods_list_mobile2.lbi'}
+     <div class="clr"></div>
+     <!-- TemplateBeginEditable name="Bottom" -->
+<!-- TemplateEndEditable -->
+    {if $long_desc}
+     <div class="clr"></div>
+    <article id="description">
+            <div class="article_content">{$long_desc}</div>
+            <div class="view-more hidden">
+            <p id="btn-viewmore"><span id="view1">Đọc thêm </span><span id="view2" class="hidden">Thu gọn </span> </p>
+            </div>
+    </article>
+    {/if}
+      <!-- TemplateBeginEditable name="Bottom2" -->
+<!-- TemplateEndEditable -->
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{* Nếu phát sinh file js thì sửa lại giá trị name category.Mobile.min.js *}
+{insert_js name='category.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.2.3.4.min.js' minify='js/global_mobile.js,js/init_mobile.js'}
+<script type="text/javascript">
+    var base_path = '{$option.static_path}';
+    $(document).ready(function() {
+        if($("#owl-cate").length > 0){
+            $("#owl-cate").owlCarousel({items: 1,margin:0,lazyLoad:!0,slideSpeed : 2000,nav:!1,dots:!0,loop:!0,responsiveRefreshRate : 200});
+        }
+        callw('._category','.mnav',3,30);
+        callw('._best','.listpromo',3,15);
+    });
+
+     $(".criteria").click(function() {
+        $(".criteria").not(this).next().hide();
+        $(this).next().slideToggle(200);
+        $("body,html").animate({
+            scrollTop: $(".filter").position().top
+        }, 600)
+    });
+     /** view more */
+    var el = $('#description .article_content');
+    var h = el.height();
+
+    if(h>300){
+        el.addClass('short_view');
+        $('#description .view-more').removeClass('hidden');
+    }
+    $('#btn-viewmore').click(function(e){
+        el.toggleClass('short_view');
+        $('#view1').toggleClass('hidden');
+        $('#view2').toggleClass('hidden');
+        e.preventDefault();
+    });
+    /** end view more */
+</script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

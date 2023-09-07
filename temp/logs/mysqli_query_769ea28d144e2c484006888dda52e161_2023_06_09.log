@@ -1,0 +1,16 @@
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('f9de2118b4e9190faa04e5f1a890dcd1', '1686272675', '118.70.131.98', 'a:0:{}')
+
+2023-06-09 08:04:35 - MySQLi Query Error: Duplicate entry 'f9de2118b4e9190faa04e5f1a890dcd1' for key 'PRIMARY'
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('f9de2118b4e9190faa04e5f1a890dcd1', '1686272675', '118.70.131.98', 'a:0:{}')
+
+2023-06-09 08:04:35 - MySQLi Query Error: Duplicate entry 'f9de2118b4e9190faa04e5f1a890dcd1' for key 'PRIMARY'
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_goods` SET rd_id=0 WHERE rd_id='1'
+
+2023-06-09 15:35:52 - MySQLi Query Error: Unknown column 'rd_id' in 'where clause'
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_goods` SET rd_id=0 WHERE rd_id='2'
+
+2023-06-09 15:35:54 - MySQLi Query Error: Unknown column 'rd_id' in 'where clause'
+

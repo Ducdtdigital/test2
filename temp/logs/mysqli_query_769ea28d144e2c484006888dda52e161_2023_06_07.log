@@ -1,0 +1,40 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1686081762', ip = '1.53.240.223', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = 'fa87be626171c33d7c98041a53935ead' LIMIT 1
+
+2023-06-07 03:02:42 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1686079962
+
+2023-06-07 03:02:42 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1686079962
+
+2023-06-07 03:02:42 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1686081763', ip = '1.53.240.223', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = 'fa87be626171c33d7c98041a53935ead' LIMIT 1
+
+2023-06-07 03:02:43 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1686108080', ip = '118.70.131.98', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = 'ad289c54da37fc3c52ff323400055592' LIMIT 1
+
+2023-06-07 10:21:20 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1686106280
+
+2023-06-07 10:21:20 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1686134496
+
+2023-06-07 18:11:36 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND (g.cat_id  IN ('580','584','581','585','320','543','319')  OR g.goods_id IN ('') )AND g.brand_id=578   group by g.goods_id ORDER BY (g.shop_price = 0) ASC, (g.goods_number = 0) ASC is_best ASC LIMIT 20
+
+2023-06-07 18:20:54 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'is_best ASC LIMIT 20' at line 1
+
+SELECT g.goods_id, g.goods_name, g.market_price, g.shop_price1 AS org_price, g.promote_price, IFNULL(mp.user_price, g.shop_price1 * '1') AS shop_price1, promote_start_date, promote_end_date, g.goods_brief, g.goods_thumb, goods_img, b.brand_name, g.is_best, g.is_new, g.is_hot, g.is_promote FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_brand` AS b ON b.brand_id = g.brand_id LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND g.brand_id = '587' AND (g.is_best = 1 OR (g.is_promote = 1 AND promote_start_date <= '1686111747' AND promote_end_date >= '1686111747')) ORDER BY g.sort_order, g.last_update DESC
+
+2023-06-07 18:22:27 - MySQLi Query Error: Unknown column 'g.shop_price1' in 'field list'
+
+SELECT g.goods_id, g.goods_name, g.market_price, g.shop_price1 AS org_price, IFNULL(mp.user_price, g.shop_price1 * '1') AS shop_price1, g.promote_price, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND g.brand_id = '587' ORDER BY is_best  LIMIT 20, 20
+
+2023-06-07 18:22:27 - MySQLi Query Error: Unknown column 'g.shop_price1' in 'field list'
+

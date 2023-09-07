@@ -1,0 +1,4 @@
+[30-Mar-2023 18:56:55 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 16384 bytes) in /home/kuqpxtvxhosting/public_html/xoa/remove_a_tags.php on line 5
+[30-Mar-2023 18:57:32 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 16384 bytes) in /home/kuqpxtvxhosting/public_html/xoa/remove_a_tags.php on line 36
+[30-Mar-2023 18:58:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 12288 bytes) in /home/kuqpxtvxhosting/public_html/xoa/remove_a_tags.php on line 7
+[30-Mar-2023 19:08:34 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 16384 bytes) in /home/kuqpxtvxhosting/public_html/xoa/remove_a_tags.php on line 37

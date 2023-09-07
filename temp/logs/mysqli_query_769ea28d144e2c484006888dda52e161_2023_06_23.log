@@ -1,0 +1,40 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687509061', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:4:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 15:31:01 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687509654', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 15:40:54 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1687507854
+
+2023-06-23 15:40:54 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687509943', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 15:45:43 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687509943', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 15:45:43 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687509943', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 15:45:43 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687511986', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 16:19:46 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1687510186
+
+2023-06-23 16:19:46 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1687511986', ip = '113.23.44.157', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:5:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;s:9:\"last_time\";i:1687483563;s:13:\"captcha_login\";s:16:\"YmFkZGY0OWRlMA==\";}' WHERE sesskey = '6bd2615f6025a1ed208fdc3cc6bd5adc' LIMIT 1
+
+2023-06-23 16:19:46 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1687510186
+
+2023-06-23 16:19:46 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

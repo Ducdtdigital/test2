@@ -1,0 +1,78 @@
+
+<div id="menu-container">
+   <div id="menu-wrapper">
+     
+   </div>
+   <ul class="menu-list accordion">
+        {foreach from=get_categories_tree() item='cat' name='categories'}
+       
+          <li id="nav1" class="toggle accordion-toggle"> 
+         <span class="icon-plus"></span><a class="menu-link" href="{$cat.url}"  title="{$cat.name}"><span>{$cat.name}</span></a><span class="toggle_arrow"></span>
+           </li>
+    {if $cat.cat_id}
+    <ul class="menu-submenu accordion-content">
+        {if $cat.nav_data}
+         
+        <li class="show_cat3 noibat">
+        <span class="spanh"> Nổi bật</span>
+             <ul class="sub_cat_2">
+             {foreach from=$cat.nav_data item='nav'}
+            <li><a href="{$nav.url}"><span>{$nav.name}</span></a></li>
+            {/foreach}
+                     </ul>
+           <span class="toggle_arrow" style="
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid #999;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    margin-top: -10px;
+"></span>           
+        </li>
+       
+        {/if}
+         {assign var="group_count" value=0}
+            {foreach from=$cat.cat_id item='child' name='child_cat'}
+                <li class="show_cat3">
+                                    {if $child.cat_id}
+<span class="toggle_arrow" style="
+    content: '';
+    width: 0px;
+    height: 0;
+    border-left: 5px solid #999;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: inherit;
+    float: right;
+    margin-right: 15px;
+"></span>  
+   {/if}
+                    <a href="{$child.url}" class="child_menu {if $child.cat_id}has_sub{/if}">{$child.name} <em></em></a>
+                    {if $child.cat_id}
+                    <ul class="sub_cat_2">
+                        {foreach from=$child.cat_id item='childer' name='childer_cat'}
+                            {assign var="group_count" value=$group_count+1}
+                            <li><a href="{$childer.url}">{$childer.name}</a></li>
+                            {if $group_count >= 10}
+                                {assign var="group_count" value=0}
+                                </ul>
+                            </li>
+                            <li class="group_menu">
+                                <a href="{$child.url}" class="child_menu {if $child.cat_id}has_sub{/if}">{$child.name} <em></em></a>
+                                <ul class="sub_cat_2">
+                            {/if}
+                        {/foreach}
+                    </ul>
+                    {/if}
+                </li>
+            {/foreach}
+   </ul>
+   {/if}
+    {/foreach}
+    </ul>
+</div>
+

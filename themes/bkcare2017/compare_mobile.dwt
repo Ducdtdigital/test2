@@ -1,0 +1,12 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    Tính năng so sánh không được hỗ trợ trên giao diện di động
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

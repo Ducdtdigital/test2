@@ -1,0 +1,55 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMHG5TK8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+    <div class="htop">
+        <div class="wrap-main">
+            <a class="logo" title="THB Việt Nam - Cung Cấp Dụng Cụ Điện, Thiết Bị Đo Lường Chất Lượng Cao" href="./">{if $pname eq 'index'}<h1><img src="{$option.static_path}static/img/logo.png" alt="{$shop_name}"></h1>{else}<img src="{$option.static_path}static/img/logo.png" alt="{$shop_name}">{/if}</a>
+            <div class="search-thb">
+            {if $pname eq 'article' || $pname eq 'article_cat' || $pname eq 'article_cat_index'}
+            <form id="search-site" action="{$option.static_path}tin-tuc" method="get" autocomplete="off">
+                <input class="topinput" id="search-keyword" name="keywords" type="text" tabindex="1" value="{$search_keywords|escape}" placeholder="Tìm kiếm tin tức..." autocomplete="off"  maxlength="50">
+                <button class="btntop" type="submit"><i class="icontgdd-topsearch"></i></button>
+                <div class="search-suggest"></div>
+                
+            </form>
+            <div class="search-sug">{siy:nav type='top'}</div>
+            </div>
+            {else}
+            <form id="search-site" action="{$option.static_path}tim-kiem" method="get" autocomplete="off">
+                <input class="topinput" id="search-keyword" name="keywords" type="text" tabindex="1" value="{$search_keywords|escape}" placeholder="Tìm kiếm sản phẩm bạn cần..." autocomplete="off"  maxlength="50">
+                <button class="btntop" type="submit"><i class="icontgdd-topsearch"></i></button>
+                <div class="search-suggest"></div>
+                
+            </form>
+            <div class="search-sug">{siy:nav type='top'}</div>
+            </div>
+            {/if}
+            <span class="htop-r">
+                <span><strong>0904 810 817</strong><p>Hà Nội</p></span>
+                <span><strong>0979 244 335</strong><p>Hồ Chí Minh</p></span>
+            </span>
+             <div id="cart" class="cart_space">
+                <p class="label">
+                <a href="gio-hang"> Giỏ hàng <i class="icontgdd-cartstick"></i>{insert name='cart_info'}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="hnav">
+         <div class="wrap-main">
+           <div class="all_cat_wrapper">
+                <div class="all_cat">
+                    <div class="line"><i></i><i></i><i></i></div>
+                    <span> Danh mục sản phẩm</span>
+                </div>
+                    <div class="all_category">
+                    {include file='library/category_tree.lbi'}
+                    </div>
+            </div>
+            {siy:nav type='middle'}
+        </div>
+    </div>
+    <div class="clr"></div>
+</header>

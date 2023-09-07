@@ -1,0 +1,60 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` SET user_name = 'maykhoanbosch.net', email = 'maykhoanbosch.net@gmail.com' fullname = 'd'sdt_admin = '212'WHERE user_id = '21'
+
+2023-05-07 15:04:46 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'fullname = 'd'sdt_admin = '212'WHERE user_id = '21'' at line 1
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` (user_name, email, password, add_time, nav_list, action_list, role_id) VALUES ('xzczxczxc', 'xzczxczxc@gmail.com', '3c0057c1e2a0301fc5f7f1eed5c6ff18', '1683422062', 'Goods list|goods.php?act=list,Order list|order.php?act=list,User comments|comment_manage.php?act=list,User list|users.php?act=list,Danh mục bài viết|articlecat.php?act=list', 'goods_manage,remove_back,cat_manage,cat_drop,attr_manage,brand_manage,comment_priv,tag_manage,goods_type,goods_auto,virualcard,picture_batch,goods_batch,gen_goods_script,article_cat,article_manage,shopinfo_manage,shophelp_manage,vote_priv,article_auto,order_os_edit,order_ps_edit,order_ss_edit,order_edit,order_view,order_view_finished,repay_manage,booking,sale_order_stats,client_flow_stats,delivery_view,back_view', '1','Đinh Thế Đức','0988897846')
+
+2023-05-07 15:14:22 - MySQLi Query Error: Column count doesn't match value count at row 1
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` (user_name, email, password, add_time, nav_list, action_list, role_id) VALUES ('zxczxczxczxc', 'Novadigital20121@gmail.com', '3c0057c1e2a0301fc5f7f1eed5c6ff18', '1683422142', 'Goods list|goods.php?act=list,Order list|order.php?act=list,User comments|comment_manage.php?act=list,User list|users.php?act=list,Danh mục bài viết|articlecat.php?act=list', 'goods_manage,remove_back,cat_manage,cat_drop,attr_manage,brand_manage,comment_priv,tag_manage,goods_type,goods_auto,virualcard,picture_batch,goods_batch,gen_goods_script,article_cat,article_manage,shopinfo_manage,shophelp_manage,vote_priv,article_auto,order_os_edit,order_ps_edit,order_ss_edit,order_edit,order_view,order_view_finished,repay_manage,booking,sale_order_stats,client_flow_stats,delivery_view,back_view', '1','Đinh Thế Đức','0988897846')
+
+2023-05-07 15:15:42 - MySQLi Query Error: Column count doesn't match value count at row 1
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` (user_name, email, password, add_time, nav_list, action_list, role_id) VALUES ('Thuynguyen', 'Novadigita23l2021@gmail.com', '3c0057c1e2a0301fc5f7f1eed5c6ff18', '1683422207', 'Goods list|goods.php?act=list,Order list|order.php?act=list,User comments|comment_manage.php?act=list,User list|users.php?act=list,Danh mục bài viết|articlecat.php?act=list', 'goods_manage,remove_back,cat_manage,cat_drop,attr_manage,brand_manage,comment_priv,tag_manage,goods_type,goods_auto,virualcard,picture_batch,goods_batch,gen_goods_script,article_cat,article_manage,shopinfo_manage,shophelp_manage,vote_priv,article_auto,order_os_edit,order_ps_edit,order_ss_edit,order_edit,order_view,order_view_finished,repay_manage,booking,sale_order_stats,client_flow_stats,delivery_view,back_view', '3','Đinh Thế Đức1','0988897846')
+
+2023-05-07 15:16:47 - MySQLi Query Error: Column count doesn't match value count at row 1
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:20:47 - MySQLi Query Error: Unknown column 'nav_listm' in 'field list'
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:20:50 - MySQLi Query Error: Unknown column 'nav_listm' in 'field list'
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:20:53 - MySQLi Query Error: Unknown column 'nav_listm' in 'field list'
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:21 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:21 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_listm,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:21 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_listm, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:28 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_list,fullname,sdt_admin, FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'' at line 1
+
+SELECT user_id, user_name, email, nav_list,fullname,sdt_adminFROM `kuqpxtvxhosting_minhngoc1`.`nb_admin_user` WHERE user_id = '31'
+
+2023-05-07 15:21:39 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`nb_admin_user` WHERE user_id = '31'' at line 1
+

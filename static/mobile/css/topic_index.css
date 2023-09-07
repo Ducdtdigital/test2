@@ -1,0 +1,4 @@
+.prolist li{margin-bottom: 10px;}
+.prolist img{width: 100%;height: auto}
+.prolist h3, .prolist .time {padding: 5px 10px}
+.prolist h3 a{font-weight: 700;font-size: 18px}

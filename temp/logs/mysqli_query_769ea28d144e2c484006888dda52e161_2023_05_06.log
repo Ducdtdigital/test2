@@ -1,0 +1,4 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1683306313', ip = '104.28.222.77', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = 'c3c710560afb40b63ef6f60e3ea55ccf' LIMIT 1
+
+2023-05-06 00:05:13 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

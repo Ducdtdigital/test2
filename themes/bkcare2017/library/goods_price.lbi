@@ -1,0 +1,26 @@
+{if $goods_price_list}
+<div class="xm-plain-box clearfix" id="goods_price">
+	<div class="box-hd"><h2 class="title">Tương tự cùng phân khúc giá</h2></div>
+	<ul class="box-bd cate owl-carousel owl-theme">
+		{foreach from=$goods_price_list item=goods name=goods_price}
+		<li>
+            <a href="{$goods.url}">
+                <img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}">
+                <h3>{$goods.goods_name}</h3>
+                {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                {else}
+                    {if $goods.promote_price}
+                    <strong class="gs">{$goods.formated_promote_price}</strong>
+                    <strong class="gg">{$goods.shop_price}</strong>
+                    {else}
+                    <strong class="gs">{$goods.shop_price}</strong>
+                    {/if}
+                {/if}
+            </a>
+		</li>
+		{/foreach}
+	</ul>
+</div>
+
+{/if}

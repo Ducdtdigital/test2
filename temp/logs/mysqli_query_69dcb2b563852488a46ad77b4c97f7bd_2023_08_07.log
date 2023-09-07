@@ -1,0 +1,16 @@
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-08-07 10:21:51 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-08-07 10:21:51 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-08-07 23:43:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-08-07 23:43:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+

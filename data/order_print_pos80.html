@@ -1,0 +1,80 @@
+{literal}
+<style type="text/css">
+body, html, p, div, ul, li{margin: 0;padding: 0}
+body {font-size:11px;padding: 10px;font-family: Helvetica, Arial,sans-serif;}
+ul li {list-style: none;line-height: 16px}
+.goodslist>li span{width: 50%;display: inline-block;}
+.goodslist>li span.total{text-align: right;}
+.goodslist>li.head span{font-weight: 700;}
+.name{overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.break {border-bottom: 1px dashed #333}
+.ar{text-align: right;}
+.amount {font-weight: 700;font-style: normal;}
+.thank{margin-top: 10px;text-align: center;}
+.mb10{margin-bottom: 10px}
+</style>
+{/literal}
+<h1 align="center">{$shop_name}</h1>
+<ul class="break mb10">
+    <li>{$lang.label_shop_address} {$shop_address}</li>
+    <li>{$lang.label_service_phone} {$service_phone}</li>
+    <li>Thu ngân: {$action_user}</li>
+    <li>{$lang.label_print_time} {$print_time}</li>
+</ul>
+<ul class="break mb10">
+    <li>{$lang.print_order_sn} {$order.order_sn}</li>
+    <li>Khách hàng: {$order.consignee}</li>
+    {if $order.mobile}<li>ĐT: 0{$order.mobile}</li>{/if}
+    <li>Địa chỉ: {$order.address}</li>
+</ul>
+<ul class="goodslist mb10">
+    <li class="head"><span class="goodsname">Tên SP</span><span class="total">Thành tiền</span></li>
+    <!-- {foreach from=$goods_list item=goods key=key} -->
+    <li class="name">{$goods.goods_name}
+        {if $goods.is_gift}{if $goods.goods_price gt 0}{$lang.remark_favourable}{else}{$lang.remark_gift}{/if}{/if}
+        {if $goods.parent_id gt 0}{$lang.remark_fittings}{/if}
+         <!-- {foreach key=key from=$goods_attr[$key] item=attr} -->
+        <!-- {if $attr.name} --> {$attr.name}:{$attr.value} <!-- {/if} -->
+        <!-- {/foreach} --></li>
+    <li class="break"><span class="goodsname">{$goods.formated_goods_price} x {$goods.goods_number}</span><span class="total">{$goods.formated_subtotal}</span></li>
+     <!-- {/foreach} -->
+    <li class="ar">{if $order.inv_payee}
+        {$lang.label_inv_payee}{$order.inv_payee}&nbsp;&nbsp;&nbsp;
+        {$lang.label_inv_content}{$order.inv_content}
+        {/if}</li>
+    <li class="ar mb10">{if $order.discount gt 0}- {$lang.label_discount}{$order.formated_discount}{/if}{if $order.pack_name and $order.pack_fee neq '0.00'}
+         <!-- 包装名称包装费用 -->
+        + {$lang.label_pack_fee}{$order.formated_pack_fee}
+        {/if}
+        {if $order.card_name and $order.card_fee neq '0.00'}<!-- 贺卡名称以及贺卡费用 -->
+        + {$lang.label_card_fee}{$order.formated_card_fee}
+        {/if}
+        {if $order.pay_fee neq '0.00'}<!-- 支付手续费 -->
+        + {$lang.label_pay_fee}{$order.formated_pay_fee}
+        {/if}
+        {if $order.shipping_fee neq '0.00'}<!-- 配送费用 -->
+        + {$lang.label_shipping_fee}{$order.formated_shipping_fee}
+        {/if}
+        {if $order.insure_fee neq '0.00'}<!-- 保价费用 -->
+        + {$lang.label_insure_fee}{$order.formated_insure_fee}
+        {/if}
+        <!-- 订单总金额 -->
+        = {$lang.label_order_amount} {$order.formated_total_fee} </li>
+        <li class="ar">
+            {if $order.money_paid neq '0.00'}- Tiền hàng: {$order.formated_money_paid}{/if}
+
+        <!-- 如果使用了余额支付, 减去已使用的余额 -->
+        {if $order.surplus neq '0.00'}- {$lang.label_surplus} {$order.formated_surplus}{/if}
+
+        <!-- 如果使用了积分支付, 减去已使用的积分 -->
+        {if $order.integral_money neq '0.00'}- {$lang.label_integral} {$order.formated_integral_money}{/if}
+
+        <!-- 如果使用了红包支付, 减去已使用的红包 -->
+        {if $order.bonus neq '0.00'}- {$lang.label_bonus} {$order.formated_bonus}{/if}
+        </li>
+        <li class="ar"> = {$lang.label_money_dues} <em class="amount">{$order.formated_order_amount}</em></li>
+    {if $order.pay_note}
+    <li class="note">{$lang.pay_note} {$order.pay_note}</li>
+    {/if}
+</ul>
+<p class="thank">Cảm ơn bạn đã mua hàng tại hệ thống {$shop_name} của chúng tôi !</p>

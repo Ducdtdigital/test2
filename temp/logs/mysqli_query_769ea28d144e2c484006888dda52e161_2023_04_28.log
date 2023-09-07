@@ -1,0 +1,8 @@
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_catbrand` WHERE cat_id = '588'
+
+2023-04-28 23:21:00 - MySQLi Query Error: Table 'kuqpxtvxhosting_minhngoc1.nb_catbrand' doesn't exist
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_catbrand` (cat_id, brand_id, brand_desc, is_show) VALUES ('588', '578', 'xcxcxc', '0')
+
+2023-04-28 23:21:00 - MySQLi Query Error: Table 'kuqpxtvxhosting_minhngoc1.nb_catbrand' doesn't exist
+

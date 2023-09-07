@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /dashboard/
+Disallow: /bootstrap/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /languages/
+Disallow: /themes/
+Disallow: /js/
+Disallow: /modules/
+Disallow: /respond.php
+Disallow: /tim-kiem
+Disallow: /tracking
+sitemap: oke

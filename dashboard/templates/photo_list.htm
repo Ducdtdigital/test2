@@ -1,0 +1,10 @@
+{include file="pageheader.htm"}
+
+<ul class="files">
+    {foreach from=$files item=file}
+     <li>
+        <a href="photomanage.php?act=filemanage&dir={$file.link}">{$file.name}</a>
+     </li>
+    {/foreach}
+</ul>
+{include file="pagefooter.htm"}

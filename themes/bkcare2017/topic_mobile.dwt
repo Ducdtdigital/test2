@@ -1,0 +1,55 @@
+{include file='library/html_header_mobile.lbi'}
+<link rel="canonical" href="{$canonical}" />
+{insert_css  files="mobile/css/global.css,mobile/css/topic.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    {include file='library/ur_here.lbi'}
+    <div class="topic">
+        <div class="article_content">{$topic.intro}</div>
+        <div class="clearfix"></div>
+        {foreach from=$sort_goods_arr item=sort key=sort_name}
+        <div class="cate_head">{$sort_name}</div>
+            <ul class="cate normal">
+                {foreach from=$sort item=goods name=sort}
+                <li>
+                    {if $topic.discount_method eq 0}
+                        {if $goods.rate_sale}<label class="rate">-{$goods.rate_sale}%</label>{/if}
+                    {else}
+                        {if $goods.discount}<label class="rate">{$goods.discount}</label>{/if}
+                    {/if}
+                    <a href="{$goods.url}" title="{$goods.name|escape:html}">
+                        {if $goods.thumb_url}
+                            <img src="{$goods.thumb_url}" width="320" height="150" alt="{$goods.name|escape:html}">
+                        {else}
+                            <img src="{$option.cdn1_path}{$goods.goods_thumb}" width="150" height="150" alt="{$goods.name|escape:html}">
+                        {/if}
+                        <h3>{$goods.goods_name}</h3>
+                        {if $goods.price eq 0}
+                        <span>Giá liên hệ</span>
+                        {else}
+                        <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong>
+                        {/if}
+                        <div class="promotion">
+                            {$goods.seller_note}
+                        </div>
+                        {if $goods.desc_short}
+                        <figure class="bginfo">
+                            <span class="name">{$goods.name}</span>
+                            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+                            {$goods.desc_short}
+                        </figure>
+                        {/if}
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+        {/foreach}
+</div>
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{* Nếu phát sinh file js thì sửa lại giá trị name index.Mobile.min.js *}
+{insert_js name='topic.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.min.js' minify='js/global_mobile.js,js/init_mobile.js'}
+</body>
+</html>

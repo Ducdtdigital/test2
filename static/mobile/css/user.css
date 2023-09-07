@@ -1,0 +1,101 @@
+
+
+/*table */
+table{width: 100%; max-width: 100% }
+table>thead>tr>th {border-bottom: 1px solid #bbb; text-align: left; font-weight: 600; }
+table>tbody>tr>td, table>tbody>tr>th, table>tfoot>tr>td, table>tfoot>tr>th, table>thead>tr>td, table>thead>tr>th {
+    padding: 8px 10px; line-height: 1.5384616; vertical-align: middle; border-top: 1px solid #ddd;white-space: nowrap;
+}
+table td, table th, table tr{transition: background-color .15s ease-in-out }
+table tbody>tr:nth-of-type(odd) {background-color: #fcfcfc; }
+table>tbody>tr:hover, table>tbody>tr.active>td, table>tbody>tr.active>th, table>tbody>tr>td.active, table>tbody>tr>th.active, table>tfoot>tr.active>td, table>tfoot>tr.active>th, table>tfoot>tr>td.active, table>tfoot>tr>th.active, table>thead>tr.active>td, table>thead>tr.active>th, table>thead>tr>td.active, table>thead>tr>th.active {
+    background-color: #f6f6f6;
+}
+.table_response {overflow-x: scroll;}
+
+.user_dashboard {width: 100%;}
+.user_dashboard .item{display:inline;float:left;width:48.5%;margin-right:1%;background-color:#eee;border:1px solid #e8e8e8;border-radius:5px;margin-bottom: 10px;}
+.user_dashboard .item:nth-child(2n+2){margin-left:0}
+.user_dashboard .item .item_inner{display:block;text-decoration:none;text-align: center;}
+.user_dashboard .item .item_inner .count{display:block;padding:5px 0;color:#333;font-size:32px;font-weight:bold;line-height: 32px;}
+.user_dashboard .item .item_inner .label{display:block;margin:0 5px;text-align:center;font-size:16px;font-weight:bold;line-height:37px;border-top:1px solid #e8e8e8}
+.user_dashboard .item .price sub{display:none}
+.user_dashboard .item .price span{font-size:26px}
+.user_status {line-height: 40px;padding: 0 10px}
+.user_status em{font-weight: 700}
+.user_nav {display: block;height: 40px;background: #fafafa;position: relative;margin-bottom: 10px;}
+#toggle_nav {float: right;}
+#user_nav {display: none;position: absolute;top: 40px;background: #fff;padding: 10px;z-index: 3;
+width: 100%;border: 1px solid #ececec}
+#user_nav a{width: 20%;display: inline-block;padding: 10px;color: #3E414F}
+/* box */
+
+.box{margin-bottom:10px;padding:0 10px;}
+.box .hd{height:35px;border-bottom:1px solid #3E414F;}
+.box .hd h3{float:left;height:35px;padding:3px 10px 0 10px;font-size:16px;line-height:28px;font-weight:700;color: #3E414F}
+.box .hd .extra{float:right;height:35px;padding:3px 10px 0 0;line-height:28px;}
+.box .bd{padding:10px 0;}
+.bd:after{clear:both;content:'\0020';display:block;visibility:hidden;height:0}
+.bd{display:inline-block}
+* html .bd{height:1%}
+.bd{display:block}
+.has_tab_box .box{padding-top:39px;margin-top:-39px;}
+.has_tab_box .box .hd{display:none;}
+.has_tab_box .box .bd{padding:20px 0;}
+.tab_wrapper{position:relative;height:39px;margin:0 10px;border-bottom:1px solid #e3e3e3;}
+.tab_wrapper .tabs{float:left;height:32px;padding:7px 0 0;}
+.tab_wrapper .extra{float:right;height:32px;padding:7px 0 0;}
+.tab_wrapper .extra .pagination{padding-top:3px;}
+.tabs .label{display:inline-block;float:left;padding:0 5px 0 10px;line-height:32px;}
+.tabs a{display:block;float:left;height:31px;padding:0 20px;margin-right:4px;line-height:31px;color:#3E414F;font-size:14px;text-decoration:none;background-color:#fff;border:1px solid #e3e3e3;border-bottom-width:0;border-radius:5px 5px 0 0;outline:none;}
+.tabs a:hover{color:#000;}
+.tabs a.current{height:32px;color:#fff;background: #3E414F;}
+.tabs a.current:hover{color:#fff;}
+.tabs a em{opacity:0.5;-webkit-transition:opacity 0.5s ease-out;-moz-transition:opacity 0.5s ease-out;-o-transition:opacity 0.5s ease-out;-ms-transition:opacity 0.5s ease-out;}
+.tabs a:hover em{opacity:1;-webkit-transition:opacity 1s ease-out;-moz-transition:opacity 1s ease-out;-o-transition:opacity 1s ease-out;-ms-transition:opacity 1s ease-out;}
+.tabs .arrow_up, .tabs .arrow_down{display:inline-block;float:right;height:20px;width:20px;overflow:hidden;margin:6px -6px 0 4px;line-height:999em;background:url('../img/arrow.png') no-repeat 4px 2px;}
+.tabs .arrow_down{background-position:-36px 2px;}
+.tabs .number{display:none;}
+
+
+/* form login */
+.wrap_cart h3{font-size: 22px;text-align: center;padding: 10px 0}
+.user_form {padding: 15px}
+.form label .directions{float:left;display:inline-block;width:40em;clear:both;margin-left:10em;padding-left:10px;padding-top:5px}
+.form label .to{float:left;display:block;padding:5px 0 0 10px}
+.form label .status{display:inline-block;width:16px;height:16px;padding-left:5px;vertical-align:middle}
+.form label .valid{background:url('../img/checkmark.png') no-repeat right top}
+.form label .invalid{background:url('../img/cross.png') no-repeat right top}
+.form label,.form .label{float:left;display:block;padding:5px 0;width:100%}
+.form label b,.form .label b{float:left;width:30%;padding:5px 0 4px;font-weight:normal;display:block}
+.form .label em,.form label em{float:left;margin-left:10px;padding:5px 0}
+.form .required b:before{content:'*';margin-right:3px;color:#f53;font-size:1.5em;line-height:0.5em;font-weight:normal}
+.form .required b .before{margin-right:3px;color:#f53;font-size:1.5em;line-height:0.5em;font-weight:normal}
+.form .required_tip{color:#999;font-size:96%;font-weight:normal;position:absolute;top:.4em;right:2em;left:auto;width:13em;text-align:right}
+.form .required_tip b{color:#f53;font-size:140%}
+.form div.submit_wrap{clear:both;padding:10px 0 10px;border-top:1px solid #d8d8d8;text-align: center;}
+.form div.submit_wrap p{margin-top: 20px}
+.form div.submit_wrap p a{color: #288ad6}
+.form input[type="text"], .form input[type="password"],
+.form input[type="tel"], .form input[type="email"]
+{width: 70%;box-sizing: border-box;padding:10px;}
+.form select{width: 34.68%;box-sizing: border-box;padding:10px;}
+.form .remember {margin-left: 10em}
+.form .remember label{width: auto}
+/* end form login */
+form.account_form label{float: none;clear: both;}
+form.account_form label b {width: 100%}
+form.account_form input[type="text"], form.account_form textarea{width: 100%;box-sizing: border-box}
+.radio_wrap label{display: inline-block;width: auto;margin-right: 10px}
+.users-form h3 {text-align: center;font-weight: 700;}
+@media screen and (max-width:480px) {
+    .form select{width: 100%;box-sizing: border-box;margin-bottom: 5px;}
+}
+@media screen and (max-width:385px) {
+    #user_nav a{width: 46%;box-sizing: border-box}
+    .user_dashboard .item{width: 99%}
+    .form input[type="text"], .form input[type="password"],
+    .form input[type="tel"], .form input[type="email"],
+    .form label b,.form .label b{width: 100%;}
+
+}

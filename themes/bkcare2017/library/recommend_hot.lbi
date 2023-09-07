@@ -1,0 +1,48 @@
+{if $hot_goods}
+{if $cat_rec_sign neq 1}
+<div class="xm-plain-box hot-goods">
+    <div class="box-hd">
+        <h3 class="title">{$lang.hot_goods}</h3>
+        <div class="more">
+            {if $pname eq 'index'}
+                {if $cat_rec[3]}
+                <p class="selector" id="itemHot">
+                    <a href="javascript:void(0)" onclick="getRecommend(3, 0);" class="current">{$lang.all_goods}</a>
+                    {foreach from=$cat_rec[3] item=rec_data}
+                    <a href="javascript:void(0)" onclick="getRecommend(3, {$rec_data.cat_id})">{$rec_data.cat_name}</a>
+                    {/foreach}
+                </p>
+                {/if}
+            {/if}
+        </div>
+    </div>
+    <div class="box-bd goods_list">
+        <div id="show_hot">
+            {/if}
+            <ul class="cate">
+                {foreach from=$hot_goods item=goods name=hot_goods}
+                <li data-id="{$goods.id}">
+                    <a href="{$goods.url}" >
+                        <img src="{$option.cdn1_path}{$goods.thumb}" width="388" height="180" alt="{$goods.name|escape:html}">
+                        <h4>{$goods.name}</h4>
+                        
+                     {if $goods.price eq 0}
+					<span>Giá liên hệ</span>
+    					{elseif ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+    					<p class="price" style="color: #f60"><span style="color: #C03;">Tạm hết hàng</span></p><div class="buy_now"><p>XEM SẢN PHẨM</div></p>
+    					{else}
+                        <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong>
+                        <div class="buy_now">ĐẶT MUA NGAY</div>
+                        <div class="promotion">{$goods.seller_note}</div>
+                    {/if}
+                        <div class="promotion">{$goods.seller_note}</div>
+                    </a>
+                </li>
+                {/foreach}
+        </ul>
+            {if $cat_rec_sign neq 1}
+        </div>
+    </div>
+</div>
+{/if}
+{/if}

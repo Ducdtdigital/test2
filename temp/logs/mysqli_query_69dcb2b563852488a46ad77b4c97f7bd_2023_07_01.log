@@ -1,0 +1,40 @@
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1688146050', ip = '118.71.192.253', userid = '0', adminid = '9', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"allin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1688120344;}' WHERE sesskey = '011187fd020412226fd86ee4a63a2110' LIMIT 1
+
+2023-07-01 00:27:30 - MySQLi Query Error: MySQL server has gone away
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions` WHERE expiry < 1688144250
+
+2023-07-01 00:27:30 - MySQLi Query Error: MySQL server has gone away
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (:cat_id, :attr_id, :manual_range)
+
+2023-07-01 01:51:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':cat_id, :attr_id, :manual_range)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (:cat_id, :attr_id, :manual_range)
+
+2023-07-01 01:51:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':cat_id, :attr_id, :manual_range)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (:cat_id, :attr_id, :manual_range)
+
+2023-07-01 01:51:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':cat_id, :attr_id, :manual_range)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (:cat_id, :attr_id, :manual_range)
+
+2023-07-01 01:51:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':cat_id, :attr_id, :manual_range)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (?, ?, ?)
+
+2023-07-01 01:57:26 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, ?, ?)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (?, ?, ?)
+
+2023-07-01 01:57:26 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, ?, ?)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (?, ?, ?)
+
+2023-07-01 01:57:26 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, ?, ?)' at line 1
+
+INSERT INTO `thbvietnam_1s`.`nb_manual_filter_range`(cat_id, attr_id, manual_range) VALUES (?, ?, ?)
+
+2023-07-01 01:57:26 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, ?, ?)' at line 1
+

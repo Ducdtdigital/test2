@@ -1,0 +1,45 @@
+<ul class="categories">
+    {foreach from=get_categories_tree() item='cat' name='categories'}
+    <li>
+        <span>
+            
+            <a href="{$cat.url}">{$cat.name}</a>
+        </span>
+        {if $cat.cat_id}
+        <ul class="sub_cat">
+        {if $cat.nav_data}
+            <ul class="brand_cat_mn">
+            <span>Nổi bật</span>
+                
+            {foreach from=$cat.nav_data item='nav'}
+                <li class="brand_catli"><a href="{$nav.url}" {if $nav.opennew == '1'}target="_blank"{/if}>{$nav.name}</a></li>
+            {/foreach}
+            </ul>
+            {/if}
+            {assign var="group_count" value=0}
+            {foreach from=$cat.cat_id item='child' name='child_cat'}
+                <li>
+                    <a href="{$child.url}" class="child_menu {if $child.cat_id}has_sub{/if}">{$child.name} <em></em></a>
+                    {if $child.cat_id}
+                    <ul class="sub_cat_2">
+                        {foreach from=$child.cat_id item='childer' name='childer_cat'}
+                            {assign var="group_count" value=$group_count+1}
+                            <li><a href="{$childer.url}">{$childer.name}</a></li>
+                            {if $group_count >= 10}
+                                {assign var="group_count" value=0}
+                                </ul>
+                            </li>
+                            <li class="group_menu">
+                                <a href="{$child.url}" class="child_menu {if $child.cat_id}has_sub{/if}">{$child.name} <em></em></a>
+                                <ul class="sub_cat_2">
+                            {/if}
+                        {/foreach}
+                    </ul>
+                    {/if}
+                </li>
+            {/foreach}
+        </ul>
+        {/if}
+    </li>
+    {/foreach}
+</ul>

@@ -1,0 +1,127 @@
+<!-- $Id: codecard_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+{insert_scripts files="validator.js,../js/transport.js"}
+<div class="main-div">
+<form method="post" action="codecard_manage.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
+
+  <tr>
+    <td class="label">Danh mục thẻ Game</td>
+    <td>
+    <select name="cat_id" id="cat_id" onchange="loadCard(this)">
+        <option value="0">--Chọn Danh Mục --</option>
+        {html_options options=$cat_list selected=$codecard.cat_id}
+    </select>
+    {$lang.require_field}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">Mã thẻ</td>
+    <td>
+        {if $codecard.goods_sn}
+        <p>{$codecard.goods_sn} - {$codecard.goods_name}</p>
+        {/if}
+        <select name="goods_sn" id="goods_sn">
+        <option value="">--Chọn mã thẻ --</option>
+        </select> --> Chọn lại nếu bạn muốn thay đổi
+    </td>
+  </tr>
+  <tr>
+    <td class="label">Mã code</td>
+    <td><input type="text" name="encrypt"  size="80" value="{$codecard.encrypt}" />{$lang.require_field}</td>
+  </tr>
+    <tr>
+    <td class="label">Serial</td>
+    <td><input type="text" name="serial_number"  size="80" value="{$codecard.serial_number}" />{$lang.require_field}</td>
+  </tr>
+  <tr>
+    <td class="label">Ghi chú</td>
+    <td><input type="text" name="note" size="80"  value="{$codecard.note}" /></td>
+  </tr>
+  <tr>
+    <td class="label">Trạng thái</td>
+    <td><label><input type="checkbox" name="is_sold" {if $codecard.is_sold eq 1} checked{/if} value="1" />Đánh dấu đã bán</label></td>
+  </tr>
+  {if $codecard.is_sold eq 1}
+   <tr>
+    <td class="label">Đặt hàng bởi</td>
+    <td><p>Email khách hàng: {$codecard.cemail}</p>
+        <p>Ngày bán: {$codecard.time_sold}</p>
+    </td>
+  </tr>
+  {/if}
+</table>
+
+<table align="center">
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+      <input type="reset" class="button" value="{$lang.button_reset}" />
+      <input type="hidden" name="act" value="{$form_action}" />
+      <input type="hidden" name="old_goods_sn" value="{$codecard.goods_sn}" />
+      <input type="hidden" name="id" value="{$codecard.id}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+
+  onload = function()
+  {
+    var obj = document.getElementById('cat_id');
+    loadCard(obj);
+  }
+function loadCard(obj)
+{
+   var cat_id = obj.form.elements['cat_id'].value;
+   Ajax.call('codecard_manage.php?is_ajax=1&act=loadcard', 'cat_id=' + cat_id, Cardresponse, "GET", "JSON");
+}
+function Cardresponse(result, text_result)
+{
+  var sel = document.getElementById('goods_sn');
+
+  sel.length = 1;
+  sel.selectedIndex = 0;
+  sel.style.display = (result.content.length == 0) ? "none" : '';
+
+  if (document.all)
+  {
+    sel.fireEvent("onchange");
+  }
+  else
+  {
+    var evt = document.createEvent("HTMLEvents");
+    evt.initEvent('change', true, true);
+    sel.dispatchEvent(evt);
+  }
+
+  if (result.content)
+  {
+    for (i = 0; i < result.content.length; i ++ )
+    {
+      var opt = document.createElement("OPTION");
+      opt.value = result.content[i].goods_sn;
+      opt.text  = result.content[i].goods_sn + ' - ' +result.content[i].goods_name;
+
+      sel.options.add(opt);
+    }
+  }
+}
+/**
+ * Chekc
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.required("cat_id",  'Chưa chọn danh mục thẻ');
+    validator.required("serial_number",  'Chưa nhập Serial');
+    validator.required("encrypt",  'Chưa nhập mã thẻ');
+    return validator.passed();
+}
+
+</script>
+{/literal}
+{include file="pagefooter.htm"}

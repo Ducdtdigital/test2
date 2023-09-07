@@ -1,0 +1,28 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1683849390', ip = '116.96.44.13', userid = '0', adminid = '9', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"allin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1683824078;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'a5b89f6061bdc1c2cc55eb573fa72b46' LIMIT 1
+
+2023-05-12 06:56:30 - MySQLi Query Error: MySQL server has gone away
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1683847590
+
+2023-05-12 06:56:30 - MySQLi Query Error: MySQL server has gone away
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1683849394', ip = '116.96.44.13', userid = '0', adminid = '9', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"allin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1683824078;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'a5b89f6061bdc1c2cc55eb573fa72b46' LIMIT 1
+
+2023-05-12 06:56:34 - MySQLi Query Error: MySQL server has gone away
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1683847594
+
+2023-05-12 06:56:34 - MySQLi Query Error: MySQL server has gone away
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1683849468', ip = '116.96.44.13', userid = '0', adminid = '9', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"allin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1683824078;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'a5b89f6061bdc1c2cc55eb573fa72b46' LIMIT 1
+
+2023-05-12 06:57:48 - MySQLi Query Error: MySQL server has gone away
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1683847668
+
+2023-05-12 06:57:48 - MySQLi Query Error: MySQL server has gone away
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1683847668
+
+2023-05-12 06:57:48 - MySQLi Query Error: MySQL server has gone away
+

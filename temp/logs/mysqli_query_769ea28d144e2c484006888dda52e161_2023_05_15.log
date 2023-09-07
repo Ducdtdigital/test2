@@ -1,0 +1,8 @@
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-05-15 13:40:21 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-05-15 13:40:58 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+

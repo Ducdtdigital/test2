@@ -1,0 +1,76 @@
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('d2a04bcd42d6da232a822b03d0754b15', '1687817757', '222.254.2.160', 'a:0:{}')
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687817757', ip = '222.254.2.160', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = 'd2a04bcd42d6da232a822b03d0754b15' LIMIT 1
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions_data` WHERE expiry < 1687815957
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions_data' doesn't exist
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `thbvietnam_1s`.`nb_sessions` WHERE sesskey = 'd2a04bcd42d6da232a822b03d0754b15'
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('d2a04bcd42d6da232a822b03d0754b15', '1687817757', '222.254.2.160', 'a:0:{}')
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687817757', ip = '222.254.2.160', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = 'd2a04bcd42d6da232a822b03d0754b15' LIMIT 1
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions_data` WHERE expiry < 1687815957
+
+2023-06-27 05:15:57 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions_data' doesn't exist
+
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('853efeb556486b45bd9b6d6edc0d1fd1', '1687817758', '222.254.2.160', 'a:0:{}')
+
+2023-06-27 05:15:58 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+SELECT rd_id, link_old, link_new  FROM `thbvietnam_1s`.`nb_redirect` WHERE link_old = 'favicon.ico' 
+
+2023-06-27 05:15:58 - MySQLi Query Error: Table 'thbvietnam_1s.nb_redirect' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687817758', ip = '222.254.2.160', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '853efeb556486b45bd9b6d6edc0d1fd1' LIMIT 1
+
+2023-06-27 05:15:58 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions_data` WHERE expiry < 1687815958
+
+2023-06-27 05:15:58 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions_data' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions` WHERE expiry < 1687815958
+
+2023-06-27 05:15:58 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `thbvietnam_1s`.`nb_sessions` WHERE sesskey = '4d0779a3d1d1d4e81d3190c035dbe95b'
+
+2023-06-27 05:16:12 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+INSERT INTO `thbvietnam_1s`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('4d0779a3d1d1d4e81d3190c035dbe95b', '1687817772', '113.23.53.25', 'a:0:{}')
+
+2023-06-27 05:16:12 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687817772', ip = '113.23.53.25', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:1:{s:10:\"last_check\";i:1687792572;}' WHERE sesskey = '4d0779a3d1d1d4e81d3190c035dbe95b' LIMIT 1
+
+2023-06-27 05:16:12 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+DELETE FROM `thbvietnam_1s`.`nb_sessions` WHERE expiry < 1687815972
+
+2023-06-27 05:16:12 - MySQLi Query Error: Table 'thbvietnam_1s.nb_sessions' doesn't exist
+
+SELECT cat_id, cat_name FROM `thbvietnam_1s`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-27 10:09:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+SELECT cat_id, cat_name FROM `thbvietnam_1s`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-27 10:10:07 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1687837343', ip = '222.252.27.203', userid = '0', adminid = '21', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:17:\"maykhoanbosch.net\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1687811726;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '8b2cd2f7a82273ea8ef90d2d5c295799' LIMIT 1
+
+2023-06-27 10:42:23 - MySQLi Query Error: MySQL server has gone away
+

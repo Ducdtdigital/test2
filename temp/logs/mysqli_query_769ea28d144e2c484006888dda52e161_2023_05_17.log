@@ -1,0 +1,20 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684335129', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-17 21:52:09 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684335129', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-17 21:52:09 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684339529', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-17 23:05:29 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684339564', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-17 23:06:04 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1684337764
+
+2023-05-17 23:06:04 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

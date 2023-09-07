@@ -1,0 +1,7 @@
+{if $nav}
+<div class="txtbanner">
+    {foreach from=$nav item='navi' name='navigation'}
+    <a class="{if $navi.active}current{/if}" href="{$navi.url}" {if $navi.opennew} target="_blank"{/if} title="{$navi.title}">{$navi.name}</a>
+    {/foreach}
+</div>
+{/if}

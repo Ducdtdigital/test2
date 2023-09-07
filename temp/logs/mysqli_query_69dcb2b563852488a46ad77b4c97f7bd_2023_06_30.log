@@ -1,0 +1,16 @@
+SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order, brand_meta_title, brand_keyword, brand_desc_long FROM `thbvietnam_1s`.`nb_brand` WHERE brand_id='578'
+
+2023-06-30 01:56:21 - MySQLi Query Error: Unknown column 'brand_keyword' in 'field list'
+
+SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order, brand_meta_title, brand_keyword, brand_desc_long FROM `thbvietnam_1s`.`nb_brand` WHERE brand_id='578'
+
+2023-06-30 01:56:21 - MySQLi Query Error: Unknown column 'brand_keyword' in 'field list'
+
+SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order, brand_meta_title, brand_keyword, brand_desc_long FROM `thbvietnam_1s`.`nb_brand` WHERE brand_id='578'
+
+2023-06-30 01:56:21 - MySQLi Query Error: Unknown column 'brand_keyword' in 'field list'
+
+SELECT brand_id, brand_name, site_url, brand_logo, brand_desc, brand_logo, is_show, sort_order, brand_meta_title, brand_keyword, brand_desc_long FROM `thbvietnam_1s`.`nb_brand` WHERE brand_id='578'
+
+2023-06-30 01:56:39 - MySQLi Query Error: Unknown column 'brand_keyword' in 'field list'
+

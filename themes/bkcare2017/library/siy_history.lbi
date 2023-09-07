@@ -1,0 +1,23 @@
+{if $history_goods}
+<div id="history" class="xm-plain-box history-goods">
+    <div class="box-hd">
+        <h4 class="title">{$lang.view_history}</h4>
+        <div class="more"></div>
+    </div>
+	<div class="box-bd">
+		<ul class="cate">
+			{foreach from=$history_goods item=history_goods name=goods}
+			<li data="id:'{$history_goods.goods_id}'">
+				<a href="{$history_goods.url}" title="{$history_goods.name|escape:html}" class="photo">
+                    <img src="{$option.cdn1_path}{$history_goods.thumb}" alt="{$history_goods.name|escape:html}">
+                    <div class="info">
+                        <h3>{$history_goods.short_name}</h3>
+                        <strong>{if $history_goods.promote_price}{$history_goods.promote_price}{else}{$history_goods.shop_price}{/if}</strong>
+                    </div>
+                </a>
+			</li>
+			{/foreach}
+		</ul>
+	</div>
+</div>
+{/if}

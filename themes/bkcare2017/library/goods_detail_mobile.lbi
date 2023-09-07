@@ -1,0 +1,151 @@
+{if $goods.is_on_sale eq 1}
+    <div class="area_price" id="normalproduct">
+        {if $goods.shop_price eq 0}
+            <strong style=" width: 100%; ">Liên hệ</strong>
+        {else}
+            {if $goods.is_promote and $goods.gmt_end_time}
+                <div class="price_km">
+                {if $goods.is_vat eq 0} 
+                  <span>Giá Khuyến Mại :</span> <strong  id="_amount">{$goods.promote_price}</strong><em>{$goods.discount} GIẢM</em> 
+                  <span>Giá Niêm Yết :</span> <del>{$goods.market_price}</del>     
+           
+                {elseif $goods.is_vat eq 1} 
+                <span>Giá Khuyến Mại :</span><strong  id="_amount">{$goods.promote_price}</strong><em>(Đã gồm VAT)</em>
+                <span>Giá Niêm Yết :</span> <del>{$goods.market_price}</del> 
+                {elseif $goods.is_vat eq 2}
+                <div class="price_none_vat">
+                <span>Giá KM:</span> <strong>{$goods.promote_price_none_vat|price_format}</strong> <span>(Chưa VAT)</span>   </div>
+                <span>Giá KM :</span> <strong  id="_amount">{$goods.promote_price}</strong><em>{$goods.discount} GIẢM</em><span>(Đã gồm VAT)</span> <br> 
+                
+                      
+                {/if}
+                </div>
+            {else}
+                <div class="price newpr"> 
+                        {if $goods.is_vat eq 0} 
+                    <span>Giá Niêm Yết: </span>  <del>{$goods.market_price}</del> <strong  id="_amount">{$goods.shop_price_formated}</strong> <em>{$goods.discount} GIẢM</em>
+                        {elseif $goods.is_vat eq 1} 
+                      <span>Giá: </span>    <strong  id="_amount">{$goods.shop_price_formated}</strong> <em>{$goods.discount} GIẢM</em> 
+                            <em>(Đã gồm VAT)</em>
+                        {elseif $goods.is_vat eq 2}
+                        <div class="price_none_vat">
+                        <span>Giá:</span>    <strong >{$goods.shop_price_none_vat|price_format}</strong> <span style="margin-left: 3px;">(Chưa VAT)</span></div>
+                         <span>Giá: </span>   <strong  id="_amount">{$goods.shop_price_formated}</strong> <em>{$goods.discount} GIẢM</em> <span style="margin-left: 3px;"> (Đã gồm VAT)</span>
+                        {/if}
+                    </div>
+            {/if}
+            {if $goods.is_promote and $goods.gmt_end_time}
+            <p class="end_time_wrapper" style="font-weight: 700;">Thời gian KM: <span class="end_time" title="{siy:date_format date=$goods.gmt_end_time format='Y-m-d-H-i-s'}">{siy:date_format date=$goods.gmt_end_time}</span></p>
+            {/if}
+            {if ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+            <p class="price" style="color: #f60">Trạng thái: Tạm Hết Hàng</p>
+            {/if}
+
+
+        {/if}
+            <p><span style=" width: 100%; ">Thương hiệu: <a href="{$goods.brand_goods_url}">{$goods.goods_brand}</a></span> </p>
+            <p style=" height: auto; "><span>Mã sản phẩm:</span> {$goods.goods_sn} </p>
+            <p><span>Bảo hành:</span> {$goods.warranty} </p>
+            {if $goods.goods_sx}
+            <p><span>Xuất xứ:</span> {$goods.goods_sx}</p>
+            {/if}
+            {if ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+            <p class="price" style="color: #f60"><span>Trạng thái:</span>Tạm hết hàng</p>
+            {else}
+            <p ><span>Tình trạng:</span> Sẵn hàng </p> 
+            {/if}
+    </div>
+{if $goods.goods_gift || $promotion.0.url}
+<div class="area_promotion">
+    <strong>khuyến mãi - Ưu đãi</strong>
+    {$goods.goods_gift}
+     {if $promotion.0.url}
+    {foreach from=$promotion item=item key=key}
+        {if $item.type eq "favourable"}
+        <p>{$lang.favourable} <strong>{$item.act_name}</strong></p>
+        {/if}
+    {/foreach}
+    {/if}
+</div>
+{/if}
+
+
+{if $goods.goods_number neq '0' and $option.use_storage eq '1'}
+<form action="javascript:buy({$goods.goods_id})" method="post" id="purchase_form">
+    {if $specification}
+        <div class="properties">
+            {foreach from=$specification item=spec key=spec_key name=specification}
+            <dl{if $spec.attr_type eq 2} title="{$lang.multi_choice}"{/if}>
+                <dt>{$spec.name}{$lang.colon}</dt>
+                {if $spec.attr_type eq 1}
+                <dd class="radio">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}"{if $key eq 0} checked="checked"{/if} />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {else}
+                <dd class="checkbox">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {/if}
+            </dl>
+            <input type="hidden" name="spec_list" value="{$key}">
+            {/foreach}
+        </div>
+{/if}<!-- #specification -->
+<div class="sfamout" style="padding: 10px">Số lượng: <div class="button-container">
+                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                        <input type="number" name="number" class="qty" value="1" min="1" max="{$goods.goods_number}">
+                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                    </div> {$lang.amount}{$lang.colon} <span class="price amount">{if $goods.is_promote and $goods.gmt_end_time }{$goods.promote_price}{else}{$goods.shop_price_formated}{/if}</span></div>
+</form>
+
+<div class="area_order clr">
+    <a href="javascript:buy({$goods.goods_id})" class="buy_now"><b>Mua ngay </b><span>Mua online hoặc tại cửa hàng</span></a>
+     {if $istragop}
+    <a  rel="nofollow" href="thanh-toan?gid={$goods.goods_id}" class="buy_ins"><b>Mua Trả Góp </b><span>Qua thẻ tín dụng VISA hoặc Master</span></a>
+    {/if}
+</div>
+{/if}<!-- het checl con hang hien -->
+
+{else}
+ <div class="area_price" id="normalproduct">
+    <p><strong>Ngừng Kinh Doanh</strong></p>
+ </div>
+{/if}<!-- ngung kinh doanh -->
+<div class="requestcall">
+    <h4>Bạn cần chúng tôi gọi lại TƯ VẤN</h4>
+    <div class="request-msg">Chúng tôi sẽ tư vấn theo thông tin bạn đã cung cấp.</div>
+    <form>
+        <input type="hidden" name="url" value="">
+        <input name="tel" placeholder="Nhập số điện thoại của anh/chị">
+         <a href="javascript:;" id="_call"> <strong>HÃY GỌI LẠI CHO TÔI!!!</strong>
+        <span>Tôi đang rất quan tâm sản phẩm này</span> </a>
+    </form>
+</div>
+{if $goods_phone_hn || $goods_phone_hcm}
+            <div class="phone_cat">
+                {if $goods_phone_hn}
+                    <div class="local hanoi">
+                        <span>Hotline Hà Nội</span>
+                        {foreach from=$goods_phone_hn item=phone_hn}
+                            <p>{$phone_hn.name|escape:html} - <a class="localphone" href="tel:{$phone_hn.phone}">{$phone_hn.phone}</a></p>
+                        {/foreach}
+                    </div>
+                {/if}
+                {if $goods_phone_hcm}
+                    <div class="local hcm">
+                        <span>Hotline Sài Gòn</span>
+                        {foreach from=$goods_phone_hcm item=phone_hcm}
+                            <p>{$phone_hcm.name|escape:html} - <a class="localphone" href="tel:{$phone_hcm.phone}">{$phone_hcm.phone}</a></p>
+                        {/foreach}
+                    </div>
+                {/if}
+            </div>
+        {/if}

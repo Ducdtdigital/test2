@@ -1,0 +1,12 @@
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1681317740
+
+2023-04-13 00:12:20 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1681317740
+
+2023-04-13 00:12:20 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('78bbf32cdc7baaf44be09bed32e66ba1', '1681368334', '113.23.75.186', 'a:0:{}')
+
+2023-04-13 13:45:34 - MySQLi Query Error: Duplicate entry '78bbf32cdc7baaf44be09bed32e66ba1' for key 'PRIMARY'
+

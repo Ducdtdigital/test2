@@ -1,0 +1,42 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css,mobile/css/combo.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    {include file='library/ur_here.lbi'}
+   {foreach from=$list item=val name=list}
+ <div class="combo" id="combo{$val.act_id}">
+    <h2 class="name">{$val.act_name}</h2>
+    <ul class="cate normal">
+         {foreach from=$val.goods_list item=goods key=i name=val_goods_list}
+         {if $i < 4}
+        <li>
+        <a href="{siy:build_uri app='goods' gid=$goods.goods_id append=$goods.goods_name}" title="{$goods.goods_name|escape:html}" target="_blank">
+                <img src="{$option.cdn1_path}{$goods.goods_thumb}" width="150" height="150" alt="{$goods.goods_name|escape:html}">
+                <h3>{$goods.goods_name}</h3>
+                <strong>{$goods.rank_price} <em>x 1</em></strong>
+            </a>
+        </li>
+        {/if}
+         {/foreach}
+    </ul>
+    <div class="combototal">
+            <p>Giá Combo: <strong class="price">{$val.package_price}</strong><del>{$val.subtotal}</del></p>
+            <p>Tiết kiệm: {$val.saving}</p>
+            <p><strong>Thời gian áp dụng:</strong> Từ {$val.start_time} đến {$val.end_time}</p>
+            {if $val.act_desc}<p class="combodesc"><strong>Chi tiết:</strong> {$val.act_desc}</p>{/if}
+    </div>
+    <div class="action">
+        <a href="javascript:addPackageToCart({$val.act_id})" class="button brighter_button"><span>{$lang.add_to_cart} - {$val.act_name|truncate:40}</span></a>
+    </div>
+ </div>
+  {/foreach}
+  <div class="clearfix"></div>
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{* Nếu phát sinh file js thì sửa lại giá trị name category.Mobile.min.js *}
+{insert_js name='combo.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global_mobile.js,js/init_mobile.js'}
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

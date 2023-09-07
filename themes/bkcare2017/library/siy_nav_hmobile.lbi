@@ -1,0 +1,8 @@
+{if $nav}
+<div class="navhome">
+    {foreach from=$nav item='navi' name='navigation'}
+    <a href="{$navi.url}" {if $navi.opennew} target="_blank"{/if}>{$navi.name}</a>
+    {/foreach}
+    <a href="javascript:opennav();">Tất cả</a>
+</div>
+{/if}

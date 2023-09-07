@@ -1,0 +1,124 @@
+{if $pname eq 'article_cat'}
+<div class="xm-plain-box cat_goods">
+	<div class="box-hd">
+        <h2 class="titlehome">Sản phẩm nổi bật</h2>
+    </div>
+	<div class="box-bd">
+        <ul class="cate">
+            {foreach from=$cat_goods item=goods name=cat_goods}
+            <li>
+                {if $goods.promote_price}<span class="discount">{$goods.discount}</span>{/if}
+                <a href="{$goods.url}" >
+                    <img width="160" height="160" src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}">
+                    <h3>{$goods.name}</h3>
+					 {if $goods.price eq 0}
+            <span>Giá liên hệ</span>
+			{else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong>
+                    {if $goods.is_new eq 1 and $goods.is_hot eq 0}<label class="new">Mới</label>{/if}
+                    {if $goods.is_new eq 0 and $goods.is_hot eq 1}<label class="shockprice">Hot</label>{/if} {/if}
+                    <div class="promotion clr">{$goods.seller_note}</div>
+                </a>
+                {if $goods.desc_short}
+                <figure class="bginfo">
+                    <span class="name">{$goods.name}</span>
+                    {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+                    {/if}
+                    <div class="promotion">{$goods.seller_note}</div>
+                    {$goods.desc_short}
+                </figure>
+                 {/if}
+            </li>
+            {/foreach}
+        </ul>
+	</div>
+</div>
+{else}
+<div class="xm-plain-box cat_goods">
+	<div class="box-hd">
+        <h2 class="title">{$goods_cat.name|escape:html}</h2>
+        <div class="more">
+            <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+              <a href="{$cat.url}"  title="{$cat.name}">{$cat.name}</a>
+              <!--{foreach from=$cat.children item='child' name='child_cat'}-->
+               <a href="{$child.url}"  title="{$child.name}">{$child.name}</a>
+              <!--{/foreach}-->
+              <!--{/foreach}-->
+            <a href="{$goods_cat.url}">Xem tất cả</a>
+        </div>
+    </div>
+	<div class="box-bd">
+        <ul class="cate">
+            {foreach from=$cat_goods item=goods name=cat_goods}
+            <li>
+                {if $goods.promote_price}<span class="discount">{$goods.discount}</span>{/if}
+                <a href="{$goods.url}" >
+                    <img width="160" height="160" src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}">
+                                        {if $goods.is_new eq 1 and $goods.is_hot eq 0 and $goods.is_best eq 0}<label class="new">Mới</label>{/if}
+                    {if $goods.is_new eq 0 and $goods.is_hot eq 1}<label class="shockprice">Hot</label>{/if}
+                    {if $goods.is_best eq 1 }<label class="shockprice">Bán chạy</label>{/if}
+                                       
+                </a>
+                    {if $goods.brand_logo}
+                    <div class="brand_goods_in">
+				<img src="{$option.cdn_path}brandlogo/{$goods.brand_logo}" alt="{$goods.brand_name}({$goods.goods_num})"/>
+				</div>
+               {else}
+               <div class="brand_goods_in">
+                </div>
+				{/if}
+				 <a href="{$goods.url}" >
+                    <h3>{$goods.name}</h3>
+                     <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank_css}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div> 
+					{if $goods.price eq 0}
+					<strong>Giá liên hệ</strong>
+					{elseif ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+					<p class="price" style="color: #f60"><span style="color: #C03;">Tạm hết hàng</span></p>
+					{else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong>
+                    {/if}
+                    <div class="promotion clr">{$goods.seller_note}</div>
+                </a>
+                {if $goods.desc_short}
+                <figure class="bginfo">
+                    <span class="name">{$goods.name}</span>
+                    
+                    {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.market_price}{/if}</strong>
+                    {/if}
+                    <div class="promotion">{$goods.seller_note}</div>
+                    {$goods.desc_short}
+                </figure>
+                {elseif $goods.name_leng }
+                <figure class="bginfo">
+   
+                    <span class="name">{$goods.name}</span>
+                    <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div> 
+                    {if $goods.price eq 0}
+					<strong>Giá liên hệ</strong>
+					{elseif ($goods.goods_number eq '0') and ($option.use_storage eq '1')}
+					<p class="price" style="color: #f60"><span style="color: #C03;">Tạm hết hàng</span></p>
+					{else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong>
+                    {/if}
+                    
+                    <div class="promotion">{$goods.seller_note}</div>
+                    {$goods.desc_short}
+                </figure>
+                 {/if}
+            </li>
+            {/foreach}
+        </ul>
+	</div>
+</div>
+
+{/if}

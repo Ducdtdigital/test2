@@ -1,0 +1,12 @@
+UPDATE `thbvietnam_1s`.`nb_sessions` SET expiry = '1688782861', ip = '118.70.131.98', userid = '0', adminid = '21', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:17:\"maykhoanbosch.net\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1688757449;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '3630490e7f0d12c990de40a7e47d67e5' LIMIT 1
+
+2023-07-08 09:21:01 - MySQLi Query Error: MySQL server has gone away
+
+SELECT g.*, b.brand_name as brandname  FROM `thbvietnam_1s`.`nb_goods` AS g LEFT JOIN `thbvietnam_1s`.`nb_brand` AS b ON g.brand_id = b.brand_id WHERE is_delete = 0  AND is_on_sale = 1  AND brand_id = '592' AND (goods_name LIKE '%3280%' OR goods_sn LIKE '%3280%' OR goods_id LIKE '%3280%') 
+
+2023-07-08 09:57:26 - MySQLi Query Error: Column 'brand_id' in where clause is ambiguous
+
+SELECT g.*, b.brand_name as brandname  FROM `thbvietnam_1s`.`nb_goods` AS g LEFT JOIN `thbvietnam_1s`.`nb_brand` AS b ON g.brand_id = b.brand_id WHERE is_delete = 0  AND is_on_sale = 1  AND brand_id = '592' AND (goods_name LIKE '%3280%' OR goods_sn LIKE '%3280%' OR goods_id LIKE '%3280%') 
+
+2023-07-08 09:58:39 - MySQLi Query Error: Column 'brand_id' in where clause is ambiguous
+

@@ -1,0 +1,26 @@
+<div class="over"></div>
+<header>
+    <a href="{$hu}" class="logo"><i class="iconmobile-logo"></i></a>
+    <div class="menu" id="_menu"><i class="iconmobile-menu"></i></div>
+    <nav class="subnav" id="_subnav">
+        <div class="navigation">
+            <a class="nvcustom" href="{$option.static_path}thanh-vien">{$lang.dashboard}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=profile">{$lang.profile}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=order_list">{$lang.label_order}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=booking_list">{$lang.collections_and_booking}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=collection_list">{$lang.label_collection}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=message_list">{$lang.messages_and_comments}</a>
+            <a class="nvcustom" href="{$option.static_path}thanh-vien?act=logout">{$lang.btn_logout}</h4></a>
+            <div class="buycall">Gọi đặt mua:<a href="tel:{$service_phone}">{$service_phone}</a> <span>({$opentime})</span></div>
+           <div class="buycall">Giỏ hàng {insert name='cart_number'}</div>
+
+        </div>
+    </nav>
+    <form action="{$option.static_path}tim-kiem" method="get" class="search ">
+        <input name="keywords" type="search" placeholder="Tìm sản phẩm bạn cần " value="{$search_keywords|escape}" autocomplete="off"  />
+        <div class="iconsearch"><i class="iconmobile-search"></i></div>
+        <button type="submit" class="btn-submit">Tìm</button>
+    </form>
+    <!-- sugguest -->
+    <div id="suggestion"></div>
+</header>

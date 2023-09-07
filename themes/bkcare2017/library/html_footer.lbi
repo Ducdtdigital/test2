@@ -1,0 +1,86 @@
+{$render.before_html_footer}
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Ẩn hiện icon go-top
+        $(window).scroll(function(){
+            if( $(window).scrollTop() == 0 ) {
+                $('#back-top').stop(false,true).fadeOut(600);
+            }else{
+                $('#back-top').stop(false,true).fadeIn(600);
+            }
+        });
+        // Cuộn trang lên với scrollTop
+        $('#back-top').click(function(){
+            $('body,html').animate({scrollTop:0},300);
+            return false;
+        });
+        $('#purchase_form').ChangePriceSiy();
+    });
+    $.fn.delayKeyup = function(callback, ms){
+            var timer = 0;
+            var el = $(this);
+            $(this).keyup(function(){
+            clearTimeout (timer);
+            timer = setTimeout(function(){
+                callback(el)
+                }, ms);
+            });
+            return $(this);
+        };
+        $('#suggest').delayKeyup(function(el){
+            keywords = el.val();
+            $.post(
+                'ajax/search_suggest.php',
+                {keywords: keywords},
+                function(response){
+                    console.log(response);
+                    var res = $.evalJSON(response);
+                    var show = $('#search-site .search-suggest');
+                    show.css('display','block');
+                    show.html(res.content);
+                },
+                'text'
+            );
+        },1000);
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-962741957"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-962741957');
+</script>
+<script>
+var itemid = '';
+var page = 'other';
+var price = 0;
+if(window.location.pathname == '/'){
+    page = 'home';
+}
+else if(jQuery("#page_goods").length==1){
+    itemid = jQuery(".no").text().split("Mã SP: ")[1];
+    page = 'offerdetail';
+    price = parseFloat(jQuery("#_amount").text().replace(/[^0-9]/g,''));
+}    
+else if(jQuery("#page_category").length==1){
+    page = 'searchresults';
+}
+else if(jQuery(".flow_done").length==1){
+    page = 'conversion';
+    price = parseFloat(jQuery(".price").text().replace(/[^0-9]/g,''));
+} 
+else if(jQuery("#page_flow").length==1){
+    page = 'conversionintent';
+    price = parseFloat(jQuery(".total").text().replace(/[^0-9]/g,''));
+    
+}
+  gtag('event', 'page_view', {
+      'send_to': 'AW-962741957',
+      'dynx_itemid': window.itemid,
+      'dynx_pagetype': window.page,
+      'dynx_totalvalue': window.price
+  });
+</script>
+{$render.after_html_footer}
+{$stats_code}
+

@@ -1,0 +1,184 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css,mobile/css/article.css"}
+<style type="text/css">
+    .star-rating-on a, .star-rating-hover a{background-position: 0px 0px !important}
+</style>
+</head>
+<body id="page_{$pname}">
+<section>
+    {include file='library/ur_here.lbi'}
+      {if $article.content}
+         <article>
+            <h1 class="titledetail">{$article.title_display|escape:html}</h1>
+            <div class="userdetail">
+                <a>{$article.author}</a>
+                <span>{$article.add_time}</span>
+                <span>{$article.viewed} lượt xem</span>
+            </div>
+            <div id="share-buttons">
+                <!-- Facebook -->
+                <a rel="nofollow" href="http://www.facebook.com/sharer.php?u={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
+
+                <!-- LinkedIn -->
+                <a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                </a>
+                <!-- Pinterest -->
+                <a rel="nofollow" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','https://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+                    <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+                </a>
+                <!-- Twitter -->
+                <a rel="nofollow" href="https://twitter.com/share?url={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
+            </div>
+             <ul id="toc"></ul>
+            {if $article.content}
+            <div class="article_content">{$article.content}</div>
+            
+            {else}
+            <p class="empty">{$lang.content_empty}</p>
+            {/if}
+        </article>
+         <!-- TemplateBeginEditable name="SP Liên quan" -->
+<!-- #BeginLibraryItem "/library/goods_related_mobile.lbi" -->
+{if $related_goods and $pname eq 'goods'}
+<div class="clearfix" id="related">
+	<h2 class="title_heading">Sản phẩm liên quan</h2>
+	<div class="overpromo _related">
+    <ul class="cate listpromo">
+		{foreach from=$related_goods item=releated_goods_data name=related_goods}
+		<li>
+            {if $releated_goods_data.promote_price}<span class="discount">{$goods.discount}</span>{/if}
+            <a href="{$releated_goods_data.url}">
+                <img src="{$option.cdn1_path}{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name|escape:html}">
+                <h3>{$releated_goods_data.short_name}</h3>
+                {if $releated_goods_data.price eq 0}
+                    <span>Giá liên hệ</span>
+                {else}
+                    {if $releated_goods_data.promote_price}
+                    <strong class="gs">{$releated_goods_data.formated_promote_price} <del>{$releated_goods_data.shop_price}</del></strong>
+                    {else}
+                    <strong class="gs">{$releated_goods_data.shop_price}</strong>
+                    {/if}
+                {/if}
+            </a>
+		</li>
+		{/foreach}
+	</ul>
+    </div>
+</div>
+{elseif $related_goods and $pname eq 'article'}
+    {foreach from=$related_goods item=goods name=related_goods}
+    <div class="infoprod">
+        <div class="image">
+            <a href="{$goods.url}"><img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}"></a>
+        </div>
+        <div class="infor">
+            <a href="{$goods.url}"><h3>{$goods.goods_name}</h3></a>
+            {if $goods.price eq 0}
+            <span>Giá liên hệ</span>
+            {else}
+            <strong>{$goods.formated_promote_price|default:$goods.shop_price}</strong>
+            {/if}
+            {$goods.desc_short}
+            <a href="{$goods.url}" class="viewdetail">Xem chi tiết</a>
+        </div>
+    </div>
+    {/foreach}
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+         {if $article_rela}
+        <h4 class="titledetail">Tin liên quan</h4>
+        <ul class="news">
+           {foreach from=$article_rela key=i item=article name=article_list}
+            <li>
+                <a href="{$article.url}">
+                    <img src="{$option.cdn1_path}{$article.article_thumb}" alt="{$article.title|escape:html}" width="100" height="70">
+                    <h3>{$article.title|escape:html}</h3>
+                    <div><span>{$article.add_time}</span> <span> {$article.viewed} lượt xem</span></div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+        {/if}
+        <div class="pluggin-comment-facebook" id="fbcomment">
+            {if $option.comment_enabled}{include file='library/comments.lbi'}{/if}
+        </div>
+    {else}
+        <p class="empty">{$lang.content_empty}</p>
+    {/if}
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{insert_js name='article.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global_mobile.js,js/init_mobile.js'}
+<script type="text/javascript" src="{$option.static_path}static/owl-carousel/owl.carousel.2.3.4.min.js"></script>
+<script type="text/javascript" src="{$option.static_path}static/js/jquery.toc.min.js"></script>
+<script>
+    var base_path = '{$option.static_path}';
+    var url_post = base_path+'{$article.url}';
+    $("#toc").toc({content: "div.article_content", headings: "h2,h3,h4", url: url_post});
+    $("#toc").wrap( "<div class='wrap_toc'></div>" );
+    $(".wrap_toc").css('visibility', 'visible').prepend('<p class="titletoc">Nội dung chính</p>');
+
+    $(document).ready(function() {
+        $("#owl-cate").owlCarousel({items:2,lazyLoad:!0,navigation:!1,pagination:!0,itemsDesktop:2,itemsDesktopSmall:2,itemsTablet:2,autoPlay:5e3,stopOnHover:!0});
+    });
+
+   $("#toc a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+</script>
+<script>
+    $(document).ready(function() {
+        $("#owl-home").owlCarousel({navigation:!1,slideSpeed:300,paginationSpeed:400,singleItem:!0,lazyLoad:!0,autoPlay:!0,autoHeight:!0});
+        callw('._best','.listpromo',3,15);
+        getW('._scroll');
+    });
+
+    function getW(el){
+        var ul = $(el+" ul.listpromo");
+        ul.each(function() {
+            var li = $(this).find('li');
+            var w = li.length*(li.width()+15);
+            if(li.length > 1){
+                $(this).css('width', w);
+            }
+
+        });
+    }
+;
+</script>
+<script type="text/javascript">
+    $('.rank_star').rating({
+        focus: function(value, link){
+            var tip = $('#star_tip');
+            tip[0].data = tip[0].data || tip.html();
+            tip.html(link.title || 'value: '+value).show();
+        },
+        blur: function(value, link){
+            $('#star_tip').html(link.title).show();
+        },
+        callback: function(value, link){
+           $('#star_tip').html(link.title).show();
+           $('div.action-comment').fadeIn('600');
+        }
+    });
+</script>
+
+{include file='library/html_desktopmobile.lbi'}
+
+</body>
+</html>

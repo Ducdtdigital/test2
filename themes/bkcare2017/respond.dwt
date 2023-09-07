@@ -1,0 +1,30 @@
+{include file='library/html_header.lbi'}
+{insert_css files="css/style.css,css/respond.css"}
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+    <div class="message_wrapper">
+        <p class="message_info {$msg_type}_box">{$msg}</p>
+        {if $virtual_card}
+        <div class="clearfix">
+            <ul class="virtual_card clearfix">
+                {foreach from=$virtual_card item=vgoods name=virtual_card}
+                {foreach from=$vgoods.info item=card name=vgoods_info}
+                <li>
+                    <span class="type">{$vgoods.goods_name}</span>
+                    {if $card.card_sn}<span class="id"><strong>{$lang.card_sn}{$lang.colon}</strong>{$card.card_sn}</em></span>{/if}
+                    {if $card.card_password}<span class="serial_code"><strong>{$lang.card_password}{$lang.colon}</strong><em>{$card.card_password}</em></span>{/if}
+                    {if $card.end_date}<span class="expire_date"><strong>{$lang.end_date}{$lang.colon}</strong><em>{$card.end_date}</em></span>{/if}
+                </li>
+                {/foreach}
+                {/foreach}
+            </ul>
+        </div>
+        {/if}
+        <p class="action"><a class="button" href="{$shop_url}">Trở lại Trang chủ</a></p>
+    </div>
+</section>
+{include file='library/page_footer.lbi'}
+</body>
+</html>

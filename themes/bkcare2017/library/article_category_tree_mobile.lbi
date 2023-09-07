@@ -1,0 +1,12 @@
+{if $article_categories}
+<div class="scrollmenu _cat_article">
+<ul class="mnav">
+    {foreach from=$article_categories item=cat name=categories}
+    <li {if $cat_id eq $cat.id}class="active"{/if} >
+        <a href="{$cat.url}">{$cat.name}</a>
+    </li>
+    {/foreach}
+</ul>
+</div>
+<div class="clr"></div>
+{/if}

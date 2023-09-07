@@ -1,0 +1,120 @@
+{include file='library/html_header.lbi'}
+{insert_css files="css/style.css,css/card.css"}
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+    <form action="javascript:;">
+        <select name="cat_id" id="cat_id">
+            <option value="0">Danh mục Thẻ</option>
+            {foreach from=$cat_list item=cate name=cat_list}
+            <option value="{$cate.cat_id}">{$cate.cat_name}</option>
+            {/foreach}
+        </select>
+        <select name="goods_sn" id="goods_sn">
+            <option value="">Loại thẻ</option>
+        </select>
+        <div class="">
+            <input type="number" name="soluong" value="1" min="1" max="10" id="soluong">
+            <input type="hidden" name="amount" id="amount">
+            Thành tiền: <span id="total"></span>
+        </div>
+        <div>
+             <input type="email" name="cemail" placeholder="Email (Để nhận Mã thẻ)"  id="cemail">
+            <a href="javascript:void(0)" class="button" onclick="SubmitOrder()"><b>Đặt mua</b></a>
+        </div>
+    </form>
+</section>
+{include file='library/page_footer.lbi'}
+{insert_js name='card.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,js/jquery.number.min.js' minify='js/global.js,js/init.js' }
+<script type="text/javascript">
+    $("#cat_id").change(function(){
+        var cat_id = $(this).val();
+
+        if(cat_id == ''){
+            alert('Vui lòng chọn Danh mục thẻ');
+        }
+
+        $.get(
+            'the-cao?act=loadcard',
+            'cat_id=' + cat_id,
+            function(response){
+
+                var res = $.evalJSON(response);
+                if (res.error == 1) {
+                    cAlert(res.message);
+                }
+                else{
+                   $("#goods_sn").append(res.data);
+                }
+            },
+            'text'
+        );
+
+    });
+
+    $("#goods_sn").change(function(){
+        var price = $(this).find(':selected').data("price");
+        var goods_sn = $(this).val();
+        var soluong =  $("#soluong").val();
+
+        if(goods_sn == ''){
+            alert('Vui lòng chọn loại thẻ');
+        }
+        amount(soluong, price);
+        /*reset form*/
+        //$("#cat_id").prop('selectedIndex',0);
+        //$("#goods_sn").prop('selectedIndex',0);
+    });
+
+    $("#soluong").keyup(function(){
+        var price = $("#goods_sn").find(':selected').data("price");
+        var soluong = $(this).val();
+        amount(soluong, price);
+    });
+    function amount(soluong, price){
+        var amount = soluong*price;
+        $("#total").html($.number(amount, 0, ',', '.' )+'₫');
+        $("#amount").val(amount);
+    }
+
+    function SubmitOrder(note, amount){
+        var cat_id = $("#cat_id").find(':selected').val();
+        var price = $("#goods_sn").find(':selected').data("price");
+        var goods_sn = $("#goods_sn").find(':selected').val();
+        var goods_name = $("#goods_sn").find(':selected').text();
+        var soluong = $("#soluong").val();
+        var cemail = $("#cemail").val();
+        var amount = soluong*price;
+
+        if(goods_sn == ''){
+            alert('Vui lòng chọn loại thẻ');
+        }
+        if(!isValidEmail(cemail)){
+            alert('Email không hợp lệ');
+        }
+        if(soluong < 1 && soluong > 10){
+            alert('Số lượng thẻ không hợp lệ');
+        }
+
+        $.post(
+            'the-cao?act=order',
+            {cat_id: cat_id,  cemail: cemail, goods_sn: goods_sn, soluong: soluong, amount: amount},
+            function(response){
+                console.log(response)
+                var res = $.evalJSON(response);
+                if (res.error == 1) {
+                    cAlert(res.message);
+                }
+                else{
+                    cAlert('Hệ thống đang chuyển hướng thanh toán. Vui lòng không Fresh (F5) trang.');
+                   location.href = res.payment;
+                }
+            },
+            'text'
+        );
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+.combo {
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #f2f2f2;
+    border-bottom: 1px dotted #dddddd;
+    width: 100%;
+    clear: both;
+}
+.combo .name{font-weight: 700;font-size: 26px;padding: 10px}
+.combodesc {
+    border: 1px solid #f2f2f2;
+    border-top: none;
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 2em;
+    background: #f8f8f8;
+    color: #6D6D6D;
+}
+.combototal{
+    width: 200px;
+    height: 230px;
+    padding: 10px 0;
+    box-sizing: border-box;
+    float: right;
+    display: inline-block;
+    background: #fef8ec;
+    position: relative;
+}
+.combototal:before{
+    content: '=';
+    font-size: 30px;
+    color: #888;
+    position: absolute;
+    top: 45%;
+    left: 10px;
+}
+.combototal .combototal_wrap {display: inline-block;margin-left: 40px;}
+.combototal p {line-height: 24px}
+.combototal .price{color: #F52648;font-size: 24px;font-weight: 700;display: block;padding: 5px 0}
+.combototal del{display: block;}
+.combototal .action {text-align: center;margin-top: 30px}
+/* goods_list */
+.cate {
+    display: inline-block;
+    overflow: hidden;
+    width: 999px;
+    height: 230px;
+    margin: 0;
+    padding: 0;
+}
+.cate li {
+    cursor: pointer;
+    float: left;
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+    width: 24.9%;
+}
+.cate li a {
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+.cate li a:after{
+    content: '+';
+    font-size: 30px;
+    color: #888;
+    position: absolute;
+    top: 45%;
+    right: 10px
+}
+.cate li:last-child a:after{display: none}
+.cate li h3 {
+    clear: both;
+    color: #444;
+    display: block;
+    font-size: 14px;
+    line-height: 1.3em;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+.cate li strong {
+    color: #f60;
+    display: inline-block;
+    font-size: 14px;
+    overflow: hidden;
+    vertical-align: middle;
+}

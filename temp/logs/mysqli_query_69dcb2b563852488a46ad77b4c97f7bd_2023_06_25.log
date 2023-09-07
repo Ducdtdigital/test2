@@ -1,0 +1,92 @@
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 46 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:24 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code v.goods_attr_id
+
+2023-06-25 00:15:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code, v.goods_attr_id
+
+2023-06-25 00:16:05 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code, v.goods_attr_id
+
+2023-06-25 00:16:06 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT a.attr_id, a.attr_name, a.attr_input_type, a.attr_type, a.attr_values, v.attr_value, v.attr_price, , v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`.`nb_goods_attr` AS v ON v.attr_id = a.attr_id AND v.goods_id = '3644' WHERE a.cat_id = 55 OR a.cat_id = 0 ORDER BY a.sort_order, a.attr_type, a.attr_id, v.attr_price, v.goods_code, v.goods_attr_id
+
+2023-06-25 00:16:06 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' v.goods_code FROM `thbvietnam_1s`.`nb_attribute` AS a LEFT JOIN `thbvietnam_1s`' at line 1
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:18 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:25 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:30 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:37 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:42 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:46 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:47 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:51 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = '' AND goods_id <> '3644'
+
+2023-06-25 01:58:59 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = 'DHP453Z' AND goods_id <> '3644'
+
+2023-06-25 01:59:44 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = 'DHP453Z' AND goods_id <> '3644'
+
+2023-06-25 01:59:49 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = 'AR816' AND goods_id <> '3644'
+
+2023-06-25 01:59:57 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+
+SELECT COUNT(*) FROM `thbvietnam_1s`.`nb_goods` WHERE goods_code = 'AR816' AND goods_id <> '3644'
+
+2023-06-25 02:00:01 - MySQLi Query Error: Unknown column 'goods_code' in 'where clause'
+

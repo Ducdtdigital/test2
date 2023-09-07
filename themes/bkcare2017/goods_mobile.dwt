@@ -1,0 +1,349 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="owl-carousel/owl.carousel.2.3.4.min.css,mobile/css/global.css,mobile/css/goods.css"}
+<style type="text/css">
+    .star-rating-on a, .star-rating-hover a{background-position: 0px 0px !important}
+</style>
+
+</head>
+<body id="page_{$pname}">
+<section>
+     {include file='library/ur_here.lbi'}
+    <h1>{$goods.goods_name|escape:html}</h1>
+    <div class="rating">
+        Đánh giá <span class="rank rank_{$goods.comment_rank}"></span>
+    </div>
+    <!-- Slider banner -->
+    {if $pictures.1.img_url}
+      <div id="gallery">
+          <div id="productslider" class="owl-carousel owl-theme">
+          {foreach from=$pictures item=picture name=pictures}
+             <div class="item"><img src="{$option.cdn1_path}{$picture.img_url}" alt="{$picture.img_desc}">
+             {if $picture.img_desc} <p>{$picture.img_desc}</p> {/if}
+             </div>
+            {/foreach}
+        </div>
+        <div class="help_gallery">Vuốt qua để xem thêm hình ảnh <span class="num"></span></div>
+    </div>
+    {else}
+     <div id="gallery">
+        <img src="{$option.cdn1_path}{$goods.goods_img}" alt="{$goods.goods_name|escaple:html}">
+    </div>
+    {/if}
+
+    {if $goods.goods_status eq 4}
+    {include file='library/goods_detail_mobile4.lbi'}
+    {elseif $goods.goods_status eq 3}
+    {include file='library/goods_detail_mobile3.lbi'}
+    {elseif $goods.goods_status eq 2}
+    {include file='library/goods_detail_mobile2.lbi'}
+    {else}
+    {include file='library/goods_detail_mobile.lbi'}
+    {/if}
+   
+
+{if $properties}
+<div class="clr"></div>
+<div class="tableparameter">
+    <h2>Thông số sản phẩm</h2>
+     {if $goods.goods_thumb_url}
+    <div class="imgnote">
+        <img src="{$goods.goods_thumb_url}" alt="{$goods.goods_name|escape}">
+    </div>
+    {/if}
+    <ul class="parameter">
+        {foreach from=$properties item=property_group key=key}
+        {foreach from=$property_group item=property name=property_list}
+        {if $smarty.foreach.property_list.index < 8}
+        <li><span>{$property.name|escape:html}:</span> {$property.value}</li>
+        {/if}
+        {/foreach}
+        {/foreach}
+    </ul>
+<div class="viewparameterfull">Xem chi tiết thông số kỹ thuật</div>
+</div>
+<div class="clr"></div>
+{/if}
+{if $goods.goods_desc || $goods.goods_brief}
+<article id="description">
+    <div class="article_content">
+          {if $goods.goods_brief}<p class="intro">{$goods.goods_brief}</p>{/if}
+    {$goods.goods_desc}</div>
+    <div class="view-more hidden">
+    <p id="btn-viewmore"><span id="view1">Đọc thêm </span><!-- <span id="view2" class="hidden">Thu gọn </span> --></p>
+    </div>
+</article>
+{/if}
+{include file='library/goods_related.lbi'}
+ {include file='library/goods_fittings.lbi'}
+  <!-- TemplateBeginEditable name="TinLienQuan" -->
+<!-- #BeginLibraryItem "/library/goods_article.lbi" -->
+{if $goods_article_list}
+<div class="articles_cat">
+        <h2>{$lang.article_releate}</h2>
+        <ul>
+            {foreach from=$goods_article_list item=article name=goods_article_list}
+            <li>
+                <a href="{$article.url}" target="_blank" title="{$article.title|escape:html}">
+                    <img src="{$option.cdn1_path}{$article.article_sthumb}" alt="{$article.title|escape:html}">
+                    <h3>{$article.title|escape:html}</h3>
+                    <span>{$article.add_time} - Lượt xem: {$article.viewed}</span>
+                </a>
+            </li>
+            {/foreach}
+    </ul>
+</div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+    <div class="input_action">
+        <div class="infor"><span class="sub-title-after"></span>Lợi ích khi mua hàng</div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/1.png"></img>
+        <span>Sản phẩm chính hãng 100% </span>
+        </div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/2.png"></img>
+        <span>Giá luôn tốt nhất</span>
+        </div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/3.png"></img>
+        <span>Tư vấn chuyên nghiệp</span>
+        </div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/4.png"></img>
+        <span>Giao hàng toàn quốc</span>
+        </div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/5.png"></img>
+        <span>Dưới 5km & đơn hàng trên 1 triệu</span>
+        </div>
+        <div class="talbegoods">
+        <img class="imgic" src="/static/img/icon/6.png"></img>
+        <span>Bảo hành & sửa chữa tận tâm</span>
+        </div>
+    </div>
+{if $option.comment_enabled}{include file='library/comments.lbi'}{/if}
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+
+<!-- full thong so ky thuat -->
+{if $properties}
+<div class="closebtn">X Đóng</div>
+<div class="fullparameter">
+    <div class="scroll"><h3>Thông số kỹ thuật {$goods.goods_name}</h3>
+         {if $goods.goods_thumb_url}
+        <div class="imgnote">
+            <img src="{$goods.goods_thumb_url}" alt="{$goods.goods_name|escape}">
+        </div>
+        {/if}
+        <ul class="parameter">
+            {foreach from=$properties item=property_group key=key}
+             {foreach from=$property_group item=property}
+            <li><strong>{$property.name|escape:html}</strong>: {$property.value}</li>
+             {/foreach}
+            {/foreach}
+        </ul>
+</div></div>
+{/if}
+<!-- End full thong so ky thuat -->
+{insert_js name='goods.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.2.3.4.min.js' minify='js/global_mobile.js,js/init_mobile.js' }
+<script type="text/javascript">
+    $(".cart-qty-plus").click(function() {
+        var n = $(this).parent(".button-container").find(".qty");
+        n.val(Number(n.val())+1);
+        $('#purchase_form').ChangePriceSiy();
+    });
+    $(".cart-qty-minus").click(function() {
+        var n = $(this).parent(".button-container").find(".qty");
+        var amount = Number(n.val());
+        if (amount > 1) {
+            n.val(amount-1);
+        }
+        $('#purchase_form').ChangePriceSiy();
+
+    });
+</script>
+<script type="text/javascript">
+var goodsId = {$goods_id};
+$(document).ready(function() {
+    var gallery = $("#productslider");
+        if(gallery.length > 0){
+            gallery.on('initialized.owl.carousel', syncPosition);
+            gallery.owlCarousel({items: 1,margin:0,lazyLoad:!0,slideSpeed : 2000,nav:!0,dots:!1,loop:!1,autoHeight:!0,responsiveRefreshRate : 200});
+            gallery.on('changed.owl.carousel', syncPosition);
+            function syncPosition(event) {
+                var element   = event.target;         // DOM element, in this example .owl-carousel
+                var items     = event.item.count;     // Number of items
+                var item      = event.item.index + 1;     // Position of the current item
+                // it loop is true then reset counter from 1
+                if(item > items) {
+                    item = item - items
+                  }
+                  $('#gallery .num').html(+item+"/"+items)
+                }
+        }
+    /* make nice scoll */
+    callw('._related','.listpromo',2,$('._related .listpromo li').length);
+    callw('._goods_fittings','.listpromo',2,$('._goods_fittings .listpromo li').length);
+
+
+    $('.end_time[title!=""]').each(function(){
+        var countdown = $(this);
+        countdown.parent().find('.label').text(lang.remaining_time + lang.colon);
+        var end_date = countdown.attr('title').split('-');
+        countdown.removeAttr('title');
+        var date = new Date(end_date[0],end_date[1]-1,end_date[2],end_date[3],end_date[4],end_date[5]);
+        countdown.countdown({
+            until: date,
+            layout: '<em>{dn}</em>{dl}<em>{hn}</em>{hl}<em>{mn}</em>{ml}<em>{sn}</em>{sl}'
+        });
+    });
+});
+</script>
+<script type="text/javascript">
+/* Show All Parameterfull */
+$(".viewparameterfull, .tskt").click(function() {
+    if($(".fullparameter").css("display") == "block"){
+        $(".closebtn").hide();
+        $(".fullparameter").hide();
+        $("body").removeClass("fixbody");
+        $(".fixparameter").remove();
+        $("section").show();
+        $("header").show();
+        $("footer").show();
+    }else{
+        $("section").hide();
+        $("header").hide();
+        $("footer").hide();
+        $(".fullparameter").show();
+        $(".closebtn").show();
+        $("body").addClass("fixbody").prepend('<div class="fixparameter">content<\/div>');
+    }
+});
+$(".closebtn").click(function() {
+    $(".viewparameterfull").click();
+    $("body").removeClass("fixbody");
+    $(".fixparameter").remove();
+    $(".closebtn").hide();
+    $(".gallerypopup").hide();
+    $("section").show();
+    $("header").show();
+    $("footer").show();
+});
+
+$(document.body).on("click", ".fixparameter", function() {
+    $("body").toggleClass("fixbody");
+    $(".fixparameter").remove();
+    $(".viewparameterfull").click();
+});
+
+/** view more */
+var el = $('#description .article_content');
+var h = el.height();
+
+if(h>500){
+    el.addClass('short_view');
+    $('#description .view-more').removeClass('hidden');
+}
+$('#btn-viewmore').click(function(e){
+    el.toggleClass('short_view');
+    $('#view1').toggleClass('hidden');
+    e.preventDefault();
+});
+/** end view more */
+$('#btnrank').click(function(h){
+        $('#comment_wrapper .star-rank').toggleClass('hidden');
+        $('#comment_wrapper .action-comment').toggleClass('hidden');
+        h.preventDefault();
+    });
+$('.rank_star').rating({
+        focus: function(value, link){
+            var tip = $('#star_tip');
+            tip[0].data = tip[0].data || tip.html();
+            tip.html(link.title || 'value: '+value).show();
+        },
+        blur: function(value, link){
+            $('#star_tip').html(link.title).show();
+        },
+        callback: function(value, link){
+           $('#star_tip').html(link.title).show();
+           $('div.action-comment').fadeIn('600');
+        }
+    });
+$("#_call").click(function(){
+        $form=$(this).closest("form");
+        var $tel=0;
+        $tel=$form.find("input[name='tel']").val();
+
+        if($tel.length<10 || $tel.length > 11 || $tel[0]!="0")
+        {
+            alert("Số điện thoại không hợp lệ");
+        }
+        else
+        {
+            $form.find("input[type='hidden']").val(window.location.href);
+            $.ajax({
+                    url:$("base").attr("href")+"ajax/requestcall.php",
+                    data:$form.serialize(),
+                    type:"POST",
+                    success:function(data){
+                        console.log(data);
+                        $form.hide();
+                        $form.find("input[name='tel']").val('');
+                        $(".request-msg").fadeIn();
+                    }
+            });
+        }
+        return false;
+    });
+
+$("#_booking").click(function(){
+        $form=$(this).closest("form");
+        var $tel=0;
+        var $linkman = '';
+        var $sex = '';
+        $tel=$form.find("input[name='tel']").val();
+        $sex=$form.find("input[name='sex']").val();
+        $linkman=$form.find("input[name='linkman']").val();
+
+        if($tel.length<10 || $tel.length > 11 || $tel[0]!="0")
+        {
+            alert("Số điện thoại không hợp lệ");
+        }
+        else if($linkman < 6 || $linkman == '')
+        {
+            alert("Tên có dộ dài ít nhất 6 ký tự");
+        }
+        else if($sex == '')
+        {
+            alert("Chưa chọn giới tính");
+        }
+        else
+        {
+            $("#loading_box").show();
+            $.ajax({
+                    url:$("base").attr("href")+"ajax/goods.php?act=booking",
+                    data:$form.serialize(),
+                    type:"POST",
+                    success:function(data){
+                        var res = $.evalJSON(data);
+                        $("#loading_box").hide();
+                        if(res.err_no == 1){
+                            $("#_bookingresult").html(res.err_msg).addClass('error_box').fadeIn();
+                        }else{
+                            $form.find("input[name='tel']").val('');
+                            $form.find("input[name='linkman']").val('');
+                            $form.find("input[name='email']").val('');
+                            $("#_bookingresult").html(res.err_msg).addClass('success_box').fadeIn();
+                        }
+                    }
+            });
+        }
+        return false;
+    });
+</script>
+{include file='library/html_desktopmobile.lbi'}
+
+</body>
+</html>

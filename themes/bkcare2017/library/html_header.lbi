@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="{$option.static_path}static/js/html5shiv.min.js"></script>
+  <script src="{$option.static_path}static/js/respond.min.js"></script>
+<![endif]-->
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta name="GENERATOR" content="THBVIETNAM | THB VIỆT NAM | #THBVIETNAM" />
+	<meta charset="utf-8">
+    <base href="{$option.static_path}">
+	{if $auto_redirect and $pname neq 'respond' and $message.back_url}
+        <meta http-equiv="refresh" content="3;url={$message.back_url}">
+    {/if}
+	<meta name="viewport" content="width=device-width">
+    {if $title1}
+	<title itemprop='name'>{$title1}</title>
+    {elseif $pname eq 'brand'}
+    <title itemprop='name'>{$page_title_brand}</title>
+     <link rel="canonical" href="{$canonical}" />
+    {else}
+    <title itemprop='name'>{$page_title}</title>
+    {/if}
+    {if $desc_sort1}
+    <meta name="description" content="{$desc_sort1}"/>
+    {else}
+    <meta name="description" content="{$description}"/>
+    {/if}
+    {if $keyword1}
+    <meta name="keywords" content="{$keyword1}"/>
+    {else}
+    <meta name="keywords" content="{$keywords}"/>
+    {/if}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="RATING" content="GENERAL" />
+     {if $boloc neq NULL}
+    <meta content="NOINDEX,NOFOLLOW" name="robots" />
+     {elseif $pname eq 'category'  AND $nofflow_cat eq "0"}
+    <meta content="NOINDEX,NOFOLLOW" name="robots" />
+    {elseif $article.nofollow}
+     <meta content="NOINDEX,NOFOLLOW" name="robots" />
+    {elseif $pname eq 'goods' AND $goods.is_on_sale eq "0"}
+     <meta content="NOINDEX,NOFOLLOW" name="robots" />
+    {else}
+    <meta content="INDEX,FOLLOW" name="robots" />
+    {/if}
+    <meta name="copyright" content="{$shop_name}" />
+    <meta name="author" content="{$shop_name}" />
+    <meta http-equiv="audience" content="General" />
+    <meta name="resource-type" content="Document" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="GENERATOR" content="{$shop_name}" />
+    {if $pname eq 'goods'}
+        {if $goods_cano eq null}
+    <link rel="canonical" href="{$canonical}" />
+	    <meta itemprop="image" content="{$option.cdn1_path}{$goods.goods_thumb}" />
+    <meta property="og:image" content="{$option.cdn1_path}{$goods.goods_thumb}" />
+    {else}
+    <link rel="canonical" href="{$goods_cano}" />
+	    <meta itemprop="image" content="{$option.cdn1_path}{$goods.goods_thumb}" />
+    <meta property="og:image" content="{$option.cdn1_path}{$goods.goods_thumb}" />
+        {/if}
+    {/if}
+    {if $pname eq 'article'}
+        <meta itemprop="image" content="{$option.cdn1_path}{$article.article_thumb}" />
+        <meta property="og:image" content="{$option.cdn1_path}{$article.article_thumb}" />
+    {/if}
+    <meta property="og:url" itemprop="url" content="{$canonical}" />
+    <meta property="og:title" content="{$page_title}" />
+    <meta property="og:description" content="{$description}" />
+ {if $pname eq 'article'}
+{if $article.ar_canonical eq null}
+    <link rel="canonical" href="{$canonical}" />
+{else}
+    <link rel="canonical" href="{$article.ar_canonical}" />
+{/if}
+{/if}
+    <meta property="og:site_name" content="{$shop_name}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="fb:app_id" content="{$fb_app_id}" />
+	<link rel="shortcut icon" type="image/x-icon" href="{$option.cdn_path}files/profile/favicon.png">
+   <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "url": "{$option.static_path}",
+          "logo": "{$option.static_path}static/img/logo.png",
+          "contactPoint": [{
+            "@type": "ContactPoint",
+            "telephone": "+84 {$service_phone}",
+            "contactType": "Customer service"
+          }]
+        }
+    </script>
+    {$goods_schema}
+    {$stats_code}
+    {$render.after_html_header}
+
+
+ 

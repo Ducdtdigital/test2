@@ -1,0 +1,319 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css,owl-carousel/owl.carousel.css,mobile/css/goods.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    <h1>{$goods.goods_name|escape:html}</h1>
+
+    <div class="rating">
+        {if $goods.goods_brief}<p class="intro">{$goods.goods_brief}</p>{/if}
+        Đánh giá <span class="rank rank_{$goods.comment_rank}"></span>
+    </div>
+    <!-- Slider banner -->
+    {if $pictures}
+      <div id="productslider" class="owl-carousel">
+      {foreach from=$pictures item=picture name=pictures}
+         <div class="item"><img class="lazyOwl" data-src="{$option.cdn1_path}{$picture.img_url}" alt="{$picture.img_desc}">
+         {if $picture.img_desc} <p>{$picture.img_desc}</p> {/if}
+          <div class="num"></div>
+         </div>
+        {/foreach}
+    </div>
+    {else}
+     <div id="productslider">
+        <img src="{$option.cdn1_path}{$goods.goods_img}" alt="{$goods.goods_name|escaple:html}">
+    </div>
+    {/if}
+    <div class="area_price" id="normalproduct">
+        {* Kiem tra khong nhap gia --> gia Lien he *}
+        {if $goods.shop_price eq 0}
+            Giá liên hệ
+        {else}
+            {if $goods.is_promote and $goods.gmt_end_time}
+                <p>Tại {$shop_name}: <strong id="_amount">{$goods.promote_price}</strong></p>
+                <p>Giá NY: <del>{$goods.shop_price_formated}</del></p>
+            {else}
+                <p>Tại {$shop_name}: <strong id="_amount">{$goods.shop_price_formated}</strong></p>
+                 {if $cfg.show_marketprice}
+                <p>{$lang.market_price} <del>{$goods.market_price}</del></p>
+                 {/if}
+            {/if}
+            <p>Tiết kiệm: {$goods.saved_price|formart_number}₫  <em>{$goods.discount}</em></p>
+
+        {/if}
+    </div>
+{if $goods.goods_gift}
+<div class="area_promotion">
+    <strong>khuyến mãi - Ưu đãi</strong>
+    {$goods.goods_gift}
+</div>
+{/if}
+<form action="javascript:buy({$goods.goods_id})" method="post" id="purchase_form">
+    {if $specification}
+        <div class="properties">
+            {foreach from=$specification item=spec key=spec_key name=specification}
+            <dl{if $spec.attr_type eq 2} title="{$lang.multi_choice}"{/if}>
+                <dt>{$spec.name}{$lang.colon}</dt>
+                {if $spec.attr_type eq 1}
+                <dd class="radio">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}"{if $key eq 0} checked="checked"{/if} />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {else}
+                <dd class="checkbox">
+                    {foreach from=$spec.values item=value key=key}
+                    <label for="spec_value_{$value.id}" title="{if $value.price gt 0}{$lang.plus}{$value.format_price|abs}{elseif $value.price lt 0}{$lang.minus}{$value.format_price|abs}{/if}">
+                        <input type="checkbox" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" />
+                    {$value.label}</label>
+                    {/foreach}
+                </dd>
+                {/if}
+            </dl>
+            <input type="hidden" name="spec_list" value="{$key}">
+            {/foreach}
+        </div>
+{/if}<!-- #specification -->
+</form>
+<div class="sfamout">Số lượng: <input type="number" name="number" min="1" max="10" step="1" value="1" size="4" class="number" id="number" /> {$lang.amount}{$lang.colon} <span class="price amount">{if $goods.is_promote and $goods.gmt_end_time }{$goods.promote_price}{else}{$goods.shop_price_formated}{/if}</span></div>
+<div class="area_order clr">
+    <a href="javascript:buy({$goods.goods_id})" class="buy_now"><b>Mua ngay </b><span>Mua online hoặc tại cửa hàng</span></a>
+    <a href="{siy:build_uri app='goods' istragop=1, gid=$goods.goods_id}" class="buy_ins"><b>Mua Trả Góp </b><span>Qua công ty tài chính hoặc thẻ tín dụng</span></a>
+</div>
+<div class="callorder">
+    <div class="ct">
+        <span>Gọi đặt mua: <a href="tel:{$service_phone}">{$service_phone}</a> (9:00-20:00)</span>
+    </div>
+</div>
+<ul class="policy">
+    {if $goods.warranty}
+    <li>Bảo hành: <b>{$goods.warranty}</b></li>
+    {/if}
+    {if $goods.goods_packaged}
+    <li>Bộ sản phẩm gồm: <strong>{$goods.goods_packaged}</strong></li>
+    {/if}
+    <li>Đổi miễn phí 7 ngày đầu nếu lỗi do NSX. (<a href="chinh-sach-doi-tra.html">Chi tiết</a>)</li>
+    <li>Giao Hàng Nhanh Miễn Phí Trong 30 Phút</li>
+    <li>Bán trả góp 0% cho tất cả sản phẩm</li>
+</ul>
+<div class="requestcall">
+    <h4>Bạn cần chúng tôi gọi lại TƯ VẤN</h4>
+    <div class="request-msg">Chúng tôi sẽ tư vấn theo thông tin bạn đã cung cấp.</div>
+    <form>
+        <input type="hidden" name="url" value="">
+        <input name="tel" placeholder="Nhập số điện thoại của anh/chị">
+        <a href="#"> <strong>HÃY GỌI LẠI CHO TÔI!!!</strong>
+        <span>Tôi đang rất quan tâm sản phẩm này</span> </a>
+    </form>
+</div>
+{if $package_goods_list}
+{foreach from=$package_goods_list item=package_goods name=package_goods_list}
+<div class="title_relate tltAcc"><h3>Mua {$package_goods.act_name} - Tiết kiệm hơn</h3></div>
+<div class="combototal">
+    {$lang.package_price} <strong class="price">{$package_goods.package_price}</strong> <del>{$package_goods.subtotal}</del>
+    {$lang.then_old_price} {$package_goods.saving}
+</div>
+<div class="box_relate box_acc">
+    <ul class="relate combo">
+         {foreach from=$package_goods.goods_list item=goods_list name=goods_list}
+            <li>
+                <a href="{siy:build_uri app='goods' gid=$goods_list.goods_id append=$goods_list.goods_name}">
+                <img src="{$option.cdn1_path}{$goods_list.goods_thumb}" alt="{$goods_list.goods_name|escape:html}">
+                <h3>{$goods_list.goods_name}{$goods_list.goods_attr_str}</h3>
+                <strong class="gs">{$goods_list.rank_price} x {$goods_list.goods_number}</strong>
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+ <div class="actioncombo">
+    <a href="javascript:addPackageToCart({$package_goods.act_id})" class="button brighter_button"><span>{$lang.add_to_cart} {$package_goods.act_name}</span></a>
+</div>
+ {/foreach}
+{/if}
+{if $goods.photos}
+    <div class="title_relate"><h3>Điểm nỗi bật / Hình ảnh thực tế</h3></div>
+    <div id="realphoto">
+    {foreach from=$goods.photos item=photo name=realphoto}
+      <div class="item"><img src="{$photo}" alt=""></div>
+    {/foreach}
+    </div>
+{/if}
+{if $goods.cauhinh}
+<div class="tableparameter">
+    <h2>Thông số kỹ thuật</h2>
+    <ul class="parameter">
+       {foreach from=$goods.cauhinh key=k item=v}
+       <li><span>{$k}:</span><div>{$v}</div></li>
+       {/foreach}
+    </ul>
+</div>
+{/if}
+{if $goods.goods_desc}
+<article id="description">
+    <div class="article_content">{$goods.goods_desc}</div>
+    <div class="view-more hidden">
+    <p id="btn-viewmore"><span id="view1">Đọc thêm </span><!-- <span id="view2" class="hidden">Thu gọn </span> --></p>
+    </div>
+</article>
+{/if}
+{if $related_goods}
+<div class="title_relate tltAcc">
+    <h3>{$lang.related_goods}</h3>
+</div>
+<div class="box_relate box_acc">
+    <ul class="relate">
+        {foreach from=$related_goods item=releated_goods_data name=related_goods}
+            <li>
+                <a href="{$releated_goods_data.url}">
+                <img src="{$option.cdn1_path}{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name|escape:html}">
+                    <div><h3>{$releated_goods_data.short_name}</h3></div>
+                    {if $releated_goods_data.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                        {if $releated_goods_data.promote_price}
+                        <strong class="gs">{$releated_goods_data.formated_promote_price}</strong>
+                        <strong class="gg">{$releated_goods_data.shop_price}</strong>
+                        {else}
+                        <strong class="gs">{$releated_goods_data.shop_price}</strong>
+                        {/if}
+                    {/if}
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+{/if}
+{if $fittings}
+<div class="title_relate tltAcc">
+    <h3>Phụ kiện tương thích</h3>
+</div>
+<div class="box_relate box_acc">
+    <ul class="relate">
+         {foreach from=$fittings item=goods name=fittings}
+            <li>
+                <a href="{$goods.url}">
+                <img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}">
+                    <div><h3>{$goods.short_name}</h3></div>
+                    <strong class="gs">{$goods.fittings_price}</strong>
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+{/if}
+{if $option.comment_enabled}{include file='library/comments.lbi'}{/if}
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+
+{insert_js name='goods.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.min.js' minify='js/global_mobile.js,js/init_mobile.js' }
+<script type="text/javascript">
+    var goodsId = {$goods_id};
+    $(document).ready(function() {
+            var owl = $("#productslider");
+            owl.owlCarousel({
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem:true,
+            lazyLoad : true,
+            navigation:false,
+            pagination: false,
+            autoHeight : true,
+            dots: false,
+            afterAction : afterAction
+            });
+            function afterAction(){
+                $('div.num').text((this.owl.currentItem+1)+'/'+this.owl.owlItems.length);
+            }
+
+            var photos = $("#realphoto");
+            photos.owlCarousel({singleItem : true,  autoPlay : false, navigation : false, pagination : true });
+
+    });
+</script>
+<script type="text/javascript">
+/** view more */
+var el = $('#description .article_content');
+var h = el.height();
+
+if(h>500){
+    el.addClass('short_view');
+    $('#description .view-more').removeClass('hidden');
+}
+$('#btn-viewmore').click(function(e){
+    el.toggleClass('short_view');
+    $('#view1').toggleClass('hidden');
+    e.preventDefault();
+});
+/** end view more */
+$('#btnrank').click(function(h){
+        $('#comment_wrapper .star-rank').toggleClass('hidden');
+        $('#comment_wrapper .action-comment').toggleClass('hidden');
+        h.preventDefault();
+    });
+$('.rank_star').rating({
+        focus: function(value, link){
+            var tip = $('#star_tip');
+            tip[0].data = tip[0].data || tip.html();
+            tip.html(link.title || 'value: '+value).show();
+        },
+        blur: function(value, link){
+            $('#star_tip').html(link.title).show();
+        },
+        callback: function(value, link){
+           $('#star_tip').html(link.title).show();
+           $('div.action-comment').fadeIn('600');
+        }
+    });
+$("div.requestcall a").click(function(){
+        $form=$(this).closest("form");
+        var $tel=0;
+        $tel=$form.find("input[name='tel']").val();
+
+        if($tel.length<10 || $tel.length > 11 || $tel[0]!="0")
+        {
+            alert("Số điện thoại không hợp lệ");
+        }
+        else
+        {
+            $form.find("input[type='hidden']").val(window.location.href);
+            $.ajax({
+                    url:$("base").attr("href")+"ajax/requestcall.php",
+                    data:$form.serialize(),
+                    type:"POST",
+                    success:function(data){
+                        $form.hide();
+                        $form.find("input[name='tel']").val('');
+                        $(".request-msg").fadeIn();
+                    }
+            });
+        }
+        return false;
+    });
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Product",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{$goods.comment_rank}",
+    "reviewCount": "68"
+  },
+  "description": "{$description}",
+  "name": "{$goods.goods_name}",
+  "image": "{$option.static_path}{$goods.goods_thumb}",
+  "offers": {
+    "@type": "Offer",
+    "availability": "http://schema.org/InStock",
+    "price": "{$goods.shop_price}",
+    "priceCurrency": "VND"
+  }
+}
+</script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

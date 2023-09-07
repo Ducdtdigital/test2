@@ -1,0 +1,1 @@
+<?php$_LANG['delivery']        = 'Giao hàng tận nơi';$_LANG['delivery_desc']   = 'Giao hàng tận nơi toàn quốc, Phí giao hàng: 30.000đ, Miễn phí ship cho đơn hàng từ 1 triệu trở lên.';$_LANG['base_fee']      = 'Phí giao hàng:';?>

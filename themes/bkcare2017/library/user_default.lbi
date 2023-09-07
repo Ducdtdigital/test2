@@ -1,0 +1,48 @@
+<div class="box clearfix">
+	<div class="bd">
+		{siy:load_user_info}
+
+		{if $user_notice}<div class="shop_notice notice_box">{$user_notice}</div>{/if}
+		<div class="user_dashboard clearfix">
+			<div class="item">
+				<a href="{$option.static_path}thanh-vien?act=account_detail" class="item_inner"><span class="count"><em class="price">{$siy_user_info.surplus}</em></span><em class="label">{$lang.your_surplus}</em></a>
+			</div>
+			<div class="item">
+				{if $option.points_rule}
+				<a href="{$option.static_path}thanh-vien?act=transform_points" class="item_inner"><span class="count">{$siy_user_info.points}</span><em class="label">{$lang.your_integral}</em></a>
+				{else}
+				<div class="item_inner"><span class="count">{$siy_user_info.points}</span><em class="label">{$lang.your_integral}</em></div>
+				{/if}
+			</div>
+			<div class="item">
+				<a href="{$option.static_path}thanh-vien?act=bonus" class="item_inner"><span class="count">{$siy_user_info.bonus}</span><em class="label">{$lang.your_bonus}</em></a>
+			</div>
+			<div class="item">
+				<a href="{$option.static_path}thanh-vien?act=order_list" class="item_inner"><span class="count">{$info.order_count}</span><em class="label">{$lang.last_month_order}</em></a>
+			</div>
+		</div>
+	</div>
+</div>
+{if $prompt or $info.shipped_order}
+<div class="box clearfix">
+	<div class="hd"><h3>{$lang.your_notice}</h3><div class="extra"></div></div>
+	<div class="bd">
+		<ul class="text_list">
+			{foreach from=$prompt item=item name=prompt_item}
+			<li{if $smarty.foreach.prompt_item.first} class="first"{/if}>{$item.text}</li>
+			{/foreach}
+			{foreach from=$info.shipped_order item=item name=shipped_order_item}
+			<li{if !$prompt and $smarty.foreach.shipped_order_item.first} class="first"{/if}>{$lang.please_received}<a href="{$option.static_path}thanh-vien?act=order_detail&order_id={$item.order_id}">{$item.order_sn}</a></li>
+			{/foreach}
+		</ul>
+	</div>
+</div>
+{/if}
+<div class="table_response">
+<div class="order_list box">
+	<div class="hd"><h3>{$lang.recent_orders}</h3><div class="extra"><a href="{$option.static_path}thanh-vien?act=order_list">{$lang.more}</a></div></div>
+	<div class="bd">
+		{siy:user_orders number='5'}
+	</div>
+</div>
+</div>

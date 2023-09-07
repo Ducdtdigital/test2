@@ -1,0 +1,208 @@
+
+ h1 {display: block;font-size: 24px; color: #333; line-height: 40px;color: #288ad6 }
+ .goods_detail {padding: 0 10px}
+.goods_detail>p, .extra_info>p{line-height: 24px;}
+
+.goods_detail .price {color:#f53;font-size:22px;line-height:24px}
+ .area_promotion {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 4px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+}
+.area_promotion .prob{padding: 5px 9px 5px}
+.area_promotion .prob p {float:left;padding:5px 0;line-height:16px;display: block;width: 100%}
+.area_promotion .prob p::before,
+.goods_detail>p::before
+{
+    content: "•";
+    color: #22b15c;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.area_promotion .protit {
+    background: #f1f1f1;
+
+    color: #333333;
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px;
+    text-transform: uppercase
+}
+.area_promotion a, .goods_detail a, .extra_info a {
+    color: #288ad6
+}
+
+.extra_info {margin: 10px 0}
+
+.pricing_table_wdg {
+    clear: both;
+    display: block;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%
+}
+.pricing_table_wdg .note {
+    clear: both;
+    display: block;
+    padding: 10px 0 0;
+    width: 100%
+}
+.pricing_table_wdg ul {
+    background-color: #fff;
+    border-top: 1px solid #dedede;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 47%
+}
+
+.pricing_table_wdg ul li {
+    border-bottom: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    height: 25px;
+    padding: 10px
+}
+
+.pricing_table_wdg ul li.packagename {
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, .2);
+    text-transform: uppercase
+}
+.pricing_table_wdg ul li.hide {
+    background: #fffdf7;
+    display: none
+}
+.pricing_table_wdg ul:first-child li {
+    border-left: 1px solid #dedede
+}
+.pricing_table_wdg ul li .tooltip {
+    background: #fff;
+    border: 2px solid #288ad6;
+    border-radius: 5px;
+    display: none;
+    font-size: 13px;
+    overflow: hidden;
+    padding: 5px;
+    position: absolute;
+    width: 300px;
+    z-index: 9
+}
+.pricing_table_wdg ul li .payment-detail {
+    border-top: 1px solid #ccc;
+    float: left;
+    margin-top: 5px;
+    padding-top: 5px
+}
+.pricing_table_wdg ul li .payment-detail span {
+    color: #777;
+    float: left;
+    font-size: 13px;
+    line-height: 1.6em;
+    width: 100%
+}
+.pricing_table_wdg ul li .payment-detail span b {
+    color: #333;
+    font-weight: 400
+}
+.pricing_table_wdg ul li:nth-child(7) {
+    height: 20px
+}
+.pricing_table_wdg ul li .percent {
+    color: #999;
+    display: inline-block
+}
+.pricing_table_wdg ul li .insmonth {
+    color: #333;
+    display: block
+}
+.pricing_table_wdg ul li strong {
+    color: #d0021b;
+    font-size: 16px
+}
+.pricing_table_wdg ul li .companyname {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: none;
+    width: 100%
+}
+.pricing_table_wdg ul li .view-detail .down-arr,
+.pricing_table_wdg ul li .view-detail .up-arr {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    display: inline-block;
+    height: 0;
+    margin-left: 0;
+    position: relative;
+    top: -2px;
+    width: 0
+}
+.pricing_table_wdg ul li .insmonth .view-detail {
+    color: #288ad6;
+    cursor: pointer;
+    display: inline-block
+}
+.pricing_table_wdg ul li .view-detail .down-arr {
+    border-top: 5px solid #288ad6
+}
+.pricing_table_wdg ul li .view-detail .up-arr {
+    border-bottom: 5px solid #288ad6
+}
+.pricing_table_wdg ul li .detail-install {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .15);
+    display: none;
+    font-size: 12px;
+    height: 106px;
+    left: 0;
+    margin-left: 3%;
+    overflow: hidden;
+    padding: 10px;
+    position: absolute;
+    width: 280px;
+    z-index: 9
+}
+.pricing_table_wdg ul li .detail-install span {
+    float: left;
+    line-height: 1.8em;
+    width: 80%
+}
+.pricing_table_wdg ul li .detail-install span.close-detail {
+    float: right;
+    width: 20%
+}
+.pricing_table_wdg ul li .detail-install span.subtotal {
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+    padding-top: 5px;
+    width: 100%
+}
+.pricing_table_wdg ul li:first-child {
+    background-image: linear-gradient(-180deg, #fff 0, #f2f2f2 100%);
+    color: #333;
+    overflow: hidden
+}
+
+select {background: none;border: 1px solid #ddd;}
+
+.fees {display: block;width: 100%}
+.fees li {display: block;box-sizing:border-box;border:1px solid #ececec;float: left;width: 100%}
+.fees li.tit span{font-weight: 700}
+.fees li span {width: 48%;display: inline-block;float: left;padding: 10px;box-sizing:border-box;}

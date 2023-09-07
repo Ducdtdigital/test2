@@ -1,0 +1,97 @@
+{include file='library/html_header.lbi'}
+{insert_css files="css/style.css,css/article_cat_index.css"}
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+    <div class="article_category clearfix">
+        {include file='library/ur_here.lbi'}
+        {include file='library/article_category_tree.lbi'}
+    </div>
+    <div class="col_main_lg">
+           <ul class="newslist latest">
+            {foreach from=$top5 item=article name=artciles_top5}
+                {if $smarty.foreach.artciles_top5.index eq 0}
+                    <li>
+                        <a href="{$article.url|escape:html}" title="{$article.title|escape}">
+                            <div class="tempvideo">
+                                <img  width="100" height="70" alt="{$article.title|escape}" src="{$option.cdn1_path}{$article.thumb}">
+                            </div>
+                            <h3>{$article.title} <span class="lesscom"> • {$article.viewed} lượt xem</span> </h3>
+                            <figure> {$article.desc|truncate:225} </figure>
+                        </a>
+                    </li>
+                {elseif $smarty.foreach.artciles_top5.index eq 1}
+                    <li>
+                        <a href="{$article.url|escape:html}" title="{$article.title|escape}">
+                            <div class="tempvideo">
+                                <img width="100" height="70" alt="{$article.title|escape}" src="{$option.cdn1_path}{$article.thumb}">
+                            </div>
+                            <h3>{$article.title}
+                                <span class="lesscom">• {$article.viewed} lượt xem</span>
+                            </h3>
+                        </a>
+                    </li>
+                {else}
+                    <li>
+                        <a class="linkimg" href="{$article.url|escape:html}">
+                            <h3>{$article.title|truncate:80}
+                                <span class="lesscom">• {$article.viewed} lượt xem</span>
+                            </h3>
+                        </a>
+                    </li>
+                {/if}
+            {/foreach}
+        </ul>
+        <div class="clr"></div>
+        <div class="row">
+            <div class="col col-50">
+                <div class="themes_catone">
+                     <!-- TemplateBeginEditable name="Cat Article 1" -->
+<!-- TemplateEndEditable -->
+                </div>
+            </div>
+            <div class="col col-50 fr">
+                 <div class="themes_catone">
+                     <!-- TemplateBeginEditable name="Cat Article 2" -->
+<!-- TemplateEndEditable -->
+                </div>
+            </div>
+        </div>
+        <!-- TemplateBeginEditable name="Bottom Left" -->
+<!-- TemplateEndEditable -->
+    </div>
+    <div class="col_sub_lg">
+        <!-- TemplateBeginEditable name="Top Right" -->
+<!-- TemplateEndEditable -->
+        <div class="titlehome" style="margin-top: 10px">Tin mới</div>
+        <ul class="news_sub">
+            {foreach from=index_get_new_articles(5) item=article name=new_articles}
+                <li>
+                    <a href="{$article.url}">
+                        {if $smarty.foreach.new_articles.index eq 0}
+                        <img width="340" height="178"  src="{$option.cdn1_path}{$article.thumb}" alt="{$article.title|escape:html}">
+                        {else}
+                        <img width="163" height="86"  src="{$option.cdn1_path}{$article.sthumb}" alt="{$article.title|escape:html}">
+                        {/if}
+                        <h3>{$article.title|escape:html}</h3>
+                        {if $smarty.foreach.new_articles.index eq 0}
+                        <figure>{$article.desc|truncate:225:"...":true}</figure>
+                        {/if}
+                    </a>
+                </li>
+            {/foreach}
+        </ul>
+        <!-- TemplateBeginEditable name="Bottom Right" -->
+<!-- TemplateEndEditable -->
+    </div>
+    <div class="clr"></div>
+    <div class="article_category clearfix">
+        {include file='library/article_category_tree.lbi'}
+    </div>
+</section>
+{include file='library/page_footer.lbi'}
+{insert_js name='article_cat.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global.js,js/init.js' }
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

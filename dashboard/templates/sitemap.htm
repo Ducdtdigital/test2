@@ -1,0 +1,95 @@
+<!-- $Id: sitemap.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<form method="POST" action="" name="theForm">
+<div class="main-div">
+<p style="padding: 0 10px">{$lang.sitemaps_note}</p>
+</div>
+<div class="main-div">
+<table width="100%">
+<tr>
+    <td class="label">{$lang.homepage_changefreq}</td>
+    <td>
+        <select name="homepage_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.homepage_priority}
+        </select>
+        <select name="homepage_changefreq">
+            {html_options options=$lang.priority selected=$config.homepage_changefreq}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td class="label">Danh mục sản phẩm</td>
+    <td>
+        <select name="product_category_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.product_category_priority}
+        </select>
+        <select name="product_category_changefreq">
+            {html_options options=$lang.priority selected=$config.product_category_changefreq}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td class="label">Danh mục bài viết</td>
+    <td>
+        <select name="article_category_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.article_category_priority}
+        </select>
+        <select name="article_category_changefreq">
+            {html_options options=$lang.priority selected=$config.article_category_changefreq}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td class="label">Thương hiệu</td>
+    <td>
+        <select name="brand_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.brand_priority}
+        </select>
+        <select name="brand_changefreq">
+            {html_options options=$lang.priority selected=$config.brand_changefreq}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td class="label">Sản phẩm</td>
+    <td>
+        <select name="product_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.product_priority}
+        </select>
+        <select name="product_changefreq">
+            {html_options options=$lang.priority selected=$config.product_changefreq}
+        </select>
+    </td>
+</tr>
+<tr>
+    <td class="label">Bài viết</td>
+    <td>
+        <select name="article_priority">
+            {html_options values=$arr_changefreq output=$arr_changefreq selected=$config.article_priority}
+        </select>
+        <select name="article_changefreq">
+            {html_options options=$lang.priority selected=$config.article_changefreq}
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <td></td>
+    <td><input type="submit" value="{$lang.button_submit}" class="button" /><input type="reset" value="{$lang.button_reset}" class="button" /></td>
+</tr>
+</table>
+</div>
+</form>
+{literal}
+<script type="text/javascript" language="JavaScript">
+<!--
+onload = function()
+{
+    document.forms['theForm'].elements['homepage_changefreq'].focus();
+    // 开始检查订单
+    startCheckOrder();
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

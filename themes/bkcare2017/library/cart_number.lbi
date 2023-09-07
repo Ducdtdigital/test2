@@ -1,0 +1,4 @@
+<a href="gio-hang" class="stickcart">
+    <span><i class="icontgdd-cartstick"></i><em>{$number_cart}</em></span>
+</a>
+

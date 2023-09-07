@@ -1,0 +1,20 @@
+{if $articles }
+<div class="articles_cat">
+    <div class="cat_hd"><h2 class="titlehome">{$articles_cat.name|escape:html}</h2><a class="catmore" href="{$articles_cat.url}">Xem tất cả</a></div>
+        <ul class="clr">
+           {foreach from=$articles item=article name=articles_list}
+           <li>
+                <a href="{$article.url}">
+                    {if $smarty.foreach.articles_list.index eq 0}
+                    <img src="{$option.cdn1_path}{$article.thumb}" alt="{$article.title|escape:html}" width="100" height="70">
+                    <h3>{$article.title|escape:html}</h3>
+                    {else}
+                    <h3 class="dot">{$article.title|escape:html}</h3>
+                    {/if}
+                    <span>{$article.viewed} lượt xem</span>
+                </a>
+            </li>
+            {/foreach}
+    </ul>
+</div>
+{/if}

@@ -1,0 +1,25 @@
+{if $package_goods_list}
+{foreach from=$package_goods_list item=package_goods name=package_goods_list}
+<div class="title_relate tltAcc"><h3>Mua {$package_goods.act_name} - Tiết kiệm hơn</h3></div>
+<div class="combototal">
+    {$lang.package_price} <strong class="price">{$package_goods.package_price}</strong> <del>{$package_goods.subtotal}</del>
+    {$lang.then_old_price} {$package_goods.saving}
+</div>
+<div class="box_relate box_acc">
+    <ul class="relate combo">
+         {foreach from=$package_goods.goods_list item=goods_list name=goods_list}
+            <li>
+                <a href="{siy:build_uri app='goods' gid=$goods_list.goods_id append=$goods_list.goods_name}">
+                <img src="{$option.cdn1_path}{$goods_list.goods_thumb}" alt="{$goods_list.goods_name|escape:html}">
+                <h3>{$goods_list.goods_name}{$goods_list.goods_attr_str}</h3>
+                <strong class="gs">{$goods_list.rank_price} x {$goods_list.goods_number}</strong>
+                </a>
+            </li>
+        {/foreach}
+    </ul>
+</div>
+ <div class="actioncombo">
+    <a href="javascript:addPackageToCart({$package_goods.act_id})" class="button brighter_button"><span>{$lang.add_to_cart} {$package_goods.act_name}</span></a>
+</div>
+ {/foreach}
+{/if}

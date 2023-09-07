@@ -1,0 +1,8 @@
+{if $nav}
+     <div class="topbar-nav">
+     <p style="float:left;margin-right: 5px;">Tìm nhanh: </p>
+	{foreach from=$nav item='navi' name='navigation'}
+		<a href="{$navi.url}" {if $navi.opennew} target="_blank"{/if}><span>{$navi.name}</span></a>
+	{/foreach}
+    </div>
+{/if}

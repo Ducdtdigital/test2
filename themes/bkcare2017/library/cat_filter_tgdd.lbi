@@ -1,0 +1,70 @@
+<ul class="filter">
+{if $catsubs}
+    <li class="cato-list">
+        <ul class="fsub clearfix fcat" >
+        {foreach from=$catsubs item=sub name=catsub}
+            <li class="sub-catss {if $category eq $sub.id}active_cat{/if}">
+                <div class="menucat-list">
+                    <a href="{$sub.url}">{$sub.name}</a>
+                    {if $sub.cat_id}
+                        <span class="dropdown-icon">▼</span>
+                    </div>
+                    <ul>
+                        {foreach from=$sub.cat_id item='child' name='child_cat'}
+                            <li class="{if $category eq $child.id}active_sub{/if}">
+                                <a style="margin-left: 10px;" href="{$child.url}"><span>{if $category eq $child.id}✓{/if}</span> {$child.name} <em></em></a>
+                                {if $child.cat_id}
+                                    <ul class="sub_cat">
+                                        {foreach from=$child.cat_id item='childer' name='childer_cat'}
+                                            <li><a href="{$childer.url}">{$childer.name}</a></li>
+                                        {/foreach}
+                                    </ul>
+                                {/if}
+                            </li>
+                        {/foreach}
+                    </ul>
+                {/if}
+            </li>
+        {/foreach}
+        </ul>
+    </li>
+{/if}
+
+
+
+    
+ {if $brands.1}
+    <li class="brand_cat">
+        <span class="criteria">Hãng</span>
+         <div class="fsub fbrand clearfix ">
+        {foreach from=$brands key=i item=brand name=brands}
+           <a rel="dofolow" href="{$brand.url}" title="{$brand.brand_name|escape}"><span>{if $brand.selected}✓{/if}</span> {$brand.brand_name}</a>
+        {/foreach}
+        </div>
+    </li>
+    {/if}
+
+    {if $price_grade.1}
+    <li class="ss-price">
+        <span class="criteria">Mức giá</span>
+        <div class="fsub fprice clearfix ">
+            {foreach from=$price_grade key=i item=grade name=price_grade}
+           <a rel="noffolow" href="{$grade.url}"><span>{if $grade.selected}✓{/if}</span> {$grade.price_range}</a>
+            {/foreach}
+        </div>
+    </li>
+    {/if}
+    {if $filter_attr_list}
+        {foreach from=$filter_attr_list key=k item=filter_attr name=filter_attr_list}
+         <li class="filter_cat">
+            <span class="criteria"> {$filter_attr.filter_attr_name|escape:html}</span>
+            <div class="fsub clearfix">
+                {foreach from=$filter_attr.attr_list key=i item=attr name=filter_attr}
+                <a rel="noffolow" href="{$attr.url}"><span>{if $attr.selected}✓{/if}</span> {$attr.attr_value}</a>
+                {/foreach}
+             </div>
+        </li>
+        {/foreach}
+     {/if}
+
+</ul>

@@ -1,0 +1,454 @@
+<!-- $Id: category_info.htm 16752 2009-10-20 09:59:38Z wangleisvn $ -->
+{include file="pageheader_ckeditor.htm"}
+<script type="text/javascript" src="../includes/ckfinder/ckfinder.js" rel="stylesheet" /></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+{insert_scripts files="build_url.js"}
+<!-- start add new category form -->
+<div class="main-div">
+  <form action="category.php" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+  <table width="100%" id="general-table">
+      <tr>
+        <td class="label">{$lang.cat_name}:</td>
+        <td>
+          <input type='text' name='cat_name' id="cat_name" maxlength="150" value='{$cat_info.cat_name|escape:html}' size='27' /> <font color="red">*</font>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Custom Name:</td>
+        <td>
+          <input type='text' name='custom_name' id="custom_name"  value='{$cat_info.custom_name|escape:html}' size='27' />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Url Seo</td>
+        <td><input type="text" name="slug" value="{$slug|escape}" size='27' />
+            <input type="button" value="Tạo" class="button" onclick="input_url('cat_name')">
+            <br/><span class="notice-span">Url thân thiện cho seo</span></td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.parent_id}:</td>
+        <td>
+          <select name="parent_id" class="select2">
+            <option value="0">{$lang.cat_top}</option>
+            {$cat_select}
+          </select>
+        </td>
+      </tr>
+      <tr id="measure_unit">
+        <td class="label">{$lang.measure_unit}:</td>
+        <td>
+          <input type="text" name='measure_unit' value='{$cat_info.measure_unit}' size="12" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.sort_order}:</td>
+        <td>
+          <input type="text" name='sort_order' {if $cat_info.sort_order}value='{$cat_info.sort_order}'{else} value="50"{/if} size="15" />
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.is_show}:</td>
+        <td>
+          <input type="radio" name="is_show" value="1" {if $cat_info.is_show neq 0} checked="true"{/if}/> {$lang.yes}
+          <input type="radio" name="is_show" value="0" {if $cat_info.is_show eq 0} checked="true"{/if} /> {$lang.no}
+        </td>
+      </tr>
+      <tr class="none">
+        <td class="label">{$lang.show_in_nav}:</td>
+        <td>
+          <input type="radio" name="show_in_nav" value="1" {if $cat_info.show_in_nav neq 0} checked="true"{/if}/> {$lang.yes}
+          <input type="radio" name="show_in_nav" value="0" {if $cat_info.show_in_nav eq 0} checked="true"{/if} /> {$lang.no}
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Display in Cat Goods:</td>
+        <td>
+          <input type="radio" name="show_cat_home" value="1" {if $cat_info.show_cat_home neq 0} checked="true"{/if}/> {$lang.yes}
+          <input type="radio" name="show_cat_home" value="0" {if $cat_info.show_cat_home eq 0} checked="true"{/if} /> {$lang.no}
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.show_in_index}:</td>
+        <td>
+          <input type="checkbox" name="cat_recommend[]" value="1" {if $cat_recommend[1] eq 1} checked="true"{/if}/> {$lang.index_best}
+          <input type="checkbox" name="cat_recommend[]" value="2" {if $cat_recommend[2] eq 1} checked="true"{/if} /> {$lang.index_new}
+          <input type="checkbox" name="cat_recommend[]" value="3" {if $cat_recommend[3] eq 1} checked="true"{/if} /> {$lang.index_hot}
+        </td>
+      </tr>
+       <tr>
+        <td class="label"><a href="javascript:showNotice('noticeFilterAttr');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.notice_style}"></a>{$lang.filter_attr}:</td>
+        <td>
+          <script type="text/javascript">
+          var arr = new Array();
+          var sel_filter_attr = "{$lang.sel_filter_attr}";
+          {foreach from=$attr_list item=val key=att_cat_id}
+            arr[{$att_cat_id}] = new Array();
+            {foreach from=$val item=item key=i}
+              {foreach from=$item item=attr_val key=attr_id}
+                arr[{$att_cat_id}][{$i}] = ["{$attr_val}", {$attr_id}];
+              {/foreach}
+            {/foreach}
+          {/foreach}
+          function changeCat(obj)
+          {
+            var key = obj.value;
+            var sel = window.ActiveXObject ? obj.parentNode.childNodes[4] : obj.parentNode.childNodes[5];
+            sel.length = 0;
+            sel.options[0] = new Option(sel_filter_attr, 0);
+            if (arr[key] == undefined)
+            {
+              return;
+            }
+            for (var i= 0; i < arr[key].length ;i++ )
+            {
+              sel.options[i+1] = new Option(arr[key][i][0], arr[key][i][1]);
+            }
+          }
+          </script>
+
+          <table width="100%" id="tbody-attr" align="center">
+            {if $attr_cat_id eq 0}
+            <tr>
+              <td>
+                   <a href="javascript:;" onclick="addFilterAttr(this)">[+]</a>
+                   <select class="select2" onChange="changeCat(this)"><option value="0">{$lang.sel_goods_type}</option>{$goods_type_list}</select>&nbsp;&nbsp;
+                   <select class="select2" name="filter_attr[]"><option value="0">{$lang.sel_filter_attr}</option></select><br />
+              </td>
+            </tr>
+            {/if}
+            {foreach from=$filter_attr_list item=filter_attr name="filter_attr_tab"}
+            <tr>
+              <td>
+                 {if $smarty.foreach.filter_attr_tab.iteration eq 1}
+                   <a href="javascript:;" onclick="addFilterAttr(this)">[+]</a>
+                 {else}
+                   <a href="javascript:;" onclick="removeFilterAttr(this)">[-]&nbsp;</a>
+                 {/if}
+                 <select onChange="changeCat(this)"><option value="0">{$lang.sel_goods_type}</option>{$filter_attr.goods_type_list}</select>&nbsp;&nbsp;
+                 <select name="filter_attr[]"><option value="0">{$lang.sel_filter_attr}</option>{html_options options=$filter_attr.option selected=$filter_attr.filter_attr}</select><br />
+              </td>
+            </tr>
+            {/foreach}
+          </table>
+          <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeFilterAttr">{$lang.filter_attr_notic}</span>
+        </td>
+      </tr>
+      <!-- thêm thương hiệu -->
+<!-- Phần mã HTML -->
+<tr>
+  <td class="label">Thương hiệu:</td>
+  <td>
+    <table width="100%" id="tbody-brand" align="center">
+      {foreach from=$added_brands item=added_brand key=added_brand_key}
+        <tr>
+            <td>
+                <a href="javascript:;" onclick="removeFilterBrand(this)">[-]</a>
+                <select id="filter_brand" name="filter_brand[]">
+                    <option value="0">Chọn thương hiệu</option>
+                    {foreach from=$brand_list item=brand}
+                        <option value="{$brand.brand_id}" {if $brand.brand_id == $added_brand.brand_id}selected{/if}>{$brand.brand_name}</option>
+                    {/foreach}
+                </select></br>
+                <input style=" margin: 15px; " size="50" type="text" name="brand_title[]" value="{$added_brand.brand_title}" placeholder="Nhập tiêu đề SEO Brand"/>
+                <span class="notice-span">Tiêu đề SEO Brand</span></br>
+                <input style=" margin-bottom: 15px; margin-left: 15px; margin-right: 15px; " size="50" type="text" name="brand_keyword[]" value="{$added_brand.brand_keyword}" placeholder="Nhập từ khóa Brand"/>
+                <span class="notice-span">Từ khoá SEO Brand</span>
+                </br>
+
+                <textarea style=" margin-bottom: 15px; margin-left: 15px; margin-right: 15px; " name="brand_desc_sort[]" rows="6" cols="48" placeholder="Nhập mô tả ngắn gọn">{$added_brand.brand_desc_sort}</textarea>
+                {$brand_desc_ckeditor[$added_brand_key]}
+
+            </td>
+        </tr>
+        {/foreach}
+
+    </table>
+    <a href="javascript:;" onclick="addFilterBrand()">[+] Ấn để thêm thương hiệu</a>
+  </td>
+</tr>
+
+<!-- Phần mã JavaScript -->
+<script type="text/javascript">
+var brand_desc_ckeditor = '{$CKeditor("brand_desc", "", "", "", "")|escape:'javascript'}';
+
+
+  function addFilterBrand() {
+    var table = document.getElementById("tbody-brand");
+
+    var newRow = document.createElement("tr");
+    var newCell = document.createElement("td");
+
+    var lastIndex = $('#tbody-brand textarea').length > 0 ? parseInt($('#tbody-brand textarea:last').attr('name').match(/\d+/)[0]) : 0;
+    var newIndex = lastIndex + 1;
+
+    newCell.innerHTML = `
+      <a href="javascript:;" onclick="removeFilterBrand(this)">[-]</a>
+      <select id="filter_brand" name="filter_brand[]">
+        <option value="0">Chọn thương hiệu</option>
+        {foreach from=$brand_list item=brand}
+          <option value="{$brand.brand_id}">{$brand.brand_name}</option>
+        {/foreach}
+      </select>
+      <input style=" margin: 15px; " size="50" type="text" name="brand_title[]" value="{$added_brand.brand_title}" placeholder="Nhập tiêu đề SEO Brand"/>
+                <span class="notice-span">Tiêu đề SEO Brand</span></br>
+                <input style=" margin-bottom: 15px; margin-left: 15px; margin-right: 15px; " size="50" type="text" name="brand_keyword[]" value="{$added_brand.brand_keyword}" placeholder="Nhập từ khóa Brand"/>
+                <span class="notice-span">Từ khoá SEO Brand</span>
+                </br>
+
+                <textarea style=" margin-bottom: 15px; margin-left: 15px; margin-right: 15px; " name="brand_desc_sort[]" rows="6" cols="48" placeholder="Nhập mô tả ngắn gọn">{$added_brand.brand_desc_sort}</textarea>
+      
+      <textarea name="brand_desc[${newIndex}]" id="brand_desc_${newIndex}"></textarea>
+    `;
+
+    newRow.appendChild(newCell);
+    table.appendChild(newRow);
+
+    if (CKEDITOR.instances['brand_desc[' + newIndex + ']']) {
+      CKEDITOR.instances['brand_desc[' + newIndex + ']'].destroy(true);
+    }
+
+    setTimeout(function() {
+      CKEDITOR.replace('brand_desc[' + newIndex + ']');
+    }, 100);
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <tr>
+        <td class="label"><a href="javascript:showNotice('noticeGrade');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.notice_style}"></a>Giá trị mỗi bước giá:</td>
+        <td>
+          <input type="text" name="grade_value" value="{$cat_info.grade_value}" size="50" /> <br />
+          <span class="notice-span">Mỗi khoảng giá sẽ cách nhau = giá trị này</span>
+        </td>
+      </tr>
+    <!-- thêm thương hiệu -->
+<!-- Phần mã HTML -->
+<tr>
+  <td class="label">Số Điện Thoại:</td>
+  <td>
+    <table width="100%" id="tbody-phone" align="center">
+      {foreach from=$added_phones item=added_phone key=added_phone_key}
+        <tr>
+            <td>
+                <a href="javascript:;" onclick="removeFilterPhone(this)">[-]</a>
+                <select id="filter_phone" name="filter_phone[]">
+                    <option value="0">Chọn số điện thoại</option>
+                    {foreach from=$phone_list item=phone}
+                        <option value="{$phone.id}" {if $phone.id == $added_phone.id}selected{/if}>{$phone.id} - {$phone.phone} -  ({$phone.name})</option>
+                    
+                    {/foreach}
+                </select>
+                {if $added_phone.khu_vuc == 1}<span>Hà Nội</span>{/if}
+                {if $added_phone.khu_vuc == 2}<span>Hồ Chí Minh</span>{/if}
+               
+            </td>
+        </tr>
+        {/foreach}
+
+    </table>
+    <a href="javascript:;" onclick="addFilterPhone()">[+] Ấn để thêm số điện thoại</a>
+  </td>
+</tr>
+
+<!-- Phần mã JavaScript -->
+<script type="text/javascript">
+  function addFilterPhone() {
+    var table = document.getElementById("tbody-phone");
+
+    var newRow = document.createElement("tr");
+    var newCell = document.createElement("td");
+
+    var lastIndex = $('#tbody-phone textarea').length > 0 ? parseInt($('#tbody-phone textarea:last').attr('name').match(/\d+/)[0]) : 0;
+    var newIndex = lastIndex + 1;
+
+    newCell.innerHTML = `
+      <a href="javascript:;" onclick="removeFilterPhone(this)">[-]</a>
+      <select id="filter_phone" name="filter_phone[]">
+        <option value="0">Chọn Số điện thoại</option>
+        {foreach from=$phone_list item=phone}
+          <option value="{$phone.id}">{$phone.phone} -  ({$phone.name})</option>
+        {/foreach}
+      </select>
+   
+     
+    `;
+
+    newRow.appendChild(newCell);
+    table.appendChild(newRow);
+
+    if (CKEDITOR.instances['name[' + newIndex + ']']) {
+      CKEDITOR.instances['name[' + newIndex + ']'].destroy(true);
+    }
+
+  }
+</script>
+      <tr>
+        <td class="label">iCon</td>
+        <td>
+          <input type="text" size="40" id="ckfinder-input-1" value="{$cat_info.icon}" name="icon" /> <input type="button" id="ckfinder-popup-1" value="Chọn Ảnh" class="button" onclick="return selectFileWithCKFinder('ckfinder-input-1');">
+          <br/>
+          {if $cat_info.icon}
+          <br>
+          <img height="30px" src="../{$cat_info.icon}" alt="">
+          {/if}
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="label">Meta Title:</td>
+        <td>
+          <input type='text' name='meta_title'  maxlength="75" value='{$cat_info.meta_title|escape:html}' size='50' /> <font color="red">*</font>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.keywords}:</td>
+        <td><input type="text" name="keywords" value='{$cat_info.keywords}' size="50">
+        </td>
+      </tr>
+      <tr>
+        <td class="label">{$lang.cat_desc}:</td>
+        <td>
+          <textarea name='cat_desc' rows="6" cols="48">{$cat_info.cat_desc}</textarea>
+        </td>
+      </tr>
+         <tr>
+        <td class="label">Schema (FAQ,Schema danh mục....):</td>
+        <td>
+          <textarea name='cat_faq' rows="6" cols="48" style="float:left">{$cat_info.cat_faq}</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">Mô tả dài</td>
+        <td>
+          <p style="margin-bottom: 10px"><span class="notice-span">Mục đích để tạo thêm liên kết nội bộ, bộ trợ cho SEO Onpage Danh mục</span></p>
+          {$CKeditor_long_desc}
+        </td>
+      </tr>
+      </table>
+      <div class="button-div">
+        <input type="submit" value="{$lang.button_submit}" />
+        <input type="reset" value="{$lang.button_reset}" />
+      </div>
+    <input type="hidden" name="act" value="{$form_act}" />
+    <input type="hidden" name="old_cat_name" value="{$cat_info.cat_name}" />
+    <input type="hidden" name="old_slug" value="{$slug|escape}" />
+    <input type="hidden" name="cat_id" value="{$cat_info.cat_id}" />
+  </form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['cat_name'].focus();
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+  validator = new Validator("theForm");
+  validator.required("cat_name",      catname_empty);
+  if (parseInt(document.forms['theForm'].elements['grade'].value) >10 || parseInt(document.forms['theForm'].elements['grade'].value) < 0)
+  {
+    validator.addErrorMsg('{$lang.grade_error}');
+  }
+  return validator.passed();
+}
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+}
+/**
+ * 新增一个筛选属性
+ */
+function addFilterAttr(obj)
+{
+  var src = obj.parentNode.parentNode;
+  var tbl = document.getElementById('tbody-attr');
+  var validator  = new Validator('theForm');
+  var filterAttr = document.getElementsByName("filter_attr[]");
+  if (filterAttr[filterAttr.length-1].selectedIndex == 0)
+  {
+    validator.addErrorMsg(filter_attr_not_selected);
+  }
+
+  for (i = 0; i < filterAttr.length; i++)
+  {
+    for (j = i + 1; j <filterAttr.length; j++)
+    {
+      if (filterAttr.item(i).value == filterAttr.item(j).value)
+      {
+        validator.addErrorMsg(filter_attr_not_repeated);
+      }
+    }
+  }
+  if (!validator.passed())
+  {
+    return false;
+  }
+  var row  = tbl.insertRow(tbl.rows.length);
+  var cell = row.insertCell(-1);
+  cell.innerHTML = src.cells[0].innerHTML.replace(/(.*)(addFilterAttr)(.*)(\[)(\+)/i, "$1removeFilterAttr$3$4-");
+  filterAttr[filterAttr.length-1].selectedIndex = 0;
+}
+/**
+ * 删除一个筛选属性
+ */
+function removeFilterAttr(obj)
+{
+  var row = rowindex(obj.parentNode.parentNode);
+  var tbl = document.getElementById('tbody-attr');
+  tbl.deleteRow(row);
+}
+
+    function removeFilterBrand(obj) {
+        var row = obj.parentNode.parentNode;
+        var table = row.parentNode;
+        table.removeChild(row);
+    }
+    function removeFilterPhone(obj) {
+        var row = obj.parentNode.parentNode;
+        var table = row.parentNode;
+        table.removeChild(row);
+    }
+
+
+function selectFileWithCKFinder( elementId ) {
+    CKFinder.popup( {
+        chooseFiles: true,
+        width: 800,
+        height: 600,
+        onInit: function( finder ) {
+            finder.on( 'files:choose', function( evt ) {
+                var file = evt.data.files.first();
+                var output = document.getElementById( elementId );
+                output.value = file.getUrl();
+            } );
+
+            finder.on( 'file:choose:resizedImage', function( evt ) {
+                var output = document.getElementById( elementId );
+                output.value = evt.data.resizedUrl;
+            } );
+        }
+    } );
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

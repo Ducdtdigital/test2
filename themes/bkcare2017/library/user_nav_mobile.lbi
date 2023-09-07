@@ -1,0 +1,27 @@
+<div class="user_nav">
+    <p class="user_status">
+        <span class="avatar"><em>{$info.username}</em></span>
+        <span class="rank">{$rank_name}{$next_rank_name}</span>
+        <span><a href="{$option.static_path}thanh-vien?act=logout">Đăng xuất</a></span>
+        <span id="toggle_nav">Menu</span>
+    </p>
+    <nav id="user_nav">
+    		<a href="{$option.static_path}thanh-vien">{$lang.dashboard}</a>
+    		<a href="{$option.static_path}thanh-vien?act=profile">{$lang.profile}</a>
+    		<a href="{$option.static_path}thanh-vien?act=order_list">{$lang.label_order}</a>
+    		{if $affiliate.on eq 1}
+            <a href="{$option.static_path}thanh-vien?act=affiliate">{$lang.label_affiliate}</a>
+            {/if}
+    		<a href="{$option.static_path}thanh-vien?act=collection_list">{$lang.collections_and_booking}</a>
+    		{if $option.tags_enabled}
+            <a href="{$option.static_path}thanh-vien?act=tag_list">{$lang.label_tag}</a>
+            {/if}
+    		<a href="{$option.static_path}thanh-vien?act=message_list">{$lang.messages_and_comments}</a>
+    		{if $show_transform_points}
+            <a href="{$option.static_path}thanh-vien?act=transform_points">{$lang.label_transform_points}</a>
+            {/if}
+    		<a href="{$option.static_path}thanh-vien?act=account_detail">{$lang.account_and_bonus}</a>
+
+    </nav>
+</div>
+{if $info.is_validate eq 0}<p class="notice_box email_valid">{$lang.not_validated}<a href="javascript:sendHashMail()">{$lang.resend_hash_mail}</a></p>{/if}

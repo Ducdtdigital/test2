@@ -1,0 +1,73 @@
+<!-- $Id: article_info.htm 16780 2009-11-09 09:28:30Z sxc_shop $ -->
+{include file="pageheader_ckeditor.htm"}
+
+<!-- start goods form -->
+   <div class="content_wrapper">
+        
+    <div class="main_title_wrapper clearfix">
+<h1 id="search_id"> Update giá sản phẩm theo file csv</h1>
+</div>
+<div class="main-div">
+     <form method = "POST" enctype = "multipart/form-data" name="theForm" onsubmit="return formValidate()">
+         <table cellspacing="1" cellpadding="3" width="100%">
+ 
+
+ <tr>
+
+        <td>
+            <input name="file" type="file" size="40" >
+         <br />
+        </td>
+ </tr>
+ <tr align="center">
+    <td colspan="2"> <button type="submit" name="btnGui"> Xác nhận tải lên </button> </td>
+ </tr>
+            </table>
+    </form>
+
+</div>
+
+</div>
+<!-- end goods form -->
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+    var elements;
+    onload = function()
+    {
+        // 文档元素对象
+        elements = document.forms['theForm'].elements;
+
+        // 开始检查订单
+        startCheckOrder();
+    }
+
+    /**
+     * 检查是否底级分类
+     */
+    function checkIsLeaf(selObj)
+    {
+        if (selObj.options[selObj.options.selectedIndex].className != 'leafCat')
+        {
+            alert(goods_cat_not_leaf);
+            selObj.options.selectedIndex = 0;
+        }
+    }
+
+    /**
+     * 检查输入是否完整
+     */
+    function formValidate()
+    {
+        
+        if (elements['file'].value == '')
+        {
+            alert('Vui lòng chọn tệp tải lên');
+            return false;
+        }
+        return true;
+    }
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}

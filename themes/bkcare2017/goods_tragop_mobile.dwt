@@ -1,0 +1,40 @@
+{include file='library/html_header_mobile.lbi'}
+{insert_css files="mobile/css/global.css,mobile/css/goods_tragop.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    <h1>Trả góp {$goods.goods_name|escape:html}</h1>
+    <div class="goods_detail">
+        {if $cfg.show_goodssn}<span class="no">{$lang.goods_sn} {$goods.goods_sn}</span>{/if}
+        <p>Giá Trả góp: <span class="price">
+        {if $goods.is_promote and $goods.gmt_end_time}{$goods.promote_price}{else}{$goods.shop_price_formated}{/if}</span></p>
+        {if $goods.goods_gift}
+            <div class="area_promotion" id="gdsgift">
+                <div class="protit">Khuyến mãi, Ưu đãi</div>
+                <div class="prob">
+                    {$goods.goods_gift}
+                </div>
+            </div>
+            {/if}
+        {if $goods.warranty}
+        <p>Bảo hành: <strong>{$goods.warranty}</strong></p>
+        {/if}
+        {if $goods.goods_packaged}
+        <p>Bộ sản phẩm gồm: {$goods.goods_packaged}</p>
+        {/if}
+        <p>Đổi miễn phí 7 ngày đầu nếu lỗi do NSX. (<a href="chinh-sach-doi-tra.html">Chi tiết</a>)</p>
+    </div>
+     {include file='library/tragop.lbi'}
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+<script type="text/javascript">
+var goodsId =   {$goods_id};
+var finalprice = {$goods.final_price};
+</script>
+{insert_js name='goods.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global_mobile.js,js/init_mobile.js' }
+<script  type="text/javascript" src="{$option.staic_path}static/js/jquery.number.min.js"></script>
+<script  type="text/javascript" src="{$option.staic_path}static/js/tragop.min.js"></script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

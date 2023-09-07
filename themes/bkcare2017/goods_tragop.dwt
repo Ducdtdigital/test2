@@ -1,0 +1,47 @@
+{include file='library/html_header.lbi'}
+{insert_css files="css/style.css,css/goods_tragop.css"}
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+    {include file='library/ur_here.lbi'}
+    {$render.before_main}
+        <div class="tg_hl">
+            <img class="cover" src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name:escape}">
+        </div>
+        <div class="tg_r goods_detail">
+            <a href="{$goods.url}"><h1>Trả góp {$goods.goods_name}</h1></a>
+            {if $cfg.show_goodssn}<span class="no">{$lang.goods_sn} {$goods.goods_sn}</span>{/if}
+            <p>Giá Trả góp: <span class="price">
+            {if $goods.is_promote and $goods.gmt_end_time}{$goods.promote_price}{else}{$goods.shop_price_formated}{/if}</span></p>
+            {if $goods.goods_gift}
+                <div class="area_promotion" id="gdsgift">
+                    <div class="protit">Khuyến mãi, Ưu đãi</div>
+                    <div class="prob">
+                        {$goods.goods_gift}
+                    </div>
+                </div>
+                {/if}
+            {if $goods.warranty}
+            <p>Bảo hành: <strong>{$goods.warranty}</strong></p>
+            {/if}
+            {if $goods.goods_packaged}
+            <p>Bộ sản phẩm gồm: {$goods.goods_packaged}</p>
+            {/if}
+            <p>Đổi miễn phí 7 ngày đầu nếu lỗi do NSX. (<a href="chinh-sach-doi-tra.html">Chi tiết</a>)</p>
+        </div>
+       {include file='library/tragop.lbi'}
+
+    {$render.after_main}
+</section>
+{include file='library/page_footer.lbi'}
+<script type="text/javascript">
+var goodsId =   {$goods_id};
+var finalprice = {$goods.final_price};
+</script>
+{insert_js name='goods.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global.js,js/init.js' }
+<script  type="text/javascript" src="{$option.staic_path}static/js/jquery.number.min.js"></script>
+<script  type="text/javascript" src="{$option.staic_path}static/js/tragop.min.js"></script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

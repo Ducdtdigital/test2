@@ -1,0 +1,32 @@
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+                                {if $goods.brand_logo}
+                    <div class="brand_goods_in">
+                <img src="{$option.cdn_path}brandlogo/{$goods.brand_logo}" alt="{$goods.brand_name}({$goods.goods_num})"/>
+                </div>
+               {else}
+               
+                {/if}
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}

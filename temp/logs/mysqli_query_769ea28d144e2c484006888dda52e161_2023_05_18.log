@@ -1,0 +1,108 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684346092', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-18 00:54:52 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1684344292
+
+2023-05-18 00:54:52 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684347359', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-18 01:15:59 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1684345559
+
+2023-05-18 01:15:59 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684347359', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-18 01:15:59 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1684345559
+
+2023-05-18 01:15:59 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684348094', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-18 01:28:14 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1684346294
+
+2023-05-18 01:28:14 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1684348177', ip = '58.186.70.231', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '837e25d4e7d23f0d236f6380a9bdf9a1' LIMIT 1
+
+2023-05-18 01:29:37 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-05-18 09:50:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('c6744b67bbe2d3426f5bc051715ee070', '1684378760', '118.70.131.98', 'a:0:{}')
+
+2023-05-18 09:59:20 - MySQLi Query Error: Duplicate entry 'c6744b67bbe2d3426f5bc051715ee070' for key 'PRIMARY'
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:42 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:42 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:42 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:42 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:38:56 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:39:15 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:39:15 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:39:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:39:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+
+SELECT cat_id, cat_name, class, parent_id, icon FROM `kuqpxtvxhosting_minhngoc1`.`nb_category`WHERE parent_id =  AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC
+
+2023-05-18 23:44:06 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC' at line 1
+

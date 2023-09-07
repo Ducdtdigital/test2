@@ -1,0 +1,14 @@
+{if $new_articles}
+ <ul>
+    {foreach from=$new_articles item=article name=new_articles}
+    {if $smarty.foreach.new_articles.index < 5}
+    <li>
+        <a href="{$article.url}">
+            <img width="100" height="70" src="{$option.cdn1_path}{$article.sthumb}" alt="{$article.title|escape:html}">
+            <h3>{$article.title|truncate:60:"...":true}</h3>
+        </a>
+    </li>
+     {/if}
+    {/foreach}
+</ul>
+ {/if}

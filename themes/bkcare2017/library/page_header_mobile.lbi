@@ -1,0 +1,54 @@
+
+<header><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="header_bar">
+        <div class="menu" id="_menu"><i class="iconmobile-menu"></i></div>
+        <a title="Về trang chủ khofile.com" href="./" style="display: block">
+            <img style="margin:0 auto;width: 200px;display: block;padding-top: 5px" src="{$option.static_path}static/img/logo.png" alt="logo_khofile.com">
+        </a>
+        <span class="cart" id="cart"><a href="gio-hang"><i class="iconmobile-cart"></i><em>0</em></a><a></a></span>
+    </div>
+    <div class="abcac">         
+    <nav class="subnav" id="_subnav">
+<div id="user_area">
+            <div class="user_wrap clearfix">
+                <div class="user_photo">
+                    <i class="iconmobile-user-white"></i>
+                </div>
+                <div class="user_info">
+{siy:load_user_info}
+ {if $siy_user_info.user_id eq 0 }
+<a href="thanh-vien?act=login">Đăng nhập</a>
+<p class="userguide">Nhận nhiều ưu đãi hơn</p>
+{else}
+<a href="thanh-vien">{$siy_user_info.username} ({$siy_user_info.surplus})   </a>
+<a href="thanh-vien?act=logout"><p class="userguide">Đăng xuất</p></a>
+{/if}
+                </div>
+            </div>
+<div class="menu" id="hide_nav"><i class="iconmobile-menu"></i></div>
+        </div>
+    
+<ul class="navigation" id="navigation">
+          {include file='library/category_tree_mb.lbi'}
+</ul>
+</nav>
+</div>
+{if $pname eq 'article' || $pname eq 'article_cat' || $pname eq 'article_cat_index'}
+    <form action="{$option.static_path}tin-tuc" method="get" class="search " id="search-site">
+        <input name="keywords" id="search-keyword" type="search" placeholder="Tìm tin tức " value="{$search_keywords|escape}" autocomplete="off"  />
+        <div class="iconsearch"><i class="iconmobile-search"></i></div>
+        <button type="submit" class="btn-submit">Tìm</button>
+    </form>
+    <!-- sugguest -->
+    <div id="suggestion"></div>
+{else}
+    <form action="{$option.static_path}tim-kiem" method="get" class="search " id="search-site">
+        <input name="keywords" id="search-keyword" type="search" placeholder="Tìm sản phẩm bạn cần " value="{$search_keywords|escape}" autocomplete="off"  />
+        <div class="iconsearch"><i class="iconmobile-search"></i></div>
+        <button type="submit" class="btn-submit">Tìm</button>
+        <div class="search-suggest"></div>
+    </form>
+    <!-- sugguest -->
+    <div id="suggestion"></div>
+{/if}
+</header>

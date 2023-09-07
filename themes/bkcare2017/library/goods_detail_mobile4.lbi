@@ -1,0 +1,19 @@
+<div class="goods_status">MỚI RA MẮT</div>
+<ul class="policy ">
+    <li><i class="icon-poltel"></i>
+        <p>Liên hệ HOTLINE {$service_phone}<small> (8-21h cả T7, CN)</small></p>
+    </li>
+    <li><i class="icon-polmail"></i>
+        <p>Email: {$service_email}</p>
+    </li>
+</ul>
+<div class="requestcall">
+    <h4>Bạn cần chúng tôi gọi lại TƯ VẤN</h4>
+    <div class="request-msg">Chúng tôi sẽ tư vấn theo thông tin bạn đã cung cấp.</div>
+    <form>
+        <input type="hidden" name="url" value="">
+        <input name="tel" placeholder="Nhập số điện thoại của anh/chị">
+         <a href="javascript:;" id="_call"> <strong>HÃY GỌI LẠI CHO TÔI!!!</strong>
+        <span>Tôi đang rất quan tâm sản phẩm này</span> </a>
+    </form>
+</div>

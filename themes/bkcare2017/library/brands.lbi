@@ -1,0 +1,37 @@
+{if $brand_list}
+<div class="brands box">
+	<div class="hd"><h3>{$lang.brands_list}</h3><div class="extra"><a href="thuong-hieu">{$lang.all_brand}</a></div></div>
+	<div class="bd">
+		<ul class="owl-carousel owl-theme" id="show_brand">
+			{foreach from=$brand_list item=brand name=brand}
+			{if $smarty.foreach.brand_foreach.index <= 999}
+			{if $brand.brand_logo}
+			<li class="image"><a href="{$brand.url}" title="{$brand.brand_name|escape:html}"><img src="{$option.static_path}data/brandlogo/{$brand.brand_logo}" alt="{$brand.brand_name|escape:html}"/></a></li>
+			{else}
+			<li class="text"><a href="{$brand.url}" title="{$brand.brand_name|escape:html}">{$brand.brand_name}</a></li>
+			{/if}
+			{/if}
+			{/foreach}
+		</ul>
+	</div>
+</div>
+{/if}
+{if $brand_list_thb}
+<div class="brands box">
+
+	<div class="bd">
+		<ul class="owl-carousel owl-theme" id="show_brand">
+			{foreach from=$brand_list_thb item=brand_data name=brand_list_foreach}
+			<li>
+				{if $brand_data.brand_logo}
+				<a href="{$brand_data.url}"><img src="{$option.cdn_path}brandlogo/{$brand_data.brand_logo}" alt="{$brand_data.brand_name}({$brand_data.goods_num})"/></a>
+               
+				{else}
+				<a href="{$brand_data.url}"><h3>{$brand_data.brand_name}</h3></a>
+				{/if}
+			</li>
+			{/foreach}
+		</ul>
+	</div>
+</div>
+{/if}

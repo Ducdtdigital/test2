@@ -1,0 +1,12 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1685882024', ip = '113.23.43.63', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '9fd926e110a85c7b3b099349cd722ee1' LIMIT 1
+
+2023-06-04 19:33:44 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1685880224
+
+2023-06-04 19:33:44 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1685880224
+
+2023-06-04 19:33:44 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

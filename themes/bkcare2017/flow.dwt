@@ -1,0 +1,69 @@
+{include file='library/html_header.lbi'}
+<link rel="canonical" href="{$canonical}" />
+{insert_css files="css/style.css,css/flow.css"}
+</head>
+<body id="page_{$pname}" class="{if $step neq 'login'}flow_wrapper{/if}">
+{include file='library/page_header.lbi'}
+<section>
+{$render.before_main}
+{if $step eq 'cart'}{include file='library/flow_cart.lbi'}{/if}
+{if $step eq 'login'}{include file='library/flow_login.lbi'}{/if}
+{if $step eq 'consignee'}{include file='library/flow_consignee.lbi'}{/if}
+{if $step eq 'checkout'}{include file='library/flow_checkout.lbi'}{/if}
+{if $step eq 'done'}{include file='library/flow_done.lbi'}{/if} 
+{$render.after_main}
+</section>
+<script type="text/javascript">
+    var base_path = "{$option.static_path}";
+</script>
+{insert_js name='flow.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global.js,js/init.js' }
+<script type="text/javascript" src="{$option.static_path}static/js/flow.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('input[name^="goods_number"]').tipsy({trigger:'manual',gravity:'sw',fade: true});
+        $('input[name^="goods_number"]').keypress(function(){
+            $(this).tipsy('show');
+        });
+        $('input[name^="goods_number"]').focusout(function(){
+            $(this).tipsy('hide');}
+        );
+        $('#cart').mouseenter(function(){
+            $('#cart .list_wrapper').show();
+        });
+        $('#cart').mouseleave(function(){
+            $('#cart .list_wrapper').hide();
+        });
+        $('.cart_list li').hover(function(){
+            $(this).addClass('hover');
+        }, function(){
+            $(this).removeClass('hover');
+        });
+        $('.fittings_list li[title!=""]').tipsy({gravity: 's',fade: true});
+    });
+    {if $step eq 'checkout'}var action = 'checkout';{/if}
+    </script>
+
+{if $step eq 'cart'}
+<script type="text/javascript">
+$(".button-container .qty").keyup(function(){
+    document.getElementById('updatecart').click();
+});
+
+$(".cart-qty-plus").click(function() {
+    var n = $(this).parent(".button-container").find(".qty");
+    n.val(Number(n.val())+1 );
+    document.getElementById('updatecart').click();
+});
+$(".cart-qty-minus").click(function() {
+    var n = $(this).parent(".button-container").find(".qty");
+    var amount = Number(n.val());
+    if (amount > 1) {
+        n.val(amount-1);
+    }
+    document.getElementById('updatecart').click();
+});
+</script>
+{/if}
+    {include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

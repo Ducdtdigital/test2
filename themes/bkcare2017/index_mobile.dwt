@@ -1,0 +1,318 @@
+{include file='library/html_header_mobile.lbi'}
+ <link rel="canonical" href="{$canonical}" />
+{insert_css  files="owl-carousel/owl.carousel.css,mobile/css/global.css,mobile/css/index.css"}
+</head>
+<body id="page_{$pname}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QFC699"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<section>
+     <!-- TemplateBeginEditable name="BannerHome" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+{insert name=ads id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+     <!-- TemplateBeginEditable name="SP Nổi Bật" -->
+<!-- #BeginLibraryItem "/library/recommend_best_mobile.lbi" -->
+{if $best_goods}
+<div class="xm-plain-box recommend_goods best-goods">
+<h4 class="hometitle">{$lang_sp_best}</h4>
+<div class="overpromo _best">
+<ul class="cate listpromo">
+    {foreach from=$best_goods item=goods name=best_goods}
+    <li>
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+             {if $goods.is_new eq 1 and $goods.is_hot eq 0}<label class="new">Mới</label>{/if}
+                    {if $goods.is_new eq 0 and $goods.is_hot eq 1}<label class="shockprice">Hot</label>{/if}
+                    {if $goods.is_best eq 1 }<label class="shockprice">Bán chạy</label>{/if}
+            <h3>{$goods.name}</h3>
+            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+            <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+</ul>
+</div>
+<div class="clr"></div>
+</div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_new_mobile.lbi" -->
+{if $new_goods}
+<div class="xm-plain-box recommend_goods new-goods">
+<h4 class="hometitle">{$lang_sp_moi}</h4>
+<div class="overpromo _new">
+<ul class="cate listpromo">
+    {foreach from=$new_goods item=goods name=new_goods}
+    <li>
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            {if $goods.is_new eq 1}<label class="new">Mới</label>{/if}
+            <h3>{$goods.name}</h3>
+            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+            <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+</ul>
+</div>
+</div>
+<div class="clr"></div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+    <div class="clr"></div>
+    {siy:nav type='mobile' form='library/siy_nav_hmobile.lbi'}
+    <div class="clr"></div>
+     <!-- TemplateBeginEditable name="BestProduct" -->
+<!-- TemplateEndEditable -->
+    <!-- TemplateBeginEditable name="Cat_goods" -->
+<!-- #BeginLibraryItem "/library/cat_goods_mobile.lbi" -->
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods_mobile.lbi" -->
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods_mobile.lbi" -->
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods_mobile.lbi" -->
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods_mobile.lbi" -->
+{if $cat_goods}
+<div class="hometitle">{$goods_cat.name|escape:html} <a href="{$goods_cat.url}">Xem tất cả </a></div>
+    <div class="overpromo _scroll">
+    <ul class="cate listpromo">
+    {foreach from=$cat_goods item=goods name=cat_goods}
+    <li>
+        {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            <h3>{$goods.name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}{/if}</strong></strong>
+                    {/if}
+             <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+    </ul>
+  </div>
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+ <!-- TemplateBeginEditable name="banner dưới" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+{insert name=ads id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+    <h3 class="hometitle">Tin Tức Mới <a href="tin-tuc" class="newsother">Xem thêm</a></h3>
+    <ul class="news">
+        {foreach from=$new_articles item=article name=new_articles}
+        <li>
+            <a href="{$article.url}">
+                <img src="{$option.cdn1_path}{$article.sthumb}" alt="{$article.title|escape:html}" width="100" height="70">
+                <h3>{$article.title|escape:html}</h3>
+                <div><span>{$article.add_time}</span> <span> {$article.viewed} lượt xem</span></div>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{* Nếu phát sinh file js thì sửa lại giá trị name index.Mobile.min.js *}
+{insert_js name='index.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.min.js' minify='js/global_mobile.js,js/init_mobile.js'}
+<script>
+    $(document).ready(function() {
+        $("#owl-home").owlCarousel({navigation:!1,slideSpeed:300,paginationSpeed:400,singleItem:!0,lazyLoad:!0,autoPlay:!0,autoHeight:!0});
+        callw('._best','.listpromo',3,15);
+        getW('._scroll');
+    });
+    $(document).ready(function() {
+        $("#sync1b").owlCarousel({navigation:!1,slideSpeed:300,paginationSpeed:400,singleItem:!0,lazyLoad:!0,autoPlay:!0,autoHeight:!0});
+        callw('._best','.listpromo',3,15);
+        getW('._scroll');
+    });
+    function opennav(){
+        $('#_subnav, div.over').toggleClass('show');
+        $('#_menu').toggleClass('actmenu');
+        return false;
+    }
+    function getW(el){
+        var ul = $(el+" ul.listpromo");
+        ul.each(function() {
+            var li = $(this).find('li');
+            var w = li.length*(li.width()+15);
+            if(li.length > 1){
+                $(this).css('width', w);
+            }
+
+        });
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        $("#owl-home").owlCarousel({navigation:!1,slideSpeed:300,paginationSpeed:400,singleItem:!0,lazyLoad:!0,autoPlay:!0,autoHeight:!0});
+        callw('._new','.listpromo',3,15);
+        getW('._scroll');
+    });
+    function opennav(){
+        $('#_subnav, div.over').toggleClass('show');
+        $('#_menu').toggleClass('actmenu');
+        return false;
+    }
+    function getW(el){
+        var ul = $(el+" ul.listpromo");
+        ul.each(function() {
+            var li = $(this).find('li');
+            var w = li.length*(li.width()+15);
+            if(li.length > 1){
+                $(this).css('width', w);
+            }
+
+        });
+    }
+</script>
+<script type="text/javascript">
+    var base_path = '{$option.static_path}';
+    $(document).ready(function() {
+        if($("#owl-home").length > 0){
+            $("#owl-home").owlCarousel({items:!1,margin:0,lazyLoad:!0,slideSpeed :300,paginationSpeed:400,singleItem:!0,lazyLoad:!0,autoPlay:!0,nav:!1,dots:!0,loop:!0,responsiveRefreshRate :200});
+        }
+        callw('._category','.mnav',3,30);
+        callw('._best','.listpromo',3,15);
+    });
+
+     $(".criteria").click(function() {
+        $(".criteria").not(this).next().hide();
+        $(this).next().slideToggle(200);
+        $("body,html").animate({
+            scrollTop: $(".filter").position().top
+        }, 600)
+    });
+     /** view more */
+    var el = $('#description .article_content');
+    var h = el.height();
+
+    if(h>300){
+        el.addClass('short_view');
+        $('#description .view-more').removeClass('hidden');
+    }
+    $('#btn-viewmore').click(function(e){
+        el.toggleClass('short_view');
+        $('#view1').toggleClass('hidden');
+        $('#view2').toggleClass('hidden');
+        e.preventDefault();
+    });
+    /** end view more */
+</script>
+
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

@@ -1,0 +1,304 @@
+{include file='library/html_header.lbi'}
+ <link rel="canonical" href="{$canonical}" />
+{$cat_faq}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "image": "{$cat_icon}",
+    "description": "{$description}",
+    {if $category eq $sub.id and $sub.cat_id}
+    "isSimilarTo": [
+        {foreach from=$catsubs item=sub name=catsub}
+        
+       {foreach from=$sub.cat_id item=sub name=child_cat}
+        {
+          "@type": "Thing",
+          "name": "{$sub.name|escape}",
+          "url": "{$option.static_path}{$sub.url}",
+          "@id": "{$option.static_path}{$sub.url}#category",
+          "image": "{$sub.icon}",
+          "mainEntityOfPage": "{$option.static_path}{$sub.url}",
+          "description": "{$sub.desc}"
+        }
+        {if not $smarty.foreach.child_cat.last},{/if}
+        {/foreach}
+        {/foreach}
+      ],
+    {/if}
+    "name": "{$cat_name}",
+    "url": "{$option.static_path}{$active_url}",
+    "@id": "{$option.static_path}{$active_url}#category",
+    "model": "{$cat_name}",
+    "sku": "{$cat_name}",
+    "mpn": "{$cat_name}",
+    "category": "{$option.static_path}{$active_url}",
+    "mainEntityOfPage": "{$option.static_path}{$active_url}",
+    "brand": {
+      "@id": "{$option.static_path}#organization"
+    },
+    "logo": {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "url": "{$cat_icon}",
+      "image": "{$cat_icon}",
+      "name": "{$cat_name}",
+      "description": "{$description}",
+      "representativeOfPage": "true",
+      "uploadDate": "10098223232323-060606-2121 0303:0606:3232.32"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "VND",
+      "itemCondition": "https://schema.org/NewCondition",
+      "priceValidUntil": "February 15, 2025",
+      "highPrice": "17500000",
+      "lowPrice": "103000",
+      "offerCount": "675",
+      "url": "{$option.static_path}{$active_url}"
+    },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingCount": 30,
+                "ratingValue": 4.7
+            },
+            "audience": [
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Audience",
+                    "audienceType": "https://vi.wikipedia.org/wiki/Th%E1%BB%A3_m%E1%BB%99c",
+                    "url": "https://vi.wikipedia.org/wiki/Th%E1%BB%A3_m%E1%BB%99c",
+                    "name": "Thợ Mộc",
+                    "geographicArea": {
+                    "@type": "AdministrativeArea",
+                    "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                    "@id": "kg:/m/01crd5",
+                    "name": "Việt Nam"
+                }
+                },
+                    {
+                    "@context": "https://schema.org",
+                    "@type": "Audience",
+                    "audienceType": ["https://vi.wikipedia.org/wiki/H%E1%BB%99_gia_%C4%91%C3%ACnh"],
+                    "url": "https://vi.wikipedia.org/wiki/H%E1%BB%99_gia_%C4%91%C3%ACnh",
+                    "name": "Hộ Gia Đình",
+                    "geographicArea": {
+                    "@type": "AdministrativeArea",
+                    "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                    "@id": "kg:/m/01crd5",
+                    "name": "Việt Nam"
+                    }
+                }
+            ],
+            "potentialAction": 
+                {
+                    "instrument": ["phone", "laptop", "pc", "tablet"],
+                    "@type": "BuyAction",
+                    "mainEntityOfPage": "{$option.static_path}gio-hang",
+                    "name": "giỏ hàng",
+                    "url": "{$option.static_path}gio-hang",
+                    "target": "{$option.static_path}gio-hang",
+                    "description": "Chọn mua hàng",
+                    "location": {
+                        "@type": "City",
+                        "sameAs": ["https://en.wikipedia.org/wiki/Vietnam", "https://www.wikidata.org/wiki/Q881"],
+                        "name": "Việt Nam",
+                        "url": "https://vi.wikipedia.org/wiki/Vi%E1%BB%87t_Nam",
+                        "@id": "kg:/m/01crd5",
+                        "mainEntityOfPage":"https://www.google.com/search?q=việt+nam&amp;kponly=&amp;kgmid=/m/01crd5","hasMap": "https://goo.gl/maps/5HUQFbzHSxRuAWVBA"
+                    }
+  }
+}
+</script>
+{insert_css files="owl-carousel/owl.carousel.2.3.4.min.css,css/style.css,css/category2.css"}
+
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+    {include file='library/ur_here.lbi'}
+    <div class="col_sub">
+         {include file='library/cat_filter_tgdd.lbi'}
+          <!-- TemplateBeginEditable name="BottomRight" -->
+<!-- #BeginLibraryItem "/library/history.lbi" -->
+{siy:history number=4}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+    </div>
+    <div class="col_main">
+         {if $catsubs}
+          <div class="cat-container">
+            <div class="cat_cap2">
+              {foreach from=$catsubs item=sub name=catsub}
+                {if $category eq $sub.id and $sub.cat_id}
+                  {foreach from=$sub.cat_id item='child' name='child_cat'}
+                    <li>
+                      <a href="{$child.url}">
+                        <img src="{$child.icon}" alt="{$child.name|escape}">
+                      </a>
+                      <a href="{$child.url}">
+                        <span>{$child.name}</span>
+                      </a>
+                    </li>
+                    {if $smarty.foreach.child_cat.iteration == 9}
+                      <li class="toggle-more-li">
+                        <span class="toggle-more">Xem thêm</span>
+                      </li>
+                    {/if}
+                  {/foreach}
+                {/if}
+              {/foreach}
+            </div>
+          </div>
+        {/if}
+
+         <!-- TemplateBeginEditable name="TopMain" -->
+<!-- TemplateEndEditable -->
+{if $best_goods}
+{if $cat_rec_sign neq 1}
+<div class="xm-plain-box recommend_goods best-goods">
+    <div class="box-hd">
+        <h2 class="titlebest">{if $pname eq 'category'}{$cat_name} {/if}nổi bật
+            <span class="sub-title-after"></span>
+        </h2>
+        
+    </div>
+    <div class="box-bd goods_list">
+             <ul class="cate owl-carousel owl-theme" id="show_best">
+            {/if}
+                {foreach from=$best_goods item=goods name=best_goods}
+                    <li>
+                        <a href="{$goods.url}" >
+                            {if $goods.thumb_url}
+                                <img src="{$goods.thumb_url}" width="388" height="180" alt="{$goods.name|escape:html}">
+                            {else}
+                                <img src="{$option.cdn1_path}{$goods.thumb}" width="388" height="180" alt="{$goods.name|escape:html}">
+                            {/if}
+                            {if $goods.is_new eq 1 and $goods.is_hot eq 0}<label class="new">Mới</label>{/if}
+                    {if $goods.is_new eq 0 and $goods.is_hot eq 1}<label class="shockprice">Hot</label>{/if}
+                    {if $goods.is_best eq 1 }<label class="shockprice">Bán chạy</label>{/if}
+                            <h3>{$goods.name}</h3>
+                            {if $goods.price eq 0}
+            <strong>Giá liên hệ</strong>
+            {else}
+                            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+                            {/if}
+                            
+                             <div class="promotion">{$goods.seller_note}</div>
+                        </a>
+                    </li>
+                {/foreach}
+            {if $cat_rec_sign neq 1}
+             </ul>
+    </div>
+</div>
+{/if}
+{/if}
+        <div class="category_name">
+                <div class="sortby">
+                    Sắp xếp theo:
+                    <a href="{siy:build_uri app='category' cid=$category bid=$brand_id price_min=$price_min price_max=$price_max filter_attr=$filter_attr page=$pager.page sort='is_best' order='DESC'}"><span>{if $pager.sort eq 'is_best'}✓{/if}</span> Sản phẩm bán chạy</a>
+                
+                    <a href="{siy:build_uri app='category' cid=$category bid=$brand_id price_min=$price_min price_max=$price_max filter_attr=$filter_attr page=$pager.page sort='is_new' order='DESC'}"> <span>
+                       {if $pager.sort eq 'is_new'}✓{/if}</span> Mới nhất</a>
+                    <a href="{siy:build_uri app='category' cid=$category bid=$brand_id price_min=$price_min price_max=$price_max filter_attr=$filter_attr page=$pager.page sort='shop_price' order='ASC'}"> <span>
+                        {if $pager.sort eq 'shop_price' && $pager.order eq 'ASC'}✓{/if}</span> Giá từ thấp đến cao</a>
+                    <a href="{siy:build_uri app='category' cid=$category bid=$brand_id price_min=$price_min price_max=$price_max filter_attr=$filter_attr page=$pager.page sort='shop_price' order='DESC'}"><span>{if $pager.sort eq 'shop_price' && $pager.order eq 'DESC'}✓{/if}</span> Giá từ cao đến thấp</a>
+                </div>
+
+
+        </div>
+        {include file='library/goods_list2.lbi'}
+        {if $description1}
+         <div class="clr"></div>
+        <article id="description">
+                <div class="article_content">{$description1}</div>
+                <div class="view-more hidden">
+                <p id="btn-viewmore"><span id="view1">Đọc thêm </span><span id="view2" class="hidden">Thu gọn </span> </p>
+                </div>
+        </article>
+        {/if}
+         <!-- TemplateBeginEditable name="BottomMain" -->
+<!-- TemplateEndEditable -->
+    </div>
+
+    <div class="clr"></div>
+     <!-- TemplateBeginEditable name="QCFooter" -->
+<!-- TemplateEndEditable -->
+
+</section>
+{include file='library/page_footer.lbi'}
+{insert_js name='category.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js,owl-carousel/owl.carousel.2.3.4.min.js' minify='js/global.js,js/init.js' }
+<script>
+    var base_path = '{$option.static_path}';
+    $(document).ready(function() {
+
+        if($("#owl-cate").length > 0){
+            $("#owl-cate").owlCarousel({items: 3,slideBy: 1,margin:10,lazyLoad:!0,slideSpeed : 2000,nav:!0,dots:!1,loop:!0,responsiveRefreshRate : 200,navText: ['‹','›'],});
+        }
+    });
+
+    /** view more */
+    var el = $('#description .article_content');
+    var h = el.height();
+
+    if(h>300){
+        el.addClass('short_view');
+        $('#description .view-more').removeClass('hidden');
+    }
+    $('#btn-viewmore').click(function(e){
+        el.toggleClass('short_view');
+        $('#view1').toggleClass('hidden');
+        $('#view2').toggleClass('hidden');
+        e.preventDefault();
+    });
+    /** end view more */
+
+    
+$(document).ready(function() {
+  // Hide the remaining image rows
+  $(".cat_cap2 li:not(.toggle-more-li):nth-child(n+11)").hide();
+
+  // Handle event when clicking on the span element
+  $(".toggle-more").on("click", function() {
+    $(".cat_cap2 li:not(.toggle-more-li):nth-child(n+11)").slideToggle();
+    $(this).text(function(i, text){
+      return text === "Xem thêm" ? "Thu gọn" : "Xem thêm";
+    });
+  });
+});
+
+$(document).ready(function() {
+    $('.dropdown-icon').click(function(e) {
+        e.stopPropagation();
+        $(this).parent().siblings('ul').slideToggle();
+        $(this).text($(this).text() === '▼' ? '▲' : '▼');
+    });
+
+    $('.menucat-list a').click(function(e) {
+        e.stopPropagation();
+    });
+
+    // Automatically open submenu if the submenu item is active
+    if ($('.fsub .active_sub').length) {
+        $('.fsub .active_sub').parents('li').addClass('active_cat');
+        $('.fsub .active_sub').parents('ul').show();
+    }
+
+    // Automatically open submenu if the menu item is active
+    if ($('.fsub .active_cat').length) {
+        $('.fsub .active_cat').find('ul').show();
+        $('.fsub .active_cat').find('.dropdown-icon').text('▲');
+    }
+});
+
+
+
+
+
+
+</script>
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

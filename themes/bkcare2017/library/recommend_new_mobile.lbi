@@ -1,0 +1,21 @@
+{if $new_goods}
+<div class="xm-plain-box recommend_goods new-goods">
+<h4 class="hometitle">{$lang_sp_moi}</h4>
+<div class="overpromo _new">
+<ul class="cate listpromo">
+    {foreach from=$new_goods item=goods name=new_goods}
+    <li>
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+            {if $goods.is_new eq 1}<label class="new">Mới</label>{/if}
+            <h3>{$goods.name}</h3>
+            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+            <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+</ul>
+</div>
+</div>
+<div class="clr"></div>
+{/if}

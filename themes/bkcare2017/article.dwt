@@ -1,0 +1,221 @@
+{include file='library/html_header.lbi'}
+{insert_css files="owl-carousel/owl.carousel.2.3.4.min.css,css/style.css,css/article.css"}
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Article",
+      "name" : "{$article.title_display|escape:html}",
+      "author" : {
+        "@type" : "Person",
+        "name" : "{$article.author}"
+      },
+      "datePublished" : "{$article.date}"
+    }
+    </script>
+<style type="text/css">
+    .star-rating-on a, .star-rating-hover a{background-position: 0px 0px !important}
+</style>
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+
+<section>
+    <div class="article_category clearfix">
+    	{include file='library/article_category_tree.lbi'}
+    </div>
+	{$render.before_main}
+	<!-- TemplateBeginEditable name="Top" -->
+<!-- TemplateEndEditable -->
+   <article>
+        <h1 class="titledetail">{$article.title_display|escape:html}</h1>
+        <div class="userdetail">
+            <a>{$article.author}</a>
+            <span>{$article.add_time}</span>
+            <span>{$article.viewed} lượt xem</span>
+        </div>
+        <div id="share-buttons">
+                <!-- Facebook -->
+                <a rel="nofollow" href="http://www.facebook.com/sharer.php?u={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
+                <!-- LinkedIn -->
+                <a rel="nofollow" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                </a>
+                <!-- Pinterest -->
+                <a rel="nofollow" href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','https://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+                    <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+                </a>
+                <!-- Twitter -->
+                <a rel="nofollow" href="https://twitter.com/share?url={$option.static_path}{$article.url}" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
+            </div>
+			<button class="titletoc" onclick="myFunction()">Nội dung chính</button>
+			<i id="up" ></i>
+			<div id="myDIV">
+         <ul id="toc"></ul></div>
+            {if $article.content}
+            <div class="article_content">{$article.content}</div>
+            
+            {else}
+            <p class="empty">{$lang.content_empty}</p>
+            {/if}
+        <!-- TemplateBeginEditable name="SP Liên quan" -->
+<!-- #BeginLibraryItem "/library/goods_related.lbi" -->
+{if $related_goods and $pname eq 'goods'}
+<div class="clearfix" id="related">
+	<h2 class="title_heading">Sản phẩm liên quan</h2>
+	<div class="overpromo _related">
+    <ul class="cate listpromo">
+		{foreach from=$related_goods item=releated_goods_data name=related_goods}
+		<li>
+            {if $releated_goods_data.promote_price}<span class="discount">{$goods.discount}</span>{/if}
+            <a href="{$releated_goods_data.url}">
+                <img src="{$option.cdn1_path}{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name|escape:html}">
+                <h3>{$releated_goods_data.short_name}</h3>
+                {if $releated_goods_data.price eq 0}
+                    <span>Giá liên hệ</span>
+                {else}
+                    {if $releated_goods_data.promote_price}
+                    <strong class="gs">{$releated_goods_data.formated_promote_price} <del>{$releated_goods_data.shop_price}</del></strong>
+                    {else}
+                    <strong class="gs">{$releated_goods_data.shop_price}</strong>
+                    {/if}
+                {/if}
+            </a>
+		</li>
+		{/foreach}
+	</ul>
+    </div>
+</div>
+{elseif $related_goods and $pname eq 'article'}
+    {foreach from=$related_goods item=goods name=related_goods}
+    <div class="infoprod">
+        <div class="image">
+            <a href="{$releated_goods_data.url}"><img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}"></a>
+        </div>
+        <div class="infor">
+            <a href="{$goods.url}"><h3>{$goods.goods_name}</h3></a>
+            {if $goods.price eq 0}
+            <span>Giá liên hệ</span>
+            {else}
+            <strong>{$goods.formated_promote_price|default:$goods.shop_price}</strong>
+            {/if}
+            {$goods.desc_short}
+            <a href="{$releated_goods_data.url}" class="viewdetail">Xem chi tiết</a>
+        </div>
+    </div>
+    {/foreach}
+{/if}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        <div class="likewied">
+            <div class="fb-like" data-href="{$option.static_path}{$article.url}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+            <span class="total_view">{$article.viewed} lượt xem</span><span class="text-like">, Like và chia sẻ nếu thấy thích nhé !!</span>
+        </div>
+    </article>
+    <!-- TemplateBeginEditable name="Bottom 1" -->
+<!-- TemplateEndEditable -->
+    {if $article_rela}
+     <div class="bottom">
+        <h5 class="titlerelate">Bài viết liên quan</h5>
+        <ul class="newsrelate">
+            {foreach from=$article_rela key=i item=article name=article_list}
+            <li class="item_{$i}">
+                <a href="{$article.url}" class="linkimg" title="{$article.title|escape:html}">
+                    <div class="tempvideo">
+                        <img alt="{$article.title|escape:html}" src="{$option.cdn1_path}{$article.article_thumb}" width="100">
+                    </div>
+                    <h3>{$article.title}</h3>
+                    <span class="timepost">{$article.add_time}</span>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    {/if}
+    <!-- TemplateBeginEditable name="Bottom 2" -->
+<!-- TemplateEndEditable -->
+    <div class="bottom pluggin-comment-facebook">
+        {if $option.comment_enabled}{include file='library/comments.lbi'}{/if}
+    </div>
+
+    {$render.after_main}
+</section>
+{include file='library/page_header.lbi'}
+{include file='library/page_footer.lbi'}
+{insert_js name='article.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global.js,js/init.js' }
+<script type="text/javascript" src="{$option.static_path}static/js/jquery.toc.min.js"></script>
+<script type="text/javascript" src="{$option.static_path}static/owl-carousel/owl.carousel.2.3.4.min.js"></script>
+<script>
+    var base_path = '{$option.static_path}';
+    var url_post = base_path+'{$article.url}';
+    $("#toc").toc({content: "div.article_content", headings: "h2,h3,h4", url: url_post});
+    $("#toc").wrap( "<div class='wrap_toc'></div>" );
+    $(".wrap_toc").css('visibility', 'visible').prepend('<p></p>');
+
+    $(document).ready(function() {
+        $("#owl-cate").owlCarousel({items:2,lazyLoad:!0,navigation:!1,pagination:!0,itemsDesktop:2,itemsDesktopSmall:2,itemsTablet:2,autoPlay:5e3,stopOnHover:!0});
+    });
+
+   $("#toc a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+</script>
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var e = document.getElementById("up");
+  if (e.style.transform === "rotate(45deg)") {
+    e.style.transform = "rotate(224deg)";
+  } else {
+    e.style.transform = "rotate(45deg)";
+  }
+}
+</script>
+
+<script type="text/javascript">
+    $('.rank_star').rating({
+        focus: function(value, link){
+            var tip = $('#star_tip');
+            tip[0].data = tip[0].data || tip.html();
+            tip.html(link.title || 'value: '+value).show();
+        },
+        blur: function(value, link){
+            $('#star_tip').html(link.title).show();
+        },
+        callback: function(value, link){
+           $('#star_tip').html(link.title).show();
+           $('div.action-comment').fadeIn('600');
+        }
+    });
+</script>
+<script>
+    var owl = $("#goods_price .cate");
+    if(owl.length > 0){
+        owl.find('li').css('width','100%');
+        owl.owlCarousel({items: 4,slideBy: 3,lazyLoad:!0,slideSpeed : 2000,nav:!0,dots:!1,loop:!1,responsiveRefreshRate : 200,navText: ['‹','›'],});
+    }
+
+    
+    $(document).ready(function() {
+        $("#owl-cate").owlCarousel({items:2,lazyLoad:!0,navigation:!1,pagination:!0,itemsDesktop:2,itemsDesktopSmall:2,itemsTablet:2,autoPlay:5e3,stopOnHover:!0});
+    });
+
+</script>
+</body>
+</html>

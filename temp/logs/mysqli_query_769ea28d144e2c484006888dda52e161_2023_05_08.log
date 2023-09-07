@@ -1,0 +1,4 @@
+INSERT INTO `kuqpxtvxhosting_minhngoc1`.`nb_sessions` (sesskey, expiry, ip, data) VALUES ('8d783d1d346058e5ab8dc9e7d3a694f8', '1683555363', '42.116.174.144', 'a:0:{}')
+
+2023-05-08 21:16:03 - MySQLi Query Error: Duplicate entry '8d783d1d346058e5ab8dc9e7d3a694f8' for key 'PRIMARY'
+

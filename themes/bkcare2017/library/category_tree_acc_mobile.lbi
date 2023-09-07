@@ -1,0 +1,8 @@
+<div class="navaccessories">
+     {foreach from=get_subs_child(8) item='cats' name='categories'}
+    <a href="{$cats.url}" >
+        <div><i class="iconmobile-{$cats.class}"></i></div>
+        <h3>{$cats.name}</h3>
+    </a>
+    {/foreach}
+</div>

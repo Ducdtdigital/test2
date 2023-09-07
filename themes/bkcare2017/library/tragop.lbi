@@ -1,0 +1,82 @@
+ <div class="clr"></div>
+<div class="pricing_table_wdg clearfix">
+            <ul>
+                <li>Gói trả góp nỗi bật nhất</li>
+                <li>Ngân hàng</li>
+                <li>Loại thẻ</li>
+                <li>Kỳ hạn góp</li>
+                <li>Trả trước</li>
+                <li>Góp mỗi tháng</li>
+                <li>Tổng Phí (HS+Quẹt thẻ)</li>
+                <li>Tổng tiền góp</li>
+                <li>Chênh lệch so với giá bán</li>
+                <li class="pager">Giấy tờ cần có</li>
+            </ul>
+
+            <ul>
+                <li class="packagename"><b>mPOS</b></li>
+                <li><select name="bank" id="bank" onchange="CalculateInstallment('POS')">
+                    <option value="0">Chọn ngân hàng</option>
+                    <option value="1">Sacombank</option>
+                    <option value="2">ANZ (*)</option>
+                    <option value="3">HSBC</option>
+                    <option value="4">Shinhan</option>
+                    <option value="5">VIB</option>
+                    <option value="6">Seabank</option>
+                    <option value="7" selected>Eximbank</option>
+                    <option value="8">Maritimebank</option>
+                    <option value="9">Techcombank</option>
+                    <option value="10">Citibank</option>
+                    <option value="11">VPbank</option>
+                    <option value="12">SCB</option>
+                    <option value="13">Fe Credit</option>
+                    <option value="14">Nam Á</option>
+                    <option value="15">OCB</option>
+                    <option value="16">TP Bank</option>
+                    <option value="17">Kiên Long Bank</option>
+                </select></li>
+                <li>
+                    <select name="card_type" id="card_type" onchange="CalculateInstallment('POS')">
+                        <option value="0">Chọn loại thẻ</option>
+                        <option value="0.5" selected>ATM (0.5%)</option>
+                        <option value="2">VISA/Master Nội Địa (2%)</option>
+                        <option value="2.5">VISA/Master Quốc Tế (2.5%)</option>
+                        <option value="3">JCB/CUP (3%)</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="kyhan" id="kyhanPOS" onchange="CalculateInstallment('POS')">
+                        <option value="0">Chọn kỳ hạn</option>
+                        <option value="3">3 Tháng</option>
+                        <option value="6" selected>6 Tháng</option>
+                        <option value="9">9 Tháng</option>
+                        <option value="12">12 Tháng</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="slpercentPOS" id="slpercentPOS" onchange="CalculateInstallment('POS')">
+                        <option value="0" selected="">Không trả trước</option>
+                        <option value="30" data-prepaid="" >Trả trước 30%</option>
+                        <option value="40" data-prepaid="">Trả trước 40%</option>
+                        <option value="50" data-prepaid="">Trả trước 50%</option>
+                        <option value="60" data-prepaid="">Trả trước 60%</option>
+                        <option value="70" data-prepaid="">Trả trước 70%</option>
+                    </select>
+                </li>
+                <li><strong id="gopMTPOS">NA</strong>
+                </li>
+                <li id="lsPOS">NA</li>
+                <li class="total"><strong id="TotalPOS"> NA </strong></li>
+                <li><b id="lechPOS">NA</b></li>
+                <li class="pager">Thẻ tín dụng VISA/ Master/ JCB và CMND</li>
+            </ul>
+        </div>
+
+        <div class="clr"></div>
+        <div class="extra_info">
+            <p>Đối với Maritimebank: theo quy định của Maritimebank, NH sẽ thu thêm chủ thẻ 3% phí quản lý trả góp trên giá trị giao dịch với thời hạn 3,9,12 tháng</p>
+            <p>Đối với Techcombank: theo quy định của Techcombank, NH sẽ thu thêm chủ thẻ phí chuyển đổi trả góp 1.1% trên giá trị giao dịch (Tối đã 100.000đ/1GD)</p>
+            <p>- Lưu ý: Giá trị trên chỉ mang tính tham khảo, vui lòng liên hệ trực tiếp tại cửa hàng để làm hồ sơ với mức lãi suất chính xác hơn.</p>
+            <p><a target="_blank" href="tin-tuc/bieu-phi-tra-gop-may-choi-game-tai-gamshop-vn-1672.html">- Chi tiết quy định, chính sách thủ tục trả góp xem tại đây</a></p>
+            <p>- Liên hệ ngay Hotline: <strong>{$service_phone}</strong> để làm trả góp sản phẩm này</p>
+        </div>

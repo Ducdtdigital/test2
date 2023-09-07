@@ -1,0 +1,26 @@
+{if $fittings}
+<div class="xm-plain-box clearfix" id="goods_price">
+<div class="clearfix" id="fittings">
+    <h2 class="title_heading">Ưu đãi khi mua cùng {$goods.goods_name|escape:120}</h2>
+    <div class="overpromo _goods_fittings">
+    <ul class="box-bd cate owl-carousel owl-theme">
+        {foreach from=$fittings item=goods name=fittings}
+        <li>
+            {if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+            <a href="{$goods.url}">
+                <img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}">
+                <h3>{$goods.short_name}</h3>
+                <strong class="gs">
+                {if $goods.is_discount eq 1}{$goods.fittings_price}<del>{$goods.shop_price}</del>{else}{$goods.fittings_price}{/if}
+                </strong>
+            </a>
+            <p class="actions">
+                <a href="javascript:fittings_to_flow({$goods.goods_id},{$goods.parent_id})" class="btn_fittings">Mua kèm</a>
+            </p>
+        </li>
+        {/foreach}
+    </ul>
+    </div>
+</div>
+</div>
+{/if}

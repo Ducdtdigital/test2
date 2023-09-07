@@ -1,0 +1,164 @@
+.cate_head {text-transform: uppercase;font-weight: 700;text-align: center;padding:10px 0;background: #fafafa}
+/* goods list*/
+.cate {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #eee;
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+.cate li {
+    background: #fff none repeat scroll 0 0;
+    border-left: 1px solid #eee;
+    border-top: 1px solid #eee;
+    float: left;
+    height: 210px;
+    margin: 0 0 0 -1px;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+}
+.cate li aside {
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.cate li .right {
+    padding-top: 22px;
+}
+.cate li a {
+    display: block;
+    overflow: hidden;
+    padding: 0 10px 8px;
+}
+.cate li h3 {
+    clear: both;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    height: 35px;
+    line-height: 1.3em;
+    overflow: hidden;
+}
+.cate li strong {
+    color: #f60;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 15px;
+    overflow: hidden;
+    padding: 6px 0;
+}
+.cate li strong.shockprice {
+    padding: 6px 0 0;
+}
+.cate li strong.shockprice:last-child {
+    padding-bottom: 6px;
+}
+.cate li strong span {
+    color: #333;
+    display: inline;
+    font-size: 14px;
+}
+.cate li strong span.normal {
+    font-weight: normal;
+}
+.cate li img {
+    display: block;
+    height: 100px;
+    margin: 10px auto;
+    width: 100px;
+}
+.cate li .promotion {
+    height: 36px;
+    overflow: hidden;
+}
+.cate li span, .cate li .promotion p  {
+    color: #666;
+    display: block;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cate li .promotion p::before {
+    color: #999;
+    content: "•";
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.cate li p {
+    color: #c1000c;
+    display: block;
+    font-size: 12px;
+    height: 18px;
+    overflow: hidden;
+    width: 100%;
+}
+.cate li label {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 0 3px 3px 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 18px;
+    left: 2px;
+    margin: 0 0 5px 5px;
+    padding: 0 5px 0 8px;
+    position: absolute;
+    top: 0;
+}
+.cate li label.installment {
+    background: #ff6a00 none repeat scroll 0 0;
+}
+.cate li label.installment::before {
+    border-bottom: 9px solid transparent;
+    border-right: 7px solid #ff6a00;
+    border-top: 9px solid transparent;
+    content: "";
+    height: 0;
+    left: -7px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.cate li label.installment::after {
+    color: #fff;
+    content: "•";
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 5px;
+    position: absolute;
+    right: 85%;
+    top: 1px;
+    vertical-align: middle;
+}
+.cate li label.new {
+    background: #288ad6 none repeat scroll 0 0;
+}
+.cate li label.new::before {
+    border-bottom: 9px solid transparent;
+    border-right: 7px solid #288ad6;
+    border-top: 9px solid transparent;
+    content: "";
+    height: 0;
+    left: -7px;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.cate li label.new::after {
+    color: #fff;
+    content: "•";
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 5px;
+    position: absolute;
+    right: 85%;
+    top: 1px;
+    vertical-align: middle;
+}

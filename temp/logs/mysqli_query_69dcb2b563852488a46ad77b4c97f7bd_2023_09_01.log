@@ -1,0 +1,204 @@
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS r LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = '9384' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-09-01 02:19:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS ' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `thbvietnam_1s`.`nb_goods_activity` AS ga, `thbvietnam_1s`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1693484395'
+            AND ga.end_time >= '1693484395'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-09-01 02:19:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `thbvietnam_1s`.`nb_goods` g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','591','590','595','602','608','592','606','607','621','632','624','634','637','642','660','670','662','782','783','784','739','750','748','747','746','749','751','740','611','613','622','612','579','580','584','581','585','320','543','319','582','583','669','674','587','549','300','603','604','631','623','635','609','633','636','638','299','644','659','649','643','650','704','658','327','324','718','719','720','721','722','723','724','725','726','727','728','729','698','699','702','707','705','706','708','574','575','576','577','395','605','453','483','501','457','458','459','460','484','710','486','492','493','494','689','687','502','700','703','701','497','499','743','530','533','446','531','534','532','535','571','505','504','506','507','510','508','509','478','479','481','482','480','541','495','380','381','680','681','682','382','683','684','685','709','387','390','552','572','540','385','388','391','383','386','389','551','392','558','498','393','511','399','400','401','402','405','512','396','397','398','404','653','654','408','655','656','407','403','675','679','677','678','409','694','692','695','690','693','691','688','697','696','412','406','410','411','593','597','601','599','600','598','596','594','639','640','641','615','616','617','618','619','666','667','668','645','735','736','737','738','626','627','628','450','451','454','455','456','496','711','712','713','714','715','716','717','503','513','429','430','433','431','432','514','515','516','522','523','524','517','536','519','537','520','518','521','413','421','424','461','467','470','465','468','471','462','466','469','417','553','559','560','561','569','570','554','555','556','568','394','438','440','443','441','444','439','442','445','447','449','452','448','762','763','765','764','766','463','464','472','473','475','476','474','477','767','768','415','769','416','414','770','771','772','419','422','423','418','773','775','776','774','777','778','779','781','420','741','425','427','428','426','742','314','745','744','294','539','295','317','298','303','318','304','573','297','302','545','339','309','525','528','550','526','529','538','527','312','315','296','336','306','321','305','301','330','333','328','331','547','334','337','329','332','335','307','341','310','313','500','544','548','338','308','311','646','647','663','665','664','661','648','671','673','672','752','755','753','754','761','757','759','758','760','756','342','357','360','542','363','343','351','366','349','364','367','350','365','368','348','346','355','358','361','344','354','369','352','370','353','371','347','378','376','379','377','356','359','362','345','372','375','373','374','434','437','435','436')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-09-01 02:19:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','5' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 02:22:03 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 02:22:03 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS r LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = '5158' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-09-01 02:27:47 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS ' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `thbvietnam_1s`.`nb_goods_activity` AS ga, `thbvietnam_1s`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1693484867'
+            AND ga.end_time >= '1693484867'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-09-01 02:27:47 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `thbvietnam_1s`.`nb_goods` g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','591','590','595','602','608','592','606','607','621','632','624','634','637','642','660','670','662','782','783','784','739','750','748','747','746','749','751','740','611','613','622','612','579','580','584','581','585','320','543','319','582','583','669','674','587','549','300','603','604','631','623','635','609','633','636','638','299','644','659','649','643','650','704','658','327','324','718','719','720','721','722','723','724','725','726','727','728','729','698','699','702','707','705','706','708','574','575','576','577','395','605','453','483','501','457','458','459','460','484','710','486','492','493','494','689','687','502','700','703','701','497','499','743','530','533','446','531','534','532','535','571','505','504','506','507','510','508','509','478','479','481','482','480','541','495','380','381','680','681','682','382','683','684','685','709','387','390','552','572','540','385','388','391','383','386','389','551','392','558','498','393','511','399','400','401','402','405','512','396','397','398','404','653','654','408','655','656','407','403','675','679','677','678','409','694','692','695','690','693','691','688','697','696','412','406','410','411','593','597','601','599','600','598','596','594','639','640','641','615','616','617','618','619','666','667','668','645','735','736','737','738','626','627','628','450','451','454','455','456','496','711','712','713','714','715','716','717','503','513','429','430','433','431','432','514','515','516','522','523','524','517','536','519','537','520','518','521','413','421','424','461','467','470','465','468','471','462','466','469','417','553','559','560','561','569','570','554','555','556','568','394','438','440','443','441','444','439','442','445','447','449','452','448','762','763','765','764','766','463','464','472','473','475','476','474','477','767','768','415','769','416','414','770','771','772','419','422','423','418','773','775','776','774','777','778','779','781','420','741','425','427','428','426','742','314','745','744','294','539','295','317','298','303','318','304','573','297','302','545','339','309','525','528','550','526','529','538','527','312','315','296','336','306','321','305','301','330','333','328','331','547','334','337','329','332','335','307','341','310','313','500','544','548','338','308','311','646','647','663','665','664','661','648','671','673','672','752','755','753','754','761','757','759','758','760','756','342','357','360','542','363','343','351','366','349','364','367','350','365','368','348','346','355','358','361','344','354','369','352','370','353','371','347','378','376','379','377','356','359','362','345','372','375','373','374','434','437','435','436')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-09-01 02:27:47 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','5' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 02:41:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 02:41:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 02:45:25 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 02:45:25 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:02:30 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:02:30 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:02:32 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:02:32 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:02:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:02:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:03:03 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:03:03 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:04:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:04:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:04:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:04:40 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:04:49 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:04:49 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:07:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:07:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 03:10:20 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 03:10:20 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS r LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = '4252' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-09-01 07:23:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `thbvietnam_1s`.`nb_user_rank` AS ' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `thbvietnam_1s`.`nb_goods_activity` AS ga, `thbvietnam_1s`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1693502599'
+            AND ga.end_time >= '1693502599'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-09-01 07:23:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `thbvietnam_1s`.`nb_goods` g LEFT JOIN `thbvietnam_1s`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','591','590','595','602','608','592','606','607','621','632','624','634','637','642','660','670','662','782','784','783','739','750','748','747','746','749','751','740','611','612','613','622','579','580','584','581','585','320','543','319','582','583','674','669','587','549','300','603','604','631','623','635','609','633','636','638','299','644','659','649','643','650','704','658','324','327','718','719','720','721','722','723','724','725','726','727','728','729','698','699','702','707','705','706','708','574','575','576','577','395','605','453','483','501','457','460','458','459','484','492','710','486','493','494','689','687','502','700','703','701','497','499','743','530','533','446','531','534','532','535','571','505','504','506','541','495','507','509','510','508','478','479','480','481','482','380','381','680','681','682','382','683','684','685','709','386','389','392','551','558','498','387','390','552','572','540','385','388','391','383','593','597','601','599','600','598','596','594','639','640','641','393','511','399','400','401','402','405','512','396','397','398','404','654','653','408','655','656','407','403','675','678','679','677','409','691','694','692','695','690','693','688','697','696','412','406','410','411','615','616','617','618','619','666','667','668','645','735','736','737','738','626','627','628','450','451','454','455','456','496','711','712','713','714','715','716','717','503','294','544','548','338','308','311','539','295','297','302','317','298','303','318','304','573','545','339','309','525','527','528','550','526','529','538','312','315','296','305','336','306','321','301','329','332','335','330','333','328','331','547','334','337','307','341','310','313','500','646','647','663','665','664','661','648','671','672','673','760','756','752','754','755','753','761','757','759','758','342','359','362','345','374','372','375','373','357','360','542','363','343','365','368','348','351','366','349','364','367','350','346','355','358','361','344','371','354','369','352','370','353','347','377','378','376','379','356','434','437','435','436','513','515','429','431','430','433','432','514','516','522','524','523','517','518','521','536','519','537','520','413','417','421','424','461','467','470','465','468','471','462','466','469','394','438','445','440','443','441','444','439','442','447','448','449','452','553','554','555','556','568','559','561','560','569','570','762','763','463','464','765','764','766','472','474','477','473','475','476','767','414','768','415','769','416','770','771','772','423','419','422','418','773','777','775','776','774','778','781','420','779','741','314','745','744','425','426','742','427','428')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-09-01 07:23:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','588','589','316','5' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 18:10:53 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 18:10:53 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 18:18:15 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 18:18:15 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 18:30:38 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 18:30:38 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 18:35:37 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 18:35:37 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 18:59:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 18:59:41 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >= 15000000 AND g.shop_price < 
+
+2023-09-01 19:03:47 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+
+SELECT COUNT(*) as goods_num FROM `thbvietnam_1s`.`nb_goods` AS g WHERE (g.cat_id  IN ('396')  OR g.goods_id IN ('') ) AND g.is_delete = 0 AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.shop_price >=  AND g.shop_price < 9223372036854775807
+
+2023-09-01 19:03:47 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND g.shop_price < 9223372036854775807' at line 1
+

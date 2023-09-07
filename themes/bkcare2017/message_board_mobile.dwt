@@ -1,0 +1,31 @@
+{include file='library/html_header_mobile.lbi'}
+<link rel="canonical" href="{$canonical}" />
+{insert_css files="mobile/css/global.css,mobile/css/message.css"}
+</head>
+<body id="page_{$pname}">
+<section>
+    <div class="all-map">
+    {include file='library/map.lbi'}
+    <div class="content_map">
+            <strong>Chi Nhánh Hà Nội</strong>
+            <span>CÔNG TY CỔ PHẦN CÔNG NGHỆ THB VIỆT NAM</span>
+                <span>Showroom: Số 30 Mạc Thái Tổ - Yên Hòa - Quận Cầu Giấy - TP Hà Nội</span>
+                <span>Tel: (024) 3793 8604 - 3219 1220</span>
+                <span>Hotline: 0904 810 817  -  0902 148 147</span>
+                </div>
+    {include file='library/map2.lbi'}
+                <div class="content_map">
+             <strong>Chi Nhánh Hồ Chí Minh</strong>
+             <span>Số 275F Lý Thường Kiệt, Phường 15, Quận 11, Thành Phố Hồ Chí Minh </span>
+                <span>Tel: (028) 6686 0682</span>
+                <span>Hotline:0979 244 335  -  0986 568 014</span>
+          </div>
+    </div>
+</section>
+{include file='library/page_header_mobile.lbi'}
+{include file='library/page_footer_mobile.lbi'}
+{* Nếu phát sinh file js thì sửa lại giá trị name article.Mobile.min.js *}
+{insert_js name='message.Mobile.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global_mobile.js,js/init_mobile.js'}
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>

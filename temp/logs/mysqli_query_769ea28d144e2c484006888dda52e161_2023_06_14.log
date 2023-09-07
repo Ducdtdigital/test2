@@ -1,0 +1,12 @@
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-14 09:56:09 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-14 09:56:11 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_goods` SET id=0 WHERE id='16'
+
+2023-06-14 11:24:53 - MySQLi Query Error: Unknown column 'id' in 'where clause'
+

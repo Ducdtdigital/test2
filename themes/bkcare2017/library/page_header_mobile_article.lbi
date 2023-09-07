@@ -1,0 +1,29 @@
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QFC699"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="over"></div>
+<header>
+    <a href="{$hu}" class="logo"><i class="iconmobile-logo"></i></a>
+    <div class="menu" id="_menu"><i class="iconmobile-menu"></i></div>
+    <nav class="subnav" id="_subnav">
+        <div class="navigation">
+            {foreach from=$article_categories item=cat name=categories}
+            <a class="nvcustom" href="{$option.static_path}{$cat.url}">{$cat.name}</a>
+            {/foreach}
+            <a class="nvcustom" href="{$option.static_path}lien-he">Liên Hệ</a>
+            <div class="buycall">Gọi đặt mua:<a href="tel:{$service_phone}">{$service_phone}</a> <span>({$opentime})</span></div>
+           <div class="buycall">Giỏ hàng {insert name='cart_number'}</div>
+
+        </div>
+    </nav>
+    <form action="{$option.static_path}tin-tuc" method="post" class="search ">
+        <input name="keywords" type="search" placeholder="Tìm kiếm tin tức..." value="{$search_value|escape}" autocomplete="off" >
+        <div class="iconsearch"><i class="iconmobile-search"></i></div>
+        <button type="submit" class="btn-submit">Tìm</button>
+        <input name="id" type="hidden" value="{$cat_id}" >
+        <input name="cur_url" id="cur_url" type="hidden" value="">
+    </form>
+    <!-- sugguest -->
+    <div id="suggestion"></div>
+</header>

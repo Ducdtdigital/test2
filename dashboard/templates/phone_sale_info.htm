@@ -1,0 +1,59 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<div class="main-div">
+<form method="post" action="phone_sale.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">Số điện thoại</td>
+    <td><input type="phone" name="phone" maxlength="600" size="40" value="{$phone_sale.phone}" /></br>* Nhập số điện thoại Sales<span class="require-field" style="margin-left: 0;">0988666888</span></td>
+  </tr>
+  <tr>
+    <td class="label">Tên</td>
+    <td><input type="text" name="name" maxlength="600" size="40" value="{$phone_sale.name}" /></br>* Nhập số tên mới vd: <span class="require-field" style="margin-left: 0;">Hùng Anh</span></td>
+  </tr>
+<tr>
+  <td class="label">Khu vực</td>
+  <td>
+    <select name="khu_vuc">
+      <option value="1" {if $phone_sale.khu_vuc == 1}selected{/if}>Hà Nội</option>
+      <option value="2" {if $phone_sale.khu_vuc == 2}selected{/if}>Hồ Chí Minh</option>
+    </select>
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+      <input type="reset" class="button" value="{$lang.button_reset}" />
+      <input type="hidden" name="act" value="{$form_action}" />
+      <input type="hidden" name="old_phone" value="{$phone_sale.phone}" />
+      <input type="hidden" name="id" value="{$phone_sale.id}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['phone'].focus();
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+/**
+ * 检查表单输入的数据
+ */
+function validate() {
+  validator = new Validator("theForm");
+  validator.required("phone", no_brandname);
+  validator.required("khu_vuc", "Vui lòng chọn khu vực");
+  return validator.passed();
+}
+
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

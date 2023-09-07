@@ -1,0 +1,12 @@
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1686541684
+
+2023-06-12 11:18:04 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1686541684
+
+2023-06-12 11:18:04 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_goods` SET id=0 WHERE id='5'
+
+2023-06-12 14:43:52 - MySQLi Query Error: Unknown column 'id' in 'where clause'
+

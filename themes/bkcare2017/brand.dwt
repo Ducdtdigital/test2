@@ -1,0 +1,55 @@
+{include file='library/html_header.lbi'}
+{insert_css files="css/style.css,css/brand.css"}
+<style type="text/css">
+    body {background: #f4f4f4}
+</style>
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+	{include file='library/ur_here.lbi'}
+	{$render.before_main}
+
+    <div class="col_main">
+    <!-- TemplateBeginEditable name="Main" -->
+<!-- TemplateEndEditable -->
+        <div class="category_name">
+                <div class="sortby">
+                    Sắp xếp theo:
+                    <a href="{siy:build_uri app='brand'  bid=$brand_id page=$pager.page sort='is_best' order='DESC'}"><span>
+                        {if $pager.sort eq 'is_best'}✓{/if}</span> Sản phẩm bán chạy</a>
+                
+                    <a href="{siy:build_uri app='brand' bid=$brand_id page=$pager.page sort='is_new' order='DESC'}"> <span>
+                       {if $pager.sort eq 'is_new'}✓{/if}</span> Mới nhất</a>
+                    
+                       
+                    <a href="{siy:build_uri app='brand'  bid=$brand_id page=$pager.page sort='shop_price' order='ASC'}"> <span>
+                        {if $pager.sort eq 'shop_price' && $pager.order eq 'ASC'}✓{/if}</span> Giá từ thấp đến cao</a>
+                        
+                    <a href="{siy:build_uri app='brand'  bid=$brand_id page=$pager.page sort='shop_price' order='DESC'}"><span>
+                        {if $pager.sort eq 'shop_price' && $pager.order eq 'DESC'}✓{/if}</span> Giá từ cao đến thấp</a>
+                </div>
+
+
+        </div>
+    <!-- #BeginLibraryItem "/library/brand_goods_list.lbi" --><!-- #EndLibraryItem -->
+    <!-- TemplateBeginEditable name="Bottom" -->
+<!-- TemplateEndEditable -->
+
+        {if $brand.brand_desc_long}
+         <div class="clr"></div>
+        <article id="description">
+                <div class="article_content">{$brand.brand_desc_long}</div>
+                <div class="view-more hidden">
+                <p id="btn-viewmore"><span id="view1">Đọc thêm </span><span id="view2" class="hidden">Thu gọn </span> </p>
+                </div>
+        </article>
+        {/if}
+    </div>
+    <div class="clearfix"></div>
+</section>
+{include file='library/page_footer.lbi'}
+{insert_js name='brand.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js' minify='js/global.js' }
+{include file='library/html_desktopmobile.lbi'}
+ </body>
+ </html>

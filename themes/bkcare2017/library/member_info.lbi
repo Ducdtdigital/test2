@@ -1,0 +1,9 @@
+<div class="user-area">
+{if $user_info}
+<a href="thanh-vien" class="gotouser"><strong>{$user_info.username|truncate:15}</strong></a>
+<a href="thanh-vien?act=logout">Đăng xuất</a>
+{else}
+<a href="thanh-vien?act=register">{$lang.btn_register}</a>
+<a href="thanh-vien?act=login">{$lang.btn_login}</a>
+{/if}
+</div>

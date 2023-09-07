@@ -1,0 +1,16 @@
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-06 13:41:07 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+SELECT cat_id, cat_name FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_type` WHERE cat_id IN () AND enabled = 1
+
+2023-06-06 13:41:09 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') AND enabled = 1' at line 1
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1686042129', ip = '118.70.131.98', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '3b6e93927790bf5ce536e05b42edbe54' LIMIT 1
+
+2023-06-06 16:02:09 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1686050663', ip = '1.53.240.223', userid = '0', adminid = '9', user_name='0', user_rank='0', discount='0', email='0', data = 'a:3:{s:10:\"admin_name\";s:5:\"allin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1686025262;}' WHERE sesskey = '5daa2fafb28d0fb0c2b463abcc11bb03' LIMIT 1
+
+2023-06-06 18:24:23 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

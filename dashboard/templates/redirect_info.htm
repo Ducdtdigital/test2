@@ -1,0 +1,49 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<div class="main-div">
+<form method="post" action="redirect.php" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+<table cellspacing="1" cellpadding="3" width="100%">
+  <tr>
+    <td class="label">Link out</td>
+    <td><input type="text" name="link_old" maxlength="600" size="40" value="{$redirect.link_old}" /></br>* Nhập url cần chuyển hướng vd: domain.com/<span class="require-field" style="margin-left: 0;">tin-tuc/abcd.html</span></td>
+  </tr>
+  <tr>
+    <td class="label">Link new</td>
+    <td><input type="text" name="link_new" maxlength="600" size="40" value="{$redirect.link_new}" /></br>* Nhập url mới vd: <span class="require-field" style="margin-left: 0;">https://domain.com/tin-tuc/abcd123.html</span></td>
+  </tr>
+ 
+  <tr>
+    <td colspan="2" align="center"><br />
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+      <input type="reset" class="button" value="{$lang.button_reset}" />
+      <input type="hidden" name="act" value="{$form_action}" />
+      <input type="hidden" name="old_link_old" value="{$redirect.link_old}" />
+      <input type="hidden" name="id" value="{$redirect.rd_id}" />
+    </td>
+  </tr>
+</table>
+</form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+<!--
+document.forms['theForm'].elements['link_old'].focus();
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.required("link_old",  no_brandname);
+    return validator.passed();
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

@@ -1,0 +1,85 @@
+<!-- $Id: codecard_list.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+  <form action="javascript:searchSim()" name="searchForm">
+    <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
+    Số Serial <input type="text" name="serial_number" size="15" />
+    <select name="is_sold">
+        <option value="">Trạng thái</option>
+        <option value="1">Đã bán</option>
+        <option value="0">Chưa bán</option>
+    </select>
+    <input type="submit" value="{$lang.button_search}" class="button" />
+    Số Serial có thể nhập số gợi ý. Ví dụ: Đuôi 443
+  </form>
+</div>
+<form method="post" action="" name="listForm" onsubmit="return confirm(batch_drop_confirm);">
+<div class="list-div" id="listDiv">
+{/if}
+  <table cellpadding="3" cellspacing="1">
+    <tr>
+      <th> <input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />
+          <a href="javascript:listTable.sort('id'); ">ID</a>{$sort_id} </th>
+      <th>Danh mục</th>
+      <th>Mã thẻ</th>
+      <th>Tên thẻ</th>
+      <th>Serial</th>
+      <th>Ngày tạo</th>
+      <th>Đã bán</th>
+      <th>{$lang.handler}</th>
+    </tr>
+    {foreach from=$codecard_list item=codecard}
+    <tr>
+      <td><input type="checkbox" name="checkboxes[]" value="{$codecard.id}" />
+        {$codecard.id}</td>
+     <td align="center" class="first-cell">{$codecard.cat_name}</td>
+      <td align="center">{$codecard.goods_sn}</td>
+      <td align="center">{$codecard.goods_name}</td>
+      <td align="center">{$codecard.serial_number}</td>
+      <td align="center">{$codecard.add_time}</td>
+      <td align="center"><img src="images/{if $codecard.is_sold}yes{else}no{/if}.gif" onclick="listTable.toggle(this, 'toggle_is_sold', {$codecard.id})" /></td>
+      <td align="center">
+        <a href="codecard_manage.php?act=edit&id={$codecard.id}" title="{$lang.edit}">{$lang.edit}</a> |
+        <a href="javascript:;" onclick="listTable.remove({$codecard.id}, '{$lang.drop_confirm}')" title="{$lang.remove}">{$lang.remove}</a>      </td>
+    </tr>
+    {foreachelse}
+    <tr><td class="no-records" colspan="6">{$lang.no_records}</td></tr>
+    {/foreach}
+  </table>
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td>
+      <input name="remove" type="submit" id="btnSubmit" value="{$lang.drop}" class="button" disabled="true" />
+      <input name="act" type="hidden" value="batch" />
+    </td>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+</table>
+{if $full_page}
+</div>
+</form>
+<script type="text/javascript" language="javascript">
+
+  listTable.recordCount = {$record_count};
+  listTable.pageCount = {$page_count};
+  {foreach from=$filter item=item key=key}
+  listTable.filter.{$key} = '{$item}';
+  {/foreach}
+
+{literal}
+
+  function searchSim()
+ {
+    listTable.filter.serial_number = Utils.trim(document.forms['searchForm'].elements['serial_number'].value);
+    listTable.filter.is_sold = Utils.trim(document.forms['searchForm'].elements['is_sold'].value);
+    listTable.filter.page = 1;
+    listTable.loadList();
+ }
+  {/literal}
+</script>
+{include file="pagefooter.htm"}
+{/if}

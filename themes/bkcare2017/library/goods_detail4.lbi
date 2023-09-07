@@ -1,0 +1,39 @@
+
+<div class="product_details clearfix">
+    <div class="rowtop clearfix">
+        <h1>{$goods.goods_name}</h1>
+         <div class="rating">
+            <span class="rank rank_{$goods.comment_rank}"></span> <a href="{$goods.url}#comment">{siy:comment_count id=$id type=$type} đánh giá</a>
+        </div>
+    </div>
+    <div class="extra_details">
+       {include file='library/goods_gallery_magiczoomplus.lbi'}
+    </div>
+    <div class="details">
+        <div class="goods_status">MỚI RA MẮT</div>
+         <div class="requestcall">
+            <h4>Bạn cần chúng tôi gọi lại TƯ VẤN</h4>
+            <div class="request-msg">Chúng tôi sẽ tư vấn theo thông tin bạn đã cung cấp.</div>
+            <form>
+                <input type="hidden" name="url" value="">
+                <input type="tel" name="tel" placeholder="Nhập số điện thoại của anh/chị">
+                <a href="javascript:;" id="_call"> <strong>HÃY GỌI LẠI CHO TÔI!!!</strong>
+                <span>Tôi đang rất quan tâm sản phẩm này</span> </a>
+            </form>
+        </div>
+    </div>
+    <div class="input_action">
+        <ul class="policy ">
+
+            <li><i class="icon-poltel"></i>
+                <p>Liên hệ<br>HOTLINE {$service_phone}<small> (8-21h cả T7, CN)</small></p>
+            </li>
+            <li><i class="icon-polmail"></i>
+                <p>Email<br>{$service_email}</p>
+            </li>
+        </ul>
+
+
+
+    </div>
+</div>

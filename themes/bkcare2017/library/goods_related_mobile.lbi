@@ -1,0 +1,51 @@
+{if $related_goods and $pname eq 'goods'}
+<div class="clearfix" id="related">
+	<h2 class="title_heading">Sản phẩm liên quan</h2>
+	<div class="overpromo _related">
+    <ul class="cate listpromo">
+		{foreach from=$related_goods item=releated_goods_data name=related_goods}
+		<li>
+		{if $releated_goods_data.discount}<span class="discount">{$releated_goods_data.discount}</span>{/if}
+            <a href="{$releated_goods_data.url}">
+                <img src="{$option.cdn1_path}{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name|escape:html}">
+                <h3>{$releated_goods_data.goods_name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$releated_goods_data.comment_rank}"></em><em>{$releated_goods_data.comment_count} đánh giá</em>
+                    </div>
+                     {if $releated_goods_data.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $releated_goods_data.promote_price}{$releated_goods_data.promote_price}<del>{$releated_goods_data.shop_price}</del>{else}{$releated_goods_data.shop_price}<del>{$releated_goods_data.market_price}</del>{/if}</strong>
+                {/if}
+            </a>
+		</li>
+		{/foreach}
+	</ul>
+    </div>
+</div>
+{elseif $related_goods and $pname eq 'article'}
+<div id="goods_price">
+	<h2 class="title_heading">Sản phẩm liên quan</h2>
+    <div class="overpromo _scroll">
+	<ul class="cate listpromo">
+		{foreach from=$related_goods item=goods name=related_goods}
+		<li>
+		{if $goods.discount}<span class="discount">{$goods.discount}</span>{/if}
+            <a href="{$goods.url}">
+                <img src="{$option.cdn1_path}{$goods.goods_thumb}" alt="{$goods.goods_name|escape:html}">
+                <h3>{$goods.goods_name}</h3>
+             <div class="rank_click clearfix">
+                         <em class="rank rank_{$goods.comment_rank_css}"></em><em>{$goods.comment_count} đánh giá</em>
+                    </div>
+                     {if $goods.price eq 0}
+                    <span>Giá liên hệ</span>
+                    {else}
+                    <strong>{if $goods.promote_price}{$goods.promote_price}<del>{$goods.shop_price}</del>{else}{$goods.shop_price}<del>{$goods.market_price}</del>{/if}</strong>
+                {/if}
+            </a>
+		</li>
+		{/foreach}
+	</ul>
+    </div>
+</div>
+{/if}

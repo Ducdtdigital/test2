@@ -1,0 +1,308 @@
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:02 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:02 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:09 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:09 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:10 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:10 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:14 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:14 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:47:20 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:47:20 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:16 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:17 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:18 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:19 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:22 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:22 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:23 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:23 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:28 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:28 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:28 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:28 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 00:52:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20
+
+2023-05-22 00:52:36 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY   LIMIT -20, 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:04:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price DESC LIMIT 20
+
+2023-05-22 01:04:55 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price DESC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:04:56 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price DESC LIMIT 20
+
+2023-05-22 01:04:56 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price DESC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:04:57 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price ASC LIMIT 20
+
+2023-05-22 01:04:57 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY shop_price ASC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:05:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20
+
+2023-05-22 01:05:04 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:05:05 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20
+
+2023-05-22 01:05:05 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:05:05 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20
+
+2023-05-22 01:05:05 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20' at line 1
+
+SELECT goods_id FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_cat` AS g WHERE 
+
+2023-05-22 01:05:06 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+
+SELECT g.goods_id, g.goods_name, g.click_count, g.is_feature, g.goods_name_style, g.market_price, g.is_new, g.is_best, g.is_hot, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.promote_price, g.online_price, g.goods_type,  IFNULL(AVG(r.comment_rank),0) AS comment_rank,IF(r.comment_rank,count(*),0) AS  comment_count, g.promote_start_date, g.promote_end_date, g.desc_short, g.seller_note, g.goods_thumb_url, g.goods_thumb , g.goods_img FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` AS g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0'  LEFT JOIN  `kuqpxtvxhosting_minhngoc1`.`nb_comment` AS r ON r.id_value = g.goods_id AND comment_type = 0 AND r.parent_id = 0 AND r.status = 1 WHERE g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ( OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20
+
+2023-05-22 01:05:06 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'OR g.goods_id IN ('') )  group by g.goods_id ORDER BY is_new DESC LIMIT 20' at line 1
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1684747389
+
+2023-05-22 16:53:09 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

@@ -1,0 +1,4 @@
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_goods` SET id=0 WHERE id='4'
+
+2023-06-08 16:14:26 - MySQLi Query Error: Unknown column 'id' in 'where clause'
+

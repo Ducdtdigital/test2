@@ -1,0 +1,15 @@
+<h2 class="hometitle">{$cat_name}</h2>
+<ul class="filter nostick">
+       
+     
+        <li>
+        <span class="criteria">Giá</span>
+        <div class="fsub listprice " style="display: none;">
+                        <label class="all  "> <a href="giay-nike.html">Tất cả</a></label>
+                        <label class=" check"><a href="san-pham.html?tu=100000&amp;duoi=500000">100.000₫&nbsp;-&nbsp;500.000₫</a></label>
+                        <label class=" "> <a href="san-pham.html?tu=500000&amp;duoi=1000000">500.000₫&nbsp;-&nbsp;1.000.000₫</a></label>
+                        <label class=" "> <a href="san-pham.html?tu=1000000&amp;duoi=1500000">1.000.000₫&nbsp;-&nbsp;1.500.000₫</a></label>
+                    </div>
+    </li>
+              
+</ul>

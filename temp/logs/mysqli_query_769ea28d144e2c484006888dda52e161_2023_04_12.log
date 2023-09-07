@@ -1,0 +1,76 @@
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb_user_rank` AS r LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = '0' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-04-12 00:33:32 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb...' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_activity` AS ga, `kuqpxtvxhosting_minhngoc1`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1681209212'
+            AND ga.end_time >= '1681209212'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-04-12 00:33:32 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','394','455','496','438','441','444','439','442','445','440','443','447','450','448','451','449','452','456','503','454','342','359','362','345','374','372','375','373','357','360','363','343','365','368','348','351','366','349','364','367','350','346','355','358','361','344','371','354','369','352','370','353','347','377','378','376','379','542','356','380','391','551','540','572','383','386','389','392','552','558','381','384','387','390','498','382','385','388','395','493','499','502','505','479','482','480','481','453','494','497','506','541','483','457','458','459','460','495','530','531','534','532','535','533','446','501','504','507','508','509','510','571','478','484','487','490','485','488','491','486','489','492','413','423','461','464','467','470','462','465','468','471','463','466','469','415','418','421','424','416','419','422','472','473','476','474','477','475','414','417','420','579','582','583','580','581','294','295','298','304','316','319','543','302','317','573','320','297','303','318','301','330','333','328','331','334','337','547','329','332','335','525','528','526','529','538','550','527','307','339','310','313','549','296','336','305','306','321','299','327','322','546','325','340','323','326','324','308','500','311','314','544','300','338','309','341','312','315','539','545','548','393','403','406','409','412','511','400','401','399','402','405','404','407','410','512','397','398','396','408','411','425','426','427','428','553','554','555','556','557','563','564','565','566','569','567','570','559','560','561','562','568','434','435','436','437','574','575','578','576','577','513','429','430','433','431','432','514','515','516','522','523','524','517','519','537','520','518','521','536')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-04-12 00:33:32 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','394','455','496'...' at line 1
+
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb_user_rank` AS r LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = '0' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-04-12 00:34:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb...' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_activity` AS ga, `kuqpxtvxhosting_minhngoc1`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1681209274'
+            AND ga.end_time >= '1681209274'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-04-12 00:34:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','342','345','374','372','375','373','357','360','363','343','365','368','348','351','366','349','364','367','350','346','355','358','361','344','371','354','369','352','370','353','347','377','378','376','379','542','356','359','362','380','540','572','383','386','389','552','392','558','381','384','387','390','498','382','385','388','551','391','395','493','499','502','505','479','482','480','481','453','494','497','506','541','483','457','459','460','458','495','530','531','534','532','535','533','446','501','504','571','507','508','509','510','478','484','485','488','491','486','489','492','487','490','413','461','464','467','470','462','465','468','471','463','466','469','415','418','421','424','416','419','422','472','473','476','474','477','475','414','417','420','423','579','582','583','580','581','294','301','333','328','331','334','337','547','329','332','335','330','525','528','526','529','538','550','527','339','307','310','313','549','296','336','305','306','321','299','546','322','325','340','323','326','324','327','308','500','311','314','544','300','338','341','309','312','539','315','545','548','295','304','316','543','319','302','573','317','320','297','303','318','298','553','557','563','564','565','566','569','567','570','559','560','561','562','568','554','555','556','393','403','406','409','412','511','400','401','399','402','405','404','407','410','512','397','398','396','408','411','425','427','428','426','434','435','436','437','574','575','578','576','577','513','429','430','433','431','432','514','515','516','517','537','520','518','521','536','519','522','523','524','394','496','438','441','444','439','442','445','440','443','447','450','448','451','449','452','456','503','454','455')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-04-12 00:34:34 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','342','345','374'...' at line 1
+
+SELECT rank_id, IFNULL(mp.user_price, r.discount *  / 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb_user_rank` AS r LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = '0' AND mp.user_rank = r.rank_id WHERE r.show_price = 1 OR r.rank_id = '0'
+
+2023-04-12 00:35:14 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '/ 100) AS price, r.rank_name, r.discount FROM `kuqpxtvxhosting_minhngoc1`.`nb...' at line 1
+
+SELECT pg.goods_id, ga.act_id, ga.act_name, ga.act_desc, ga.goods_name, ga.start_time,
+                   ga.end_time, ga.is_finished, ga.ext_info
+            FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods_activity` AS ga, `kuqpxtvxhosting_minhngoc1`.`nb_package_goods` AS pg
+            WHERE pg.package_id = ga.act_id
+            AND ga.start_time <= '1681209314'
+            AND ga.end_time >= '1681209314'
+            AND pg.goods_id = 
+            GROUP BY ga.act_id
+            ORDER BY ga.act_id 
+
+2023-04-12 00:35:14 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'GROUP BY ga.act_id\x0A            ORDER BY ga.act_id' at line 8
+
+SELECT g.goods_id, g.goods_name, RAND() AS rnd, g.goods_thumb, g.goods_img, g.shop_price AS org_price, IFNULL(mp.user_price, g.shop_price * '1') AS shop_price, g.market_price, g.promote_price, g.promote_start_date, g.promote_end_date FROM `kuqpxtvxhosting_minhngoc1`.`nb_goods` g LEFT JOIN `kuqpxtvxhosting_minhngoc1`.`nb_member_price` AS mp ON mp.goods_id = g.goods_id AND mp.user_rank = '0' WHERE g.goods_id <>  AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','342','345','374','372','375','373','357','360','363','343','365','368','348','351','366','349','364','367','350','346','355','358','361','344','371','354','369','352','370','353','347','377','378','376','379','542','356','359','362','380','540','572','383','386','389','552','392','558','381','384','387','390','498','382','385','388','551','391','395','493','499','502','505','479','482','480','481','453','494','497','506','541','483','457','459','460','458','495','530','531','534','532','535','533','446','501','504','571','507','508','509','510','478','484','485','488','491','486','489','492','487','490','413','461','464','467','470','462','465','468','471','463','466','469','415','418','421','424','416','419','422','472','473','476','474','477','475','414','417','420','423','579','582','583','580','581','294','301','333','328','331','334','337','547','329','332','335','330','525','528','526','529','538','550','527','339','307','310','313','549','296','336','305','306','321','299','546','322','325','340','323','326','324','327','308','500','311','314','544','300','338','341','309','312','539','315','545','548','295','304','316','543','319','302','573','317','320','297','303','318','298','553','557','563','564','565','566','569','567','570','559','560','561','562','568','554','555','556','393','403','406','409','412','511','400','401','399','402','405','404','407','410','512','397','398','396','408','411','425','427','428','426','434','435','436','437','574','575','578','576','577','513','429','430','433','431','432','514','515','516','517','537','520','518','521','536','519','522','523','524','394','496','438','441','444','439','442','445','440','443','447','450','448','451','449','452','456','503','454','455')  AND g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0  ORDER BY rnd LIMIT 10
+
+2023-04-12 00:35:14 - MySQLi Query Error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND shop_price >  0 AND shop_price < 0 AND g.cat_id  IN ('','342','345','374'...' at line 1
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1681268611', ip = '42.117.235.75', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = 'd7b09e85f7696cf3e09f888fc8c80169' LIMIT 1
+
+2023-04-12 10:03:31 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions_data` WHERE expiry < 1681266811
+
+2023-04-12 10:03:31 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+UPDATE `kuqpxtvxhosting_minhngoc1`.`nb_sessions` SET expiry = '1681318330', ip = '42.117.79.187', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='1', email='0', data = 'a:3:{s:7:\"from_ad\";i:0;s:7:\"referer\";s:11:\"Trang chủ\";s:10:\"login_fail\";i:0;}' WHERE sesskey = '377f792ee0335d08df8ed7c3149c30c4' LIMIT 1
+
+2023-04-12 23:52:10 - MySQLi Query Error: Commands out of sync; you can't run this command now
+
+DELETE FROM `kuqpxtvxhosting_minhngoc1`.`nb_sessions` WHERE expiry < 1681316530
+
+2023-04-12 23:52:10 - MySQLi Query Error: Commands out of sync; you can't run this command now
+

@@ -1,0 +1,23 @@
+{if $best_goods}
+<div class="xm-plain-box recommend_goods best-goods">
+<h4 class="hometitle">{$lang_sp_best}</h4>
+<div class="overpromo _best">
+<ul class="cate listpromo">
+    {foreach from=$best_goods item=goods name=best_goods}
+    <li>
+        <a href="{$goods.url}">
+            <img src="{$option.cdn1_path}{$goods.thumb}" alt="{$goods.name|escape:html}" width="80" height="80">
+             {if $goods.is_new eq 1 and $goods.is_hot eq 0}<label class="new">Mới</label>{/if}
+                    {if $goods.is_new eq 0 and $goods.is_hot eq 1}<label class="shockprice">Hot</label>{/if}
+                    {if $goods.is_best eq 1 }<label class="shockprice">Bán chạy</label>{/if}
+            <h3>{$goods.name}</h3>
+            <strong>{if $goods.promote_price}{$goods.promote_price}{else}{$goods.shop_price}{/if}</strong>
+            <div class="promotion">{$goods.seller_note}</div>
+        </a>
+    </li>
+    {/foreach}
+</ul>
+</div>
+<div class="clr"></div>
+</div>
+{/if}

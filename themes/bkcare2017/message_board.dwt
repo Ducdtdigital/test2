@@ -1,0 +1,37 @@
+{include file='library/html_header.lbi'}
+<link rel="canonical" href="{$canonical}" />
+{insert_css files="css/style.css,css/message.css"}
+</head>
+<body id="page_{$pname}" class="animated fadeIn">
+{include file='library/page_header.lbi'}
+<section>
+	{include file='library/ur_here.lbi'}
+	{$render.before_main}
+	<!-- TemplateBeginEditable name="Top" --><!-- TemplateEndEditable -->
+		<div class="col_main_lg">
+            {include file='library/map.lbi'}
+            <div class="content_map">
+            <strong>Chi Nhánh Hà Nội</strong>
+            <span>CÔNG TY CỔ PHẦN CÔNG NGHỆ THB VIỆT NAM</span>
+				<span>Showroom: Số 30 Mạc Thái Tổ - Yên Hòa - Quận Cầu Giấy - TP Hà Nội</span>
+				<span>Tel: (024) 3793 8604 - 3219 1220</span>
+				<span>Hotline: 0904 810 817  -  0902 148 147</span>
+				</div>
+        </div>
+        <div class="col_sub_lg">
+            {include file='library/map2.lbi'}
+            <div class="content_map">
+             <strong>Chi Nhánh Hồ Chí Minh</strong>
+             <span>Số 275F Lý Thường Kiệt, Phường 15, Quận 11, Thành Phố Hồ Chí Minh </span>
+				<span>Tel: (028) 6686 0682</span>
+				<span>Hotline:0979 244 335  -  0986 568 014</span>
+          </div>
+        </div>
+	<!-- TemplateBeginEditable name="Bottom" --><!-- TemplateEndEditable -->
+	{$render.after_main}
+</section>
+{include file='library/page_footer.lbi'}
+{insert_js name='message_board.Desktop.min.js' no_minify='js/jquery.min.1.8.3.js,js/plugins.js,js/lang.vi_vn.js' minify='js/global.js,js/init.js' }
+{include file='library/html_desktopmobile.lbi'}
+</body>
+</html>
